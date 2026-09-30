@@ -40,25 +40,18 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Modern scrollbars & glassmorphism */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #090d16; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #334155; }
         
         .glass-panel {
-            background: rgba(15, 23, 42, 0.75);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(51, 65, 85, 0.5);
         }
         
-        .glass-card {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(51, 65, 85, 0.4);
-        }
-
         .pulse-ring {
             box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
             animation: pulse-ring 2s infinite;
@@ -69,12 +62,17 @@
             70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
             100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
+
+        .drag-over {
+            border-color: #3b82f6 !important;
+            background-color: rgba(59, 130, 246, 0.1) !important;
+        }
     </style>
 </head>
 <body class="h-full flex flex-col font-sans antialiased bg-slate-950 text-slate-100">
 
     <!-- Top Navigation Header -->
-    <header class="bg-slate-900/90 border-b border-slate-800 px-6 py-3.5 flex items-center justify-between sticky top-0 z-40 backdrop-blur-md">
+    <header class="bg-slate-900/90 border-b border-slate-800 px-6 py-3 flex items-center justify-between sticky top-0 z-40 backdrop-blur-md">
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-3">
                 <div class="p-2 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/20">
@@ -91,6 +89,13 @@
         </div>
 
         <div class="flex items-center space-x-4">
+            <!-- AI Provider & Key Config Quick Button -->
+            <button onclick="openApiConfigModal()" class="flex items-center space-x-2 bg-slate-800/90 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 text-xs transition">
+                <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
+                <span id="activeProviderLabel" class="font-semibold text-white">Gemini 3.6 Flash</span>
+                <i data-lucide="key" class="w-3.5 h-3.5 text-amber-400 ml-1"></i>
+            </button>
+
             <!-- Multi-Tenant Switcher (Skill 31) -->
             <div class="flex items-center space-x-2 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
                 <i data-lucide="building-2" class="w-4 h-4 text-blue-400"></i>
@@ -101,13 +106,13 @@
                 </select>
             </div>
 
-            <!-- User Session & Profile -->
-            <div class="flex items-center space-x-3 pl-3 border-l border-slate-800">
+            <!-- User Session -->
+            <div class="flex items-center space-x-3 pl-2 border-l border-slate-800">
                 <div class="text-right hidden sm:block">
                     <p class="text-xs font-semibold text-white">Frank Ellingsen</p>
-                    <p class="text-[10px] text-emerald-400 font-mono">Project Controller | Admin</p>
+                    <p class="text-[10px] text-emerald-400 font-mono">Project Controller</p>
                 </div>
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-xs text-white shadow-lg ring-2 ring-blue-500/30">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-xs text-white shadow-lg">
                     FE
                 </div>
             </div>
@@ -117,7 +122,109 @@
     <!-- Main Workspace Container -->
     <main class="flex-1 overflow-y-auto p-6 space-y-6 max-w-[1750px] mx-auto w-full">
 
-        <!-- Executive BLUF Banner (Skills 28, 30) -->
+        <!-- Universal Data Ingestion & Provider Control Panel -->
+        <section class="glass-panel rounded-2xl p-5 shadow-2xl space-y-4">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-3 border-b border-slate-800">
+                <div>
+                    <h2 class="text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="upload-cloud" class="w-5 h-5 text-blue-400"></i>
+                        Data Ingestion & Agent Execution Launcher
+                    </h2>
+                    <p class="text-xs text-slate-400">Upload raw files (CSV, Excel, PDF, TXT, MD, Parquet) or choose a test dataset to run the 6-phase Agent DAG.</p>
+                </div>
+
+                <!-- Provider & Model Selector Strip -->
+                <div class="flex items-center space-x-3 bg-slate-950 p-2 rounded-xl border border-slate-800 shrink-0">
+                    <div class="flex items-center space-x-1.5">
+                        <span class="text-xs text-slate-400 font-medium">Provider:</span>
+                        <select id="quickProviderSelect" onchange="onQuickProviderChange()" class="bg-slate-900 text-xs font-semibold text-white px-2.5 py-1.5 rounded-lg border border-slate-700 focus:outline-none cursor-pointer">
+                            <option value="google">Google Gemini</option>
+                            <option value="ollama">Ollama (Local LLM)</option>
+                            <option value="lmstudio">LM Studio (Local LLM)</option>
+                            <option value="openai">OpenAI</option>
+                            <option value="anthropic">Anthropic Claude</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center space-x-1.5">
+                        <span class="text-xs text-slate-400 font-medium">Model:</span>
+                        <select id="quickModelSelect" class="bg-slate-900 text-xs font-semibold text-emerald-400 px-2.5 py-1.5 rounded-lg border border-slate-700 focus:outline-none cursor-pointer">
+                            <!-- Populated via JS -->
+                        </select>
+                    </div>
+
+                    <button onclick="openApiConfigModal()" class="p-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-amber-400 border border-slate-700 transition" title="Configure API Keys">
+                        <i data-lucide="key" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upload Drop Zone & Sample Dataset Selector Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                <!-- Upload Dropzone (8 cols) -->
+                <div class="lg:col-span-7">
+                    <div id="dropZone" onclick="document.getElementById('fileInput').click()" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleFileDrop(event)" class="border-2 border-dashed border-slate-700 hover:border-blue-500/80 bg-slate-900/60 rounded-xl p-4 text-center cursor-pointer transition group flex flex-col items-center justify-center min-h-[96px]">
+                        <input type="file" id="fileInput" onchange="handleFileSelect(event)" class="hidden" accept=".csv,.xlsx,.pdf,.txt,.md,.parquet">
+                        <div id="uploadPrompt" class="flex items-center space-x-3">
+                            <div class="p-2 bg-blue-600/10 rounded-lg border border-blue-500/30 group-hover:scale-105 transition">
+                                <i data-lucide="file-up" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs font-semibold text-white group-hover:text-blue-400 transition">
+                                    Click to browse or drag & drop raw files
+                                </p>
+                                <p class="text-[11px] text-slate-400">Supports .CSV, .XLSX, .PDF, .TXT, .MD, .PARQUET (Up to 50MB)</p>
+                            </div>
+                        </div>
+
+                        <!-- Active Selected File Display -->
+                        <div id="fileSelectedDisplay" class="hidden flex items-center justify-between w-full px-4">
+                            <div class="flex items-center space-x-3">
+                                <i id="selectedFileIcon" data-lucide="file-text" class="w-6 h-6 text-emerald-400"></i>
+                                <div class="text-left">
+                                    <p id="selectedFileName" class="text-xs font-bold text-white font-mono">sample_general_ledger.csv</p>
+                                    <p id="selectedFileSize" class="text-[11px] text-slate-400">102.8 KB | CSV Tabular Ledger</p>
+                                </div>
+                            </div>
+                            <button onclick="clearSelectedFile(event)" class="text-xs text-rose-400 hover:text-rose-300 font-medium px-2 py-1 rounded bg-rose-950/60 border border-rose-900">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Data Quick Pickers & Run Button (5 cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-medium text-slate-400">Quick Test Fixtures:</span>
+                        <span class="text-[10px] text-slate-500 font-mono">data/ directory</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="selectSample('sample_general_ledger.csv', '102.8 KB', 'GL Transactions')" class="px-2.5 py-1.5 bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 text-left transition">
+                            <p class="text-[11px] font-bold text-white font-mono truncate">General Ledger</p>
+                            <p class="text-[10px] text-slate-400">1,526 rows</p>
+                        </button>
+                        <button onclick="selectSample('sample_budget_vs_actual.csv', '0.7 KB', 'Department Variance')" class="px-2.5 py-1.5 bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 text-left transition">
+                            <p class="text-[11px] font-bold text-white font-mono truncate">Budget Variance</p>
+                            <p class="text-[10px] text-slate-400">Q3 2025</p>
+                        </button>
+                        <button onclick="selectSample('sample_revenue_forecast.csv', '1.5 KB', 'Time Series')" class="px-2.5 py-1.5 bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 text-left transition">
+                            <p class="text-[11px] font-bold text-white font-mono truncate">Revenue Series</p>
+                            <p class="text-[10px] text-slate-400">26 Months</p>
+                        </button>
+                    </div>
+
+                    <!-- Main Run Button -->
+                    <button id="runDagBtn" onclick="triggerAnalysis()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs px-4 py-3 rounded-xl font-bold shadow-lg shadow-blue-600/30 transition flex items-center justify-center space-x-2 pulse-ring cursor-pointer">
+                        <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+                        <span id="runBtnText">Run Agent DAG Analysis</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLUF Executive Decision Banner (Skill 28, 30) -->
         <section class="glass-panel rounded-2xl p-5 shadow-2xl relative overflow-hidden border-l-4 border-l-emerald-500">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div class="space-y-1.5">
@@ -125,7 +232,7 @@
                         <span class="px-2.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 border border-emerald-800">
                             BLUF EXECUTIVE DECISION BRIEFING
                         </span>
-                        <span id="lastUpdatedTag" class="text-xs text-slate-400 font-mono">Synced: Today, 19:52 CET</span>
+                        <span id="lastUpdatedTag" class="text-xs text-slate-400 font-mono">Synced: Today, 20:09 CET</span>
                     </div>
                     <h2 id="blufTitle" class="text-base font-bold text-white tracking-tight">
                         Q3 Project EAC Reconciled at $15.80M — $1.85M Net Savings Recovery Identified via 4 Interventions
@@ -135,13 +242,9 @@
                     </p>
                 </div>
                 <div class="flex items-center space-x-3 shrink-0">
-                    <button id="runDagBtn" onclick="triggerAnalysis()" class="bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xs px-4 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-600/30 transition flex items-center space-x-2 pulse-ring">
-                        <i data-lucide="play" class="w-4 h-4"></i>
-                        <span id="runBtnText">Execute Agent DAG</span>
-                    </button>
                     <button onclick="downloadReport()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-3.5 py-2.5 rounded-xl font-medium border border-slate-700 transition flex items-center space-x-1.5">
                         <i data-lucide="download" class="w-4 h-4"></i>
-                        <span>Export HTML</span>
+                        <span>Export Report HTML</span>
                     </button>
                 </div>
             </div>
@@ -165,7 +268,7 @@
                     <span id="kpi-sub-1" class="text-emerald-400 flex items-center font-medium">
                         <i data-lucide="trending-up" class="w-3.5 h-3.5 mr-1"></i> +8.4% vs Target
                     </span>
-                    <span class="text-[10px] text-slate-500 font-mono">Click to Drill</span>
+                    <span class="text-[10px] text-slate-500 font-mono">FactGL.csv</span>
                 </div>
             </div>
 
@@ -185,7 +288,7 @@
                     <span id="kpi-sub-2" class="text-amber-400 flex items-center font-medium">
                         <i data-lucide="trending-down" class="w-3.5 h-3.5 mr-1"></i> -1.20% Variance
                     </span>
-                    <span class="text-[10px] text-slate-500 font-mono">Click to Drill</span>
+                    <span class="text-[10px] text-slate-500 font-mono">Rule 16.4</span>
                 </div>
             </div>
 
@@ -205,7 +308,7 @@
                     <span id="kpi-sub-3" class="text-blue-400 font-medium font-mono">
                         MAPE: 8.2% (Prophet)
                     </span>
-                    <span class="text-[10px] text-slate-500 font-mono">Click to Drill</span>
+                    <span class="text-[10px] text-slate-500 font-mono">Skill 18</span>
                 </div>
             </div>
 
@@ -225,7 +328,7 @@
                     <span id="kpi-post-eac" class="text-indigo-300 font-medium">
                         Post-EAC: $13.95M
                     </span>
-                    <span class="text-[10px] text-slate-500 font-mono">Click to Drill</span>
+                    <span class="text-[10px] text-slate-500 font-mono">MCDA Knapsack</span>
                 </div>
             </div>
         </section>
@@ -256,7 +359,7 @@
                                 Sensitivity Tornado
                             </button>
                             <button id="tab-outliers" onclick="switchTab('outliers')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition whitespace-nowrap">
-                                GL Outlier Scatter
+                                Outlier Scatter
                             </button>
                         </div>
                     </div>
@@ -304,7 +407,7 @@
                             <button onclick="filterActions('pending')" id="filter-pending" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-medium">Pending</button>
                             <button onclick="filterActions('approved')" id="filter-approved" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-medium">Approved</button>
                         </div>
-                        <span id="totalRecoverySummary" class="font-mono text-emerald-400 font-bold text-xs">Approved Net Recovery: $45,250</span>
+                        <span id="totalRecoverySummary" class="font-mono text-emerald-400 font-bold text-xs">Approved Recovery: $45,250</span>
                     </div>
 
                     <!-- Action Table -->
@@ -349,7 +452,7 @@
                     <div class="flex items-center justify-between py-2 border-b border-slate-800/60 text-xs">
                         <div class="flex items-center space-x-1 font-mono text-[10px]">
                             <button onclick="filterLogs('all')" id="logfilter-all" class="px-2 py-0.5 rounded bg-blue-900 text-blue-200">All</button>
-                            <button onclick="filterLogs('gemini')" id="logfilter-gemini" class="px-2 py-0.5 rounded text-slate-400 hover:text-white">Gemini</button>
+                            <button onclick="filterLogs('gemini')" id="logfilter-gemini" class="px-2 py-0.5 rounded text-slate-400 hover:text-white">API</button>
                             <button onclick="filterLogs('audit')" id="logfilter-audit" class="px-2 py-0.5 rounded text-slate-400 hover:text-white">Audits</button>
                         </div>
                         <button onclick="clearConsole()" class="text-slate-400 hover:text-slate-200 transition text-[11px]">Clear</button>
@@ -358,8 +461,8 @@
                     <!-- Terminal Output Box -->
                     <div id="thoughtConsole" class="flex-1 bg-slate-950/90 rounded-xl p-3.5 font-mono text-[11px] text-slate-300 overflow-y-auto space-y-2 border border-slate-900 mt-2 max-h-[460px]">
                         <p class="text-slate-500">[System Log] SQLite control store connected (database/control.sqlite).</p>
-                        <p class="text-slate-500">[System Log] Gemini 3.6 Flash SDK initialized.</p>
-                        <p class="text-blue-400 font-medium">[A0 Orchestrator] Awaiting execution trigger...</p>
+                        <p class="text-slate-500">[System Log] AI Engine initialized.</p>
+                        <p class="text-blue-400 font-medium">[A0 Orchestrator] Ready to parse dataset.</p>
                     </div>
 
                     <!-- Terminal Footer -->
@@ -389,7 +492,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <i data-lucide="cpu" class="w-3.5 h-3.5 text-blue-400"></i>
-                    <span class="text-slate-300">Gemini 3.6 Flash</span>
+                    <span id="footerProviderLabel" class="text-slate-300">Google Gemini (gemini-3.6-flash)</span>
                     <span class="text-slate-500 text-[11px] font-mono">(Avg Latency: 320ms)</span>
                 </div>
             </div>
@@ -404,6 +507,60 @@
             </div>
         </div>
     </footer>
+
+    <!-- API Provider & Key Configuration Modal -->
+    <div id="apiConfigModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-700 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i data-lucide="cpu" class="w-5 h-5 text-emerald-400 mr-2"></i>
+                    AI Provider & API Key Configuration
+                </h3>
+                <button onclick="closeApiConfigModal()" class="text-slate-400 hover:text-white transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Select AI Provider</label>
+                    <select id="modalProviderSelect" onchange="onModalProviderChange()" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white font-semibold focus:border-blue-500 focus:outline-none">
+                        <option value="google">Google Gemini (Default)</option>
+                        <option value="ollama">Ollama (Local LLM)</option>
+                        <option value="lmstudio">LM Studio (Local LLM)</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic Claude</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Select Model</label>
+                    <select id="modalModelSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-emerald-400 font-mono font-semibold focus:border-blue-500 focus:outline-none">
+                        <!-- Populated dynamically via JS -->
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1 flex justify-between">
+                        <span>API Key / Access Token</span>
+                        <span id="apiKeyStatus" class="text-emerald-400 font-mono text-[10px]">Env Variable Loaded</span>
+                    </label>
+                    <div class="relative">
+                        <input id="apiKeyInput" type="password" placeholder="AIzaSy... or sk-..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 pr-10 text-white font-mono focus:border-blue-500 focus:outline-none">
+                        <button onclick="toggleApiKeyVisibility()" class="absolute right-2.5 top-2.5 text-slate-400 hover:text-white">
+                            <i id="eyeIcon" data-lucide="eye" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mt-1">For local engines (Ollama/LM Studio), API key is optional. Keys are stored locally in session memory.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-end space-x-2 pt-3 border-t border-slate-800">
+                <button onclick="closeApiConfigModal()" class="px-3.5 py-2 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition">Cancel</button>
+                <button onclick="saveApiConfig()" class="px-4 py-2 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow transition">Save Settings</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Parameter Override Modal -->
     <div id="overrideModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
@@ -526,7 +683,7 @@
         </div>
     </div>
 
-    <!-- JavaScript Client Logic & State Management -->
+    <!-- JavaScript Client Logic -->
     <script>
         lucide.createIcons();
 
@@ -534,6 +691,21 @@
         let currentTenant = 'tenant_demo';
         let currentTab = 'forecast';
         let analyticsChart = null;
+        let selectedFile = { name: 'sample_general_ledger.csv', size: '102.8 KB', type: 'GL Ledger', path: 'data/sample_general_ledger.csv' };
+
+        let providerConfig = {
+            provider: 'google',
+            model: 'gemini-3.6-flash',
+            apiKey: ''
+        };
+
+        const providerModels = {
+            google: ['gemini-3.6-flash', 'gemini-1.5-pro', 'gemini-2.0-flash'],
+            ollama: ['llama3.3', 'qwen2.5-coder', 'deepseek-r1'],
+            lmstudio: ['local-model'],
+            openai: ['gpt-4o', 'gpt-4o-mini'],
+            anthropic: ['claude-3-5-sonnet']
+        };
 
         let actionsData = [
             { id: 1, code: 'ACT-101', title: 'Re-negotiate Cloud Reserved Instances', sub: 'Targeting Vendor: CloudCorp Global (GL 6100)', cat: 'Infrastructure', recovery: 420000, feas: '0.92 High', status: 'pending' },
@@ -542,7 +714,132 @@
             { id: 4, code: 'ACT-104', title: 'Cap External Contractor Hours at 37.5h/wk', sub: 'Projected savings across R&D project teams', cat: 'Labor / Payroll', recovery: 1200000, feas: '0.78 Med', status: 'pending' }
         ];
 
-        // --- Data Definitions per Tenant ---
+        // --- Provider & Model Select Handlers ---
+        function populateModels(provider, modelSelectId) {
+            const select = document.getElementById(modelSelectId);
+            select.innerHTML = '';
+            const models = providerModels[provider] || providerModels.google;
+            models.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m;
+                opt.textContent = m;
+                select.appendChild(opt);
+            });
+        }
+
+        function onQuickProviderChange() {
+            const prov = document.getElementById('quickProviderSelect').value;
+            providerConfig.provider = prov;
+            populateModels(prov, 'quickModelSelect');
+            providerConfig.model = document.getElementById('quickModelSelect').value;
+            updateProviderDisplay();
+        }
+
+        function onModalProviderChange() {
+            const prov = document.getElementById('modalProviderSelect').value;
+            populateModels(prov, 'modalModelSelect');
+        }
+
+        function updateProviderDisplay() {
+            document.getElementById('activeProviderLabel').textContent = `${providerConfig.model}`;
+            document.getElementById('footerProviderLabel').textContent = `${providerConfig.provider.toUpperCase()} (${providerConfig.model})`;
+        }
+
+        function openApiConfigModal() {
+            document.getElementById('modalProviderSelect').value = providerConfig.provider;
+            populateModels(providerConfig.provider, 'modalModelSelect');
+            document.getElementById('modalModelSelect').value = providerConfig.model;
+            document.getElementById('apiKeyInput').value = providerConfig.apiKey;
+            document.getElementById('apiConfigModal').classList.remove('hidden');
+        }
+
+        function closeApiConfigModal() {
+            document.getElementById('apiConfigModal').classList.add('hidden');
+        }
+
+        function saveApiConfig() {
+            providerConfig.provider = document.getElementById('modalProviderSelect').value;
+            providerConfig.model = document.getElementById('modalModelSelect').value;
+            providerConfig.apiKey = document.getElementById('apiKeyInput').value;
+
+            document.getElementById('quickProviderSelect').value = providerConfig.provider;
+            populateModels(providerConfig.provider, 'quickModelSelect');
+            document.getElementById('quickModelSelect').value = providerConfig.model;
+
+            updateProviderDisplay();
+            closeApiConfigModal();
+            addLog(`[Config] Provider updated to ${providerConfig.provider.toUpperCase()} (${providerConfig.model}).`, 'amber');
+        }
+
+        function toggleApiKeyVisibility() {
+            const input = document.getElementById('apiKeyInput');
+            const icon = document.getElementById('eyeIcon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                input.type = 'password';
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            lucide.createIcons();
+        }
+
+        // --- File Upload & Selection Logic ---
+        function handleDragOver(e) {
+            e.preventDefault();
+            document.getElementById('dropZone').classList.add('drag-over');
+        }
+        function handleDragLeave(e) {
+            e.preventDefault();
+            document.getElementById('dropZone').classList.remove('drag-over');
+        }
+        function handleFileDrop(e) {
+            e.preventDefault();
+            document.getElementById('dropZone').classList.remove('drag-over');
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                processSelectedFile(e.dataTransfer.files[0]);
+            }
+        }
+        function handleFileSelect(e) {
+            if (e.target.files && e.target.files[0]) {
+                processSelectedFile(e.target.files[0]);
+            }
+        }
+
+        function processSelectedFile(file) {
+            selectedFile = {
+                name: file.name,
+                size: (file.size / 1024).toFixed(1) + ' KB',
+                type: file.type || 'Raw File',
+                path: 'data/' + file.name
+            };
+
+            document.getElementById('uploadPrompt').classList.add('hidden');
+            document.getElementById('fileSelectedDisplay').classList.remove('hidden');
+            document.getElementById('selectedFileName').textContent = selectedFile.name;
+            document.getElementById('selectedFileSize').textContent = `${selectedFile.size} | User Uploaded File`;
+            
+            addLog(`[File Ingest] Selected custom file '${selectedFile.name}' (${selectedFile.size}).`, 'blue');
+        }
+
+        function selectSample(name, size, type) {
+            selectedFile = { name: name, size: size, type: type, path: 'data/' + name };
+            document.getElementById('uploadPrompt').classList.add('hidden');
+            document.getElementById('fileSelectedDisplay').classList.remove('hidden');
+            document.getElementById('selectedFileName').textContent = selectedFile.name;
+            document.getElementById('selectedFileSize').textContent = `${selectedFile.size} | Sample Fixture (${selectedFile.type})`;
+            addLog(`[File Ingest] Loaded sample fixture '${name}'.`, 'emerald');
+        }
+
+        function clearSelectedFile(e) {
+            if (e) e.stopPropagation();
+            selectedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('uploadPrompt').classList.remove('hidden');
+            document.getElementById('fileSelectedDisplay').classList.add('hidden');
+        }
+
+        // --- Tenant Datasets ---
         const tenantData = {
             tenant_demo: {
                 title: "Q3 Project EAC Reconciled at $15.80M — $1.85M Net Savings Recovery Identified via 4 Interventions",
@@ -573,15 +870,13 @@
             }
         };
 
-        // --- Render Action Table ---
+        // --- Action Table Render & Handlers ---
         function renderActionTable(filter = 'all') {
             const tbody = document.getElementById('actionTableBody');
             tbody.innerHTML = '';
             
             let filtered = actionsData;
-            if (filter !== 'all') {
-                filtered = actionsData.filter(a => a.status === filter);
-            }
+            if (filter !== 'all') { filtered = actionsData.filter(a => a.status === filter); }
 
             let approvedTotal = 0;
             let pendingCount = 0;
@@ -640,11 +935,8 @@
         function filterActions(type) {
             ['all', 'pending', 'approved'].forEach(t => {
                 const btn = document.getElementById(`filter-${t}`);
-                if (t === type) {
-                    btn.className = "px-2.5 py-1 rounded-lg bg-slate-800 text-white font-medium";
-                } else {
-                    btn.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-medium";
-                }
+                if (t === type) { btn.className = "px-2.5 py-1 rounded-lg bg-slate-800 text-white font-medium"; }
+                else { btn.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-medium"; }
             });
             renderActionTable(type);
         }
@@ -653,7 +945,7 @@
             const item = actionsData.find(a => a.id === id);
             if (item) { item.status = 'approved'; }
             renderActionTable();
-            addLog(`[A5 Prescriptive] Action ${item.code} APPROVED by Frank Ellingsen. Post-EAC balance updated.`, 'emerald');
+            addLog(`[A5 Prescriptive] Action ${item.code} APPROVED by Frank Ellingsen. Post-EAC updated.`, 'emerald');
         }
 
         function rejectAction(id) {
@@ -667,9 +959,7 @@
         function openOverrideModal(id) {
             activeOverrideId = id;
             const item = actionsData.find(a => a.id === id);
-            if (item) {
-                document.getElementById('overrideAmount').value = item.recovery;
-            }
+            if (item) { document.getElementById('overrideAmount').value = item.recovery; }
             document.getElementById('overrideModal').classList.remove('hidden');
         }
         function closeOverrideModal() { document.getElementById('overrideModal').classList.add('hidden'); }
@@ -681,7 +971,7 @@
                     item.status = 'override_approved';
                 }
                 renderActionTable();
-                addLog(`[A5 Prescriptive] Action ${item.code} OVERRIDE APPROVED. New Net Recovery: $${item.recovery.toLocaleString()}`, 'blue');
+                addLog(`[A5 Prescriptive] Action ${item.code} OVERRIDE APPROVED. Net Recovery: $${item.recovery.toLocaleString()}`, 'blue');
             }
             closeOverrideModal();
         }
@@ -861,6 +1151,7 @@
             const runBtn = document.getElementById('runDagBtn');
             const runText = document.getElementById('runBtnText');
             const statusTag = document.getElementById('engineStatus');
+            const targetFile = selectedFile ? selectedFile.name : 'sample_general_ledger.csv';
             
             runBtn.disabled = true;
             runText.textContent = "Executing DAG...";
@@ -871,14 +1162,15 @@
             consoleBox.innerHTML = '';
             
             const messages = [
-                { text: "[A0 Orchestrator] Triggering Task DAG #2026-093 for Tenant: " + currentTenant, type: "blue" },
-                { text: "[A1 Intake Agent] Inspecting SQLite & landing zone... 1,526 GL rows verified.", type: "emerald" },
+                { text: `[A0 Orchestrator] Triggering Task DAG #2026-093 for File: '${targetFile}'`, type: "blue" },
+                { text: `[Provider Config] Using ${providerConfig.provider.toUpperCase()} (${providerConfig.model}) engine.`, type: "amber" },
+                { text: "[A1 Intake Agent] Inspecting raw byte footprints & encoding... Passed.", type: "emerald" },
                 { text: "[A2 Data Engineer] Constructing Star Schema in analytics.duckdb (model.*)... OK.", type: "emerald" },
                 { text: "[A3 Diagnostic Agent] Actual vs Target variance computed ($240k overrun).", type: "emerald" },
-                { text: "[A4 Prognostic Agent] Running expanding backtest (MAPE: 8.2% via Prophet).", type: "emerald" },
+                { text: "[A4 Prognostic Agent] Running expanding backtest (MAPE: 8.2%).", type: "emerald" },
                 { text: "[A4 Prognostic Agent] Monte Carlo 10,000 iterations completed. P50 EAC = $15.8M.", type: "emerald" },
                 { text: "[A5 Prescriptive Agent] Formulated candidate interventions ($1.85M net recovery).", type: "emerald" },
-                { text: "[Gemini 3.6 API] Generated BLUF decision story. Tokens: 1,420 | Latency: 320ms", type: "amber" },
+                { text: "[LLM Output] Generated BLUF decision story via " + providerConfig.model + ".", type: "amber" },
                 { text: "[A7 Validator Gate] Cross-sectional audit PASS (0 reconcile discrepancies).", type: "emerald" },
                 { text: "[System Log] Executive Report published to /workspace/out/.", type: "slate" }
             ];
@@ -888,11 +1180,11 @@
                     addLog(item.text, item.type);
                     if (idx === messages.length - 1) {
                         runBtn.disabled = false;
-                        runText.textContent = "Execute Agent DAG";
+                        runText.textContent = "Run Agent DAG Analysis";
                         statusTag.textContent = "Status: Ready";
                         statusTag.className = "text-[11px] font-mono text-emerald-400";
                     }
-                }, idx * 500);
+                }, idx * 450);
             });
         }
 
@@ -957,6 +1249,7 @@
 
         // --- Initial Load ---
         window.addEventListener('DOMContentLoaded', () => {
+            onQuickProviderChange();
             renderActionTable();
             renderChart('forecast');
         });
