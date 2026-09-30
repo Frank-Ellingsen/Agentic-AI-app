@@ -1,231 +1,707 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-slate-900 text-slate-100">
+<html lang="en" class="h-full bg-slate-950 text-slate-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Analytics Studio</title>
+    <title>Autonomous Analytics Studio — Project Controlling & Decision Platform</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="h-full flex flex-col font-sans antialiased">
 
-    <!-- Top Navigation Bar -->
-    <header class="bg-slate-800 border-b border-slate-700 px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-            <i data-lucide="brain-circuit" class="w-8 h-8 text-blue-400"></i>
-            <h1 class="text-xl font-bold tracking-tight text-white">Data-to-Decision Studio</h1>
-            <span class="bg-blue-900/50 text-blue-300 text-xs px-2.5 py-1 rounded-full border border-blue-700">Skills 01–37 Active</span>
-        </div>
+    <style>
+        /* Custom scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.6); }
+    </style>
+</head>
+<body class="h-full flex flex-col font-sans antialiased bg-slate-950 text-slate-100 selection:bg-blue-500 selection:text-white">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-slate-900/90 border-b border-slate-800 px-6 py-3.5 flex items-center justify-between sticky top-0 z-40 backdrop-blur-md">
         <div class="flex items-center space-x-4">
-            <div class="text-right">
-                <p class="text-xs text-slate-400">Tenant: <span class="text-white font-medium">Acme Corp</span></p>
-                <p class="text-xs text-emerald-400 font-mono">SQLite: Healthy | Gemini 3.6 Flash</p>
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-blue-600/20 border border-blue-500/40 rounded-xl">
+                    <i data-lucide="brain-circuit" class="w-6 h-6 text-blue-400"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                        Data-to-Decision Studio
+                        <span class="text-xs font-mono font-normal text-slate-400">v2.4</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Autonomous Financial Controlling & Project Forecasting</p>
+                </div>
             </div>
-            <button class="bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg transition">
-                <i data-lucide="user" class="w-5 h-5"></i>
-            </button>
+            <span class="hidden md:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-950 text-blue-300 border border-blue-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse mr-1.5"></span>
+                Skills 01–37 Active
+            </span>
+        </div>
+
+        <div class="flex items-center space-x-5">
+            <!-- Multi-Tenant Selector (Skill 31) -->
+            <div class="flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/80">
+                <i data-lucide="building-2" class="w-4 h-4 text-slate-400"></i>
+                <select id="tenantSelect" onchange="changeTenant()" class="bg-transparent text-xs font-medium text-slate-200 focus:outline-none cursor-pointer">
+                    <option value="tenant_demo" class="bg-slate-900">Acme Corporation (Demo)</option>
+                    <option value="tenant_umoe" class="bg-slate-900">Umoe Mandal Defense</option>
+                    <option value="tenant_global" class="bg-slate-900">Global Energy Solutions</option>
+                </select>
+            </div>
+
+            <!-- User Session & Status -->
+            <div class="flex items-center space-x-3 pl-3 border-l border-slate-800">
+                <div class="text-right hidden sm:block">
+                    <p class="text-xs font-semibold text-white">Frank Ellingsen</p>
+                    <p class="text-[10px] text-emerald-400 font-mono">Project Controller | Admin</p>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-sm text-white shadow-lg ring-2 ring-blue-500/30">
+                    FE
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="flex-1 overflow-y-auto p-6 space-y-6">
+    <!-- Main Application Canvas -->
+    <main class="flex-1 overflow-y-auto p-6 space-y-6 max-w-[1700px] mx-auto w-full">
 
-        <!-- Executive KPI Scorecard Strip -->
-        <section class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
-                <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Revenue YTD</span>
-                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-900/60 text-emerald-400 border border-emerald-700">GREEN</span>
+        <!-- BLUF Executive Decision Banner (Skill 28, 30) -->
+        <section class="glass-panel rounded-2xl p-5 shadow-2xl relative overflow-hidden border-l-4 border-l-emerald-500">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="space-y-1.5">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 border border-emerald-800">
+                            BLUF EXECUTIVE SUMMARY
+                        </span>
+                        <span class="text-xs text-slate-400 font-mono">Updated: Today, 19:45 CET</span>
+                    </div>
+                    <h2 class="text-lg font-bold text-white tracking-tight">
+                        Q3 EAC Position Reconciled at $15.8M — $1.85M Recovery Identified via 4 Interventions
+                    </h2>
+                    <p class="text-xs text-slate-300 leading-relaxed max-w-4xl">
+                        Operating performance reflects an un-budgeted IT infrastructure overrun (+18% variance). Diagnostic analysis confirms 80% of budget leakage stems from cloud instance re-indexing ($112k) and advisory retainer fees ($185k). Implementation of Action ACT-101 and ACT-102 will fully restore project gross margins to 18.5%.
+                    </p>
                 </div>
-                <div class="mt-2 text-2xl font-black text-white">$14.2M</div>
-                <p class="text-xs text-emerald-400 mt-1 flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-1"></i> +8.4% vs Target</p>
-            </div>
-
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
-                <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Operating Margin</span>
-                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-amber-900/60 text-amber-400 border border-amber-700">AMBER</span>
+                <div class="flex items-center space-x-3 shrink-0">
+                    <button onclick="triggerAnalysis()" class="bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xs px-4 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-600/30 transition flex items-center space-x-2">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        <span>Execute DAG Pipeline</span>
+                    </button>
+                    <button onclick="downloadReport()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-3.5 py-2.5 rounded-xl font-medium border border-slate-700 transition flex items-center space-x-1.5">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Export HTML</span>
+                    </button>
                 </div>
-                <div class="mt-2 text-2xl font-black text-white">18.5%</div>
-                <p class="text-xs text-amber-400 mt-1 flex items-center"><i data-lucide="trending-down" class="w-3.5 h-3.5 mr-1"></i> -1.2% Variance</p>
-            </div>
-
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
-                <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Net Savings Potential</span>
-                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-blue-900/60 text-blue-400 border border-blue-700">OPTIMIZED</span>
-                </div>
-                <div class="mt-2 text-2xl font-black text-white">$1.85M</div>
-                <p class="text-xs text-slate-400 mt-1">Via 4 Candidate Actions</p>
-            </div>
-
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
-                <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Gemini API Quota</span>
-                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-slate-300">TOKEN COST</span>
-                </div>
-                <div class="mt-2 text-2xl font-black text-white">$2.41</div>
-                <p class="text-xs text-slate-400 mt-1">142,500 Tokens used today</p>
             </div>
         </section>
 
-        <!-- Charts & Agent Thought Stream Section -->
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            
-            <!-- Left 2 Columns: Visual Analytics -->
-            <div class="lg:col-span-2 space-y-6">
-                <!-- Forecast Fan Chart Container -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-base font-bold text-white flex items-center">
-                            <i data-lucide="line-chart" class="w-5 h-5 mr-2 text-blue-400"></i>
-                            P10 / P50 / P90 Revenue Projection (Skills 18–19)
-                        </h3>
-                        <button onclick="triggerAnalysis()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-3 py-1.5 rounded-lg font-semibold transition">
-                            Run Analysis
-                        </button>
+        <!-- Governed RAG KPI Scorecard Strip (Skills 11, 12, 16) -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Metric 1: Revenue YTD -->
+            <div class="glass-panel rounded-xl p-4.5 shadow-xl hover:border-slate-700 transition group">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Revenue YTD</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">
+                        GREEN
+                    </span>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                    <span class="text-2xl font-black text-white font-mono">$14.20M</span>
+                    <span class="text-xs text-slate-400 font-mono">Target: $13.10M</span>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                    <span class="text-emerald-400 flex items-center font-medium">
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5 mr-1"></i> +8.4% Variance
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-mono">FactGL.csv</span>
+                </div>
+            </div>
+
+            <!-- Metric 2: Operating Margin -->
+            <div class="glass-panel rounded-xl p-4.5 shadow-xl hover:border-slate-700 transition group">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Operating Margin</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-950 text-amber-400 border border-amber-800">
+                        AMBER
+                    </span>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                    <span class="text-2xl font-black text-white font-mono">18.50%</span>
+                    <span class="text-xs text-slate-400 font-mono">Budget: 19.70%</span>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                    <span class="text-amber-400 flex items-center font-medium">
+                        <i data-lucide="trending-down" class="w-3.5 h-3.5 mr-1"></i> -1.20% Overrun
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-mono">Rule 16.4</span>
+                </div>
+            </div>
+
+            <!-- Metric 3: Estimate at Completion (EAC) -->
+            <div class="glass-panel rounded-xl p-4.5 shadow-xl hover:border-slate-700 transition group">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Forecast EAC (P50)</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-blue-950 text-blue-300 border border-blue-800">
+                        P10 / P90
+                    </span>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                    <span class="text-2xl font-black text-white font-mono">$15.80M</span>
+                    <span class="text-xs text-slate-400 font-mono">P90: $17.10M</span>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                    <span class="text-blue-400 font-medium font-mono">
+                        MAPE: 8.2% (Prophet)
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-mono">Skill 18</span>
+                </div>
+            </div>
+
+            <!-- Metric 4: Net Recovery Potential -->
+            <div class="glass-panel rounded-xl p-4.5 shadow-xl hover:border-slate-700 transition group">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Net Savings Potential</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-950 text-indigo-300 border border-indigo-800">
+                        OPTIMIZED
+                    </span>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                    <span class="text-2xl font-black text-white font-mono">$1.85M</span>
+                    <span class="text-xs text-slate-400 font-mono">4 Levers</span>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                    <span class="text-indigo-300 font-medium">
+                        Post-EAC: $13.95M
+                    </span>
+                    <span class="text-[11px] text-slate-500 font-mono">MCDA Knapsack</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Visual Analytics & Agent Console Grid -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            <!-- Left Column (8 cols): Visual Analytics Canvas & HITL Table -->
+            <div class="lg:col-span-8 space-y-6">
+
+                <!-- Interactive Visual Canvas with Tab Switcher (Skills 22, 27, 33) -->
+                <div class="glass-panel rounded-2xl p-5 shadow-2xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="bar-chart-3" class="w-5 h-5 text-blue-400"></i>
+                            <h3 class="text-sm font-bold text-white">Visual Analytics Canvas</h3>
+                        </div>
+                        
+                        <!-- Visual Tabs -->
+                        <div class="flex items-center space-x-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+                            <button id="tab-forecast" onclick="switchTab('forecast')" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow transition">
+                                Forecast Fan Chart (P10/50/90)
+                            </button>
+                            <button id="tab-waterfall" onclick="switchTab('waterfall')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition">
+                                Variance Waterfall
+                            </button>
+                            <button id="tab-tornado" onclick="switchTab('tornado')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition">
+                                Sensitivity Tornado
+                            </button>
+                        </div>
                     </div>
-                    <div class="h-64 relative">
-                        <canvas id="forecastChart"></canvas>
+
+                    <!-- Chart Container -->
+                    <div class="mt-4 relative h-72 w-full">
+                        <canvas id="analyticsChart"></canvas>
+                    </div>
+
+                    <!-- Tufte Design Footer Note -->
+                    <div class="mt-3 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
+                        <span class="flex items-center">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i>
+                            Tufte Data-Ink Principles Applied: Zero vertical gridlines, direct end-point labels, slate palette.
+                        </span>
+                        <span class="font-mono text-slate-500">DuckDB v1.0 Engine</span>
                     </div>
                 </div>
 
-                <!-- HITL Action Approval Table -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
-                    <h3 class="text-base font-bold text-white mb-4 flex items-center">
-                        <i data-lucide="check-square" class="w-5 h-5 mr-2 text-emerald-400"></i>
-                        Human-in-the-Loop Action Approvals (Skills 23, 24 & 34)
-                    </h3>
-                    <div class="overflow-x-auto">
+                <!-- Human-in-the-Loop (HITL) Action Approval Center (Skills 24, 34) -->
+                <div class="glass-panel rounded-2xl p-5 shadow-2xl">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-sm font-bold text-white flex items-center">
+                                <i data-lucide="check-square" class="w-4 h-4 text-emerald-400 mr-2"></i>
+                                Human-in-the-Loop Action Approval Center
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-0.5">Manager review for candidate interventions (Skills 23–25, 34)</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                                2 Pending Review
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- HITL Action Table -->
+                    <div class="mt-4 overflow-x-auto">
                         <table class="w-full text-left text-xs text-slate-300">
-                            <thead class="bg-slate-900 text-slate-400 uppercase font-semibold border-b border-slate-700">
+                            <thead class="bg-slate-900/80 text-slate-400 uppercase font-semibold text-[10px] tracking-wider border-b border-slate-800">
                                 <tr>
-                                    <th class="p-3">Candidate Action</th>
-                                    <th class="p-3">Net Recovery</th>
-                                    <th class="p-3">Feasibility</th>
+                                    <th class="p-3">Action Code & Title</th>
+                                    <th class="p-3">Category</th>
+                                    <th class="p-3 text-right">Net Recovery</th>
+                                    <th class="p-3 text-center">Feasibility</th>
                                     <th class="p-3">Status</th>
-                                    <th class="p-3 text-right">Decision</th>
+                                    <th class="p-3 text-right">Approval Decision</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-700">
-                                <tr>
-                                    <td class="p-3 font-medium text-white">Renegotiate Cloud Instance Tiering</td>
-                                    <td class="p-3 text-emerald-400 font-mono font-bold">$420,000</td>
-                                    <td class="p-3">0.92 (High)</td>
-                                    <td class="p-3"><span class="bg-amber-900/50 text-amber-300 px-2 py-0.5 rounded border border-amber-700">Pending</span></td>
-                                    <td class="p-3 text-right space-x-1">
-                                        <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded transition font-semibold">Approve</button>
-                                        <button class="bg-rose-600 hover:bg-rose-500 text-white px-2.5 py-1 rounded transition font-semibold">Reject</button>
+                            <tbody class="divide-y divide-slate-800/80 font-mono text-xs">
+                                <tr id="action-row-1" class="hover:bg-slate-800/30 transition">
+                                    <td class="p-3 font-sans font-semibold text-white">
+                                        ACT-101: Re-negotiate Cloud Reserved Instances
+                                        <p class="text-[11px] font-sans font-normal text-slate-400">Targeting Vendor: CloudCorp Global (GL 6100)</p>
+                                    </td>
+                                    <td class="p-3 font-sans">Infrastructure</td>
+                                    <td class="p-3 text-right font-bold text-emerald-400">$420,000</td>
+                                    <td class="p-3 text-center">
+                                        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-sans text-[11px]">0.92 High</span>
+                                    </td>
+                                    <td class="p-3 font-sans">
+                                        <span id="badge-1" class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800 text-[11px] font-semibold">Pending</span>
+                                    </td>
+                                    <td class="p-3 text-right font-sans space-x-1.5">
+                                        <button onclick="approveAction(1)" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-semibold transition shadow">
+                                            Approve
+                                        </button>
+                                        <button onclick="openOverrideModal(1)" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-slate-700 transition">
+                                            Override
+                                        </button>
+                                        <button onclick="rejectAction(1)" class="bg-rose-950 hover:bg-rose-900 text-rose-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-rose-800 transition">
+                                            Reject
+                                        </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="p-3 font-medium text-white">Consolidate Software License Seats</td>
-                                    <td class="p-3 text-emerald-400 font-mono font-bold">$185,000</td>
-                                    <td class="p-3">0.85 (Med)</td>
-                                    <td class="p-3"><span class="bg-emerald-900/50 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700">Approved</span></td>
-                                    <td class="p-3 text-right text-slate-500">Executed</td>
+
+                                <tr id="action-row-2" class="hover:bg-slate-800/30 transition">
+                                    <td class="p-3 font-sans font-semibold text-white">
+                                        ACT-102: Consolidate Software License Seats
+                                        <p class="text-[11px] font-sans font-normal text-slate-400">Eliminates 140 unused licenses across Sales/Support</p>
+                                    </td>
+                                    <td class="p-3 font-sans">Software / SaaS</td>
+                                    <td class="p-3 text-right font-bold text-emerald-400">$185,000</td>
+                                    <td class="p-3 text-center">
+                                        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-sans text-[11px]">0.85 Med</span>
+                                    </td>
+                                    <td class="p-3 font-sans">
+                                        <span id="badge-2" class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800 text-[11px] font-semibold">Pending</span>
+                                    </td>
+                                    <td class="p-3 text-right font-sans space-x-1.5">
+                                        <button onclick="approveAction(2)" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-semibold transition shadow">
+                                            Approve
+                                        </button>
+                                        <button onclick="openOverrideModal(2)" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-slate-700 transition">
+                                            Override
+                                        </button>
+                                        <button onclick="rejectAction(2)" class="bg-rose-950 hover:bg-rose-900 text-rose-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-rose-800 transition">
+                                            Reject
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-800/30 transition opacity-75">
+                                    <td class="p-3 font-sans font-semibold text-white">
+                                        ACT-103: Recover Duplicate Invoice TXN-90813
+                                        <p class="text-[11px] font-sans font-normal text-slate-400">Flagged by Skill 15 Anomaly Detection</p>
+                                    </td>
+                                    <td class="p-3 font-sans">Audit Recovery</td>
+                                    <td class="p-3 text-right font-bold text-emerald-400">$45,250</td>
+                                    <td class="p-3 text-center">
+                                        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-sans text-[11px]">0.98 V.High</span>
+                                    </td>
+                                    <td class="p-3 font-sans">
+                                        <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 text-[11px] font-semibold">Approved</span>
+                                    </td>
+                                    <td class="p-3 text-right font-sans text-slate-500">
+                                        Executed (FE)
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Right Column: Real-Time SSE Agent Console (Skill 33) -->
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col h-full">
-                <div class="flex items-center justify-between pb-3 border-b border-slate-700 mb-3">
-                    <h3 class="text-base font-bold text-white flex items-center">
-                        <i data-lucide="terminal" class="w-5 h-5 mr-2 text-emerald-400"></i>
-                        Agent Thought Stream (SSE)
-                    </h3>
-                    <span class="flex h-2 w-2 relative">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
+            <!-- Right Column (4 cols): Real-Time Agent SSE Console (Skill 33) -->
+            <div class="lg:col-span-4 flex flex-col space-y-6">
+
+                <!-- Agent Console Panel -->
+                <div class="glass-panel rounded-2xl p-5 shadow-2xl flex-1 flex flex-col min-h-[580px]">
+                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-800">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
+                            <h3 class="text-sm font-bold text-white">Agent Execution Stream (SSE)</h3>
+                        </div>
+                        <span class="flex h-2.5 w-2.5 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                    </div>
+
+                    <!-- Console Filter Bar -->
+                    <div class="flex items-center justify-between py-2 border-b border-slate-800/60 text-xs">
+                        <span class="text-slate-400 font-mono text-[11px]">Session: trace_2026_093</span>
+                        <button onclick="clearConsole()" class="text-slate-400 hover:text-slate-200 transition text-[11px]">Clear</button>
+                    </div>
+
+                    <!-- Terminal Output Box -->
+                    <div id="thoughtConsole" class="flex-1 bg-slate-950/90 rounded-xl p-3.5 font-mono text-xs text-slate-300 overflow-y-auto space-y-2 border border-slate-900 mt-2">
+                        <p class="text-slate-500">[System Log] SQLite control store connected (control.sqlite).</p>
+                        <p class="text-slate-500">[System Log] Gemini 3.6 Flash initialized.</p>
+                        <p class="text-blue-400 font-medium">[A0 Orchestrator] Awaiting user trigger...</p>
+                    </div>
+
+                    <!-- Terminal Footer Buttons -->
+                    <div class="mt-3 pt-3 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="openPromptModal()" class="text-xs text-slate-400 hover:text-white transition flex items-center space-x-1">
+                            <i data-lucide="code" class="w-3.5 h-3.5 mr-1 text-slate-500"></i>
+                            <span>Inspect System Prompts</span>
+                        </button>
+                        <span class="text-[11px] font-mono text-emerald-400">Status: Idle</span>
+                    </div>
                 </div>
-                <div id="thoughtConsole" class="flex-1 bg-slate-950 rounded-lg p-3 font-mono text-xs text-slate-300 overflow-y-auto space-y-2 border border-slate-800 h-96">
-                    <p class="text-slate-500">[System Log] Connected to SQLite control store.</p>
-                    <p class="text-slate-500">[System Log] Gemini 3.6 API Key initialized.</p>
-                    <p class="text-blue-400">[A0 Orchestrator] Awaiting user trigger...</p>
-                </div>
+
             </div>
 
         </section>
 
     </main>
 
-    <!-- JavaScript Handler -->
+    <!-- System Health & Gemini Quota Footer (Skills 36, 37) -->
+    <footer class="bg-slate-900/90 border-t border-slate-800 px-6 py-3 text-xs text-slate-400 backdrop-blur-md">
+        <div class="max-w-[1700px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span class="font-medium text-slate-300">SQLite WAL: Healthy</span>
+                    <span class="text-slate-500 text-[11px] font-mono">(4.2 MB)</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-blue-400"></i>
+                    <span class="text-slate-300">Gemini 3.6 Flash</span>
+                    <span class="text-slate-500 text-[11px] font-mono">(Avg Latency: 340ms)</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-6 font-mono text-xs">
+                <div>
+                    Tokens Today: <span class="text-white font-bold">142,500</span> / 1,000,000
+                </div>
+                <div class="text-emerald-400 font-bold">
+                    Cost: $2.41 USD
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Parameter Override Modal -->
+    <div id="overrideModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-700 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i data-lucide="sliders" class="w-4 h-4 text-blue-400 mr-2"></i>
+                    Override Action Parameters
+                </h3>
+                <button onclick="closeOverrideModal()" class="text-slate-400 hover:text-white transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Adjust Net Recovery Amount ($)</label>
+                    <input id="overrideAmount" type="number" value="450000" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white font-mono focus:border-blue-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Reviewer Justification / Notes</label>
+                    <textarea id="overrideNotes" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:border-blue-500 focus:outline-none" placeholder="Provide operational reason for parameter adjustment..."></textarea>
+                </div>
+            </div>
+
+            <div class="flex justify-end space-x-2 pt-2 border-t border-slate-800">
+                <button onclick="closeOverrideModal()" class="px-3.5 py-2 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition">Cancel</button>
+                <button onclick="saveOverride()" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow transition">Save & Approve</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Prompt Modal -->
+    <div id="promptModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-700 space-y-4 max-h-[85vh] flex flex-col">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i data-lucide="file-code" class="w-4 h-4 text-emerald-400 mr-2"></i>
+                    Agent System Prompts & Schemas
+                </h3>
+                <button onclick="closePromptModal()" class="text-slate-400 hover:text-white transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto bg-slate-950 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-3 border border-slate-900">
+                <p class="text-blue-400 font-bold">// System Instruction: Agent A0 Orchestrator</p>
+                <p class="text-slate-400">Decompose user analytical requests into a Directed Acyclic Graph (DAG) task plan, route subtasks to specialist agents (A1–A7), monitor state in control.sqlite, and manage iterative re-planning.</p>
+                
+                <p class="text-emerald-400 font-bold font-mono mt-3">// Deterministic Rule Mandate:</p>
+                <p class="text-slate-400">All numeric outputs, forecasts, and pro-forma balances must originate from analytics.duckdb or Python compute scripts. LLMs never estimate numbers in prompt text.</p>
+            </div>
+
+            <div class="flex justify-end pt-2 border-t border-slate-800">
+                <button onclick="closePromptModal()" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
     <script>
         lucide.createIcons();
 
-        // Initialize Chart.js Forecast Fan Chart
-        const ctx = document.getElementById('forecastChart').getContext('2d');
-        const forecastChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Q1', 'Q2', 'Q3', 'Q4 (P)', 'Q1 +1 (P)', 'Q2 +1 (P)'],
-                datasets: [
-                    {
-                        label: 'P50 Forecast',
-                        data: [12.1, 13.5, 14.2, 15.1, 15.8, 16.5],
-                        borderColor: '#3b82f6',
-                        backgroundColor: '#3b82f6',
-                        borderWidth: 3,
-                        fill: false
-                    },
-                    {
-                        label: 'P90 Upper Bound',
-                        data: [12.1, 13.5, 14.2, 16.2, 17.1, 18.2],
-                        borderColor: 'transparent',
-                        backgroundColor: 'rgba(59, 130, 246, 0.15)',
-                        fill: '+1'
-                    },
-                    {
-                        label: 'P10 Lower Bound',
-                        data: [12.1, 13.5, 14.2, 14.1, 14.5, 14.9],
-                        borderColor: 'transparent',
-                        backgroundColor: 'transparent',
-                        fill: false
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { labels: { color: '#94a3b8' } } },
-                scales: {
-                    x: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } },
-                    y: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } }
-                }
-            }
-        });
+        let currentTab = 'forecast';
+        let analyticsChart = null;
 
-        // Trigger Analysis via SSE
+        // --- Chart Configurations ---
+        const forecastData = {
+            labels: ['2025-Q1', '2025-Q2', '2025-Q3', '2025-Q4 (P)', '2026-Q1 (P)', '2026-Q2 (P)'],
+            datasets: [
+                {
+                    label: 'P50 Forecast ($M)',
+                    data: [12.10, 13.50, 14.20, 15.10, 15.80, 16.50],
+                    borderColor: '#3b82f6',
+                    backgroundColor: '#3b82f6',
+                    borderWidth: 3,
+                    tension: 0.2,
+                    fill: false
+                },
+                {
+                    label: 'P90 Upper Bound ($M)',
+                    data: [12.10, 13.50, 14.20, 16.20, 17.10, 18.20],
+                    borderColor: 'transparent',
+                    backgroundColor: 'rgba(59, 130, 246, 0.15)',
+                    fill: '+1'
+                },
+                {
+                    label: 'P10 Lower Bound ($M)',
+                    data: [12.10, 13.50, 14.20, 14.10, 14.50, 14.90],
+                    borderColor: 'transparent',
+                    backgroundColor: 'transparent',
+                    fill: false
+                }
+            ]
+        };
+
+        const waterfallData = {
+            labels: ['Budget Baseline', 'Volume Growth', 'IT Cloud Overrun', 'Advisory Fees', 'Duplicate Refund', 'Final EAC'],
+            datasets: [{
+                label: 'Variance Bridge ($k)',
+                data: [14200, 850, -112, -185, 45, 14800],
+                backgroundColor: [
+                    '#475569',
+                    '#10b981',
+                    '#ef4444',
+                    '#f59e0b',
+                    '#10b981',
+                    '#3b82f6'
+                ],
+                borderRadius: 6
+            }]
+        };
+
+        const tornadoData = {
+            labels: ['Cloud Reserved Pricing', 'Subscribers Churn Rate', 'Advisory Retainer', 'SaaS Seat Utilization'],
+            datasets: [
+                {
+                    label: 'Upside Impact ($k)',
+                    data: [420, 310, 185, 120],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Downside Risk ($k)',
+                    data: [-250, -410, -190, -85],
+                    backgroundColor: '#ef4444',
+                    borderRadius: 4
+                }
+            ]
+        };
+
+        function renderChart(type) {
+            const ctx = document.getElementById('analyticsChart').getContext('2d');
+            if (analyticsChart) { analyticsChart.destroy(); }
+
+            if (type === 'forecast') {
+                analyticsChart = new Chart(ctx, {
+                    type: 'line',
+                    data: forecastData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { labels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } } },
+                            tooltip: { mode: 'index', intersect: false }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: 'rgba(51, 65, 85, 0.4)' } },
+                            y: { ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: 'rgba(51, 65, 85, 0.4)' } }
+                        }
+                    }
+                });
+            } else if (type === 'waterfall') {
+                analyticsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: waterfallData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8', font: { family: 'Inter', size: 10 } }, grid: { display: false } },
+                            y: { ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: 'rgba(51, 65, 85, 0.4)' } }
+                        }
+                    }
+                });
+            } else if (type === 'tornado') {
+                analyticsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: tornadoData,
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } } } },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: 'rgba(51, 65, 85, 0.4)' } },
+                            y: { ticks: { color: '#94a3b8', font: { family: 'Inter', size: 11 } }, grid: { display: false } }
+                        }
+                    }
+                });
+            }
+        }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            ['forecast', 'waterfall', 'tornado'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tab) {
+                    btn.className = 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow transition';
+                } else {
+                    btn.className = 'px-3 py-1.5 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition';
+                }
+            });
+            renderChart(tab);
+        }
+
+        // --- DAG Execution Simulation ---
         function triggerAnalysis() {
             const consoleBox = document.getElementById('thoughtConsole');
-            const messages = [
-                "[A0 Orchestrator] Triggering Task DAG #2026-093...",
-                "[A1 Data Inspector] SQLite source check passed. 14,200 records loaded.",
-                "[A2 Forecast Engine] Running ARIMA backtest (MAPE 8.2%)...",
-                "[Gemini API] Prompt tokens: 1,420 | Completion: 380 | Latency: 420ms",
-                "[A6 Action Evaluator] 2 candidate actions generated.",
-                "[A7 Validator] Independent audit PASS (0 reconcile errors)."
-            ];
+            consoleBox.innerHTML = '';
             
-            messages.forEach((msg, idx) => {
+            const messages = [
+                { text: "[A0 Orchestrator] Triggering Task DAG #2026-093...", type: "blue" },
+                { text: "[A1 Intake Agent] Inspecting SQLite & CSV landing zone... 1,526 GL rows verified.", type: "emerald" },
+                { text: "[A2 Data Engineer] Constructing Star Schema in analytics.duckdb (model.*)... OK.", type: "emerald" },
+                { text: "[A3 Diagnostic Agent] Actual vs Target variance computed ($240k overrun).", type: "emerald" },
+                { text: "[A4 Prognostic Agent] Running expanding backtest (MAPE: 8.2% via Prophet).", type: "emerald" },
+                { text: "[A4 Prognostic Agent] Monte Carlo 10,000 iterations completed. P50 EAC = $15.8M.", type: "emerald" },
+                { text: "[A5 Prescriptive Agent] Formulated 4 candidate interventions ($1.85M net benefit).", type: "emerald" },
+                { text: "[Gemini 3.6 API] Generated BLUF decision narrative. Tokens: 1,420 | Latency: 320ms", type: "amber" },
+                { text: "[A7 Validator Gate] Cross-sectional audit PASS (0 reconcile discrepancies).", type: "emerald" },
+                { text: "[System Log] HTML Executive Report published to /workspace/out/.", type: "slate" }
+            ];
+
+            messages.forEach((item, idx) => {
                 setTimeout(() => {
                     const p = document.createElement('p');
-                    p.className = msg.includes("Gemini") ? "text-amber-300 font-semibold" : "text-emerald-400";
-                    p.textContent = msg;
+                    if (item.type === 'blue') p.className = 'text-blue-400 font-semibold';
+                    else if (item.type === 'emerald') p.className = 'text-emerald-400';
+                    else if (item.type === 'amber') p.className = 'text-amber-300 font-semibold';
+                    else p.className = 'text-slate-400 font-medium';
+                    
+                    p.textContent = item.text;
                     consoleBox.appendChild(p);
                     consoleBox.scrollTop = consoleBox.scrollHeight;
-                }, idx * 800);
+                }, idx * 600);
             });
         }
+
+        // --- HITL Action Decision Handlers ---
+        function approveAction(id) {
+            const badge = document.getElementById(`badge-${id}`);
+            badge.className = "px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 text-[11px] font-semibold";
+            badge.textContent = "Approved";
+        }
+
+        function rejectAction(id) {
+            const badge = document.getElementById(`badge-${id}`);
+            badge.className = "px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800 text-[11px] font-semibold";
+            badge.textContent = "Rejected";
+        }
+
+        let activeOverrideId = null;
+        function openOverrideModal(id) {
+            activeOverrideId = id;
+            document.getElementById('overrideModal').classList.remove('hidden');
+        }
+        function closeOverrideModal() {
+            document.getElementById('overrideModal').classList.add('hidden');
+        }
+        function saveOverride() {
+            if (activeOverrideId) {
+                const badge = document.getElementById(`badge-${activeOverrideId}`);
+                badge.className = "px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 text-[11px] font-semibold";
+                badge.textContent = "Override Approved";
+            }
+            closeOverrideModal();
+        }
+
+        function openPromptModal() { document.getElementById('promptModal').classList.remove('hidden'); }
+        function closePromptModal() { document.getElementById('promptModal').classList.add('hidden'); }
+        function clearConsole() { document.getElementById('thoughtConsole').innerHTML = ''; }
+        function changeTenant() { triggerAnalysis(); }
+        function downloadReport() { alert('Executive HTML report exported to /workspace/out/report_Q3_2025.html'); }
+
+        // Initial Chart Render
+        window.addEventListener('DOMContentLoaded', () => {
+            renderChart('forecast');
+        });
     </script>
 </body>
 </html>
