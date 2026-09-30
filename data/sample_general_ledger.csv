@@ -1,0 +1,1526 @@
+transaction_id,posting_date,department,account_code,vendor_name,amount_usd,status
+TXN-10001,2025-01-01,HR,5030-Cloud Hosting,Vendor 7,2369.09,Posted
+TXN-10002,2025-01-01,IT Infrastructure,5030-Cloud Hosting,Vendor 11,258.0,Posted
+TXN-10003,2025-01-01,HR,5040-Travel,Vendor 3,331.24,Posted
+TXN-10004,2025-01-01,R&D,5050-Office Supplies,Vendor 12,5355.34,Posted
+TXN-10005,2025-01-01,R&D,5060-Rent,Vendor 1,101.17,Posted
+TXN-10006,2025-01-01,Sales,5020-Consulting,Vendor 12,1215.89,Posted
+TXN-10007,2025-01-02,Marketing,5030-Cloud Hosting,Vendor 10,1519.56,Posted
+TXN-10008,2025-01-02,Sales,5040-Travel,Vendor 15,784.42,Posted
+TXN-10009,2025-01-02,R&D,5030-Cloud Hosting,Vendor 3,823.02,Posted
+TXN-10010,2025-01-03,Operations,5050-Office Supplies,Vendor 18,998.12,Posted
+TXN-10011,2025-01-03,Sales,5010-Software,Vendor 18,5155.95,Posted
+TXN-10012,2025-01-03,IT Infrastructure,5010-Software,Vendor 2,124.14,Posted
+TXN-10013,2025-01-03,Sales,5040-Travel,Vendor 7,970.14,Posted
+TXN-10014,2025-01-03,Sales,5050-Office Supplies,Vendor 3,2786.39,Posted
+TXN-10015,2025-01-03,R&D,5010-Software,Vendor 8,549.19,Posted
+TXN-10016,2025-01-03,Sales,5020-Consulting,Vendor 10,930.48,Posted
+TXN-10017,2025-01-04,R&D,5050-Office Supplies,Vendor 12,5339.21,Posted
+TXN-10018,2025-01-04,IT Infrastructure,5020-Consulting,Vendor 14,3478.23,Posted
+TXN-10019,2025-01-04,R&D,5040-Travel,Vendor 8,169.42,Posted
+TXN-10020,2025-01-04,HR,5050-Office Supplies,Vendor 13,574.84,Posted
+TXN-10021,2025-01-04,Marketing,5050-Office Supplies,Vendor 1,2530.73,Posted
+TXN-10022,2025-01-04,Marketing,5010-Software,Vendor 12,2319.23,Posted
+TXN-10023,2025-01-05,Operations,5010-Software,Vendor 3,1963.77,Posted
+TXN-10024,2025-01-05,Marketing,5030-Cloud Hosting,Vendor 7,215.39,Posted
+TXN-10025,2025-01-05,IT Infrastructure,5010-Software,Vendor 9,3796.94,Posted
+TXN-10026,2025-01-05,Sales,5020-Consulting,Vendor 5,250.41,Posted
+TXN-10027,2025-01-05,Operations,5040-Travel,Vendor 3,1622.33,Posted
+TXN-10028,2025-01-06,Operations,5050-Office Supplies,Vendor 3,5447.98,Posted
+TXN-10029,2025-01-06,Marketing,5050-Office Supplies,Vendor 14,1335.83,Posted
+TXN-10030,2025-01-06,Operations,5010-Software,Vendor 10,1960.24,Posted
+TXN-10031,2025-01-07,HR,5030-Cloud Hosting,Vendor 7,147.9,Posted
+TXN-10032,2025-01-07,Marketing,5040-Travel,Vendor 4,1342.68,Posted
+TXN-10033,2025-01-07,R&D,5050-Office Supplies,Vendor 13,530.11,Posted
+TXN-10034,2025-01-07,Operations,5050-Office Supplies,Vendor 7,489.71,Posted
+TXN-10035,2025-01-07,Operations,5030-Cloud Hosting,Vendor 2,363.71,Posted
+TXN-10036,2025-01-07,IT Infrastructure,5050-Office Supplies,Vendor 6,625.69,Posted
+TXN-10037,2025-01-08,Sales,5040-Travel,Vendor 11,409.74,Posted
+TXN-10038,2025-01-08,IT Infrastructure,5040-Travel,Vendor 1,760.78,Posted
+TXN-10039,2025-01-08,Marketing,5010-Software,Vendor 13,1664.87,Posted
+TXN-10040,2025-01-08,Marketing,5030-Cloud Hosting,Vendor 8,110.46,Posted
+TXN-10041,2025-01-08,Operations,5010-Software,Vendor 1,1094.89,Posted
+TXN-10042,2025-01-08,Operations,5020-Consulting,Vendor 15,717.86,Posted
+TXN-10043,2025-01-09,R&D,5010-Software,Vendor 17,875.86,Posted
+TXN-10044,2025-01-09,IT Infrastructure,5040-Travel,Vendor 7,525.29,Posted
+TXN-10045,2025-01-09,IT Infrastructure,5030-Cloud Hosting,Vendor 17,636.9,Posted
+TXN-10046,2025-01-09,Marketing,5030-Cloud Hosting,Vendor 2,1510.74,Posted
+TXN-10047,2025-01-09,Sales,5060-Rent,Vendor 1,150.41,Posted
+TXN-10048,2025-01-10,Operations,5060-Rent,Vendor 12,334.8,Posted
+TXN-10049,2025-01-10,IT Infrastructure,5060-Rent,Vendor 4,515.72,Posted
+TXN-10050,2025-01-10,Operations,5030-Cloud Hosting,Vendor 6,515.92,Posted
+TXN-10051,2025-01-11,Sales,5020-Consulting,Vendor 11,1605.76,Posted
+TXN-10052,2025-01-11,Marketing,5010-Software,Vendor 6,680.22,Posted
+TXN-10053,2025-01-11,HR,5030-Cloud Hosting,Vendor 4,1440.67,Posted
+TXN-10054,2025-01-11,Operations,5020-Consulting,Vendor 19,1176.45,Posted
+TXN-10055,2025-01-11,Sales,5040-Travel,Vendor 8,4333.26,Posted
+TXN-10056,2025-01-11,IT Infrastructure,5010-Software,Vendor 18,1789.08,Posted
+TXN-10057,2025-01-11,R&D,5020-Consulting,Vendor 16,547.49,Posted
+TXN-10058,2025-01-12,Marketing,5040-Travel,Vendor 2,1231.42,Posted
+TXN-10059,2025-01-12,Marketing,5060-Rent,Vendor 5,3512.68,Posted
+TXN-10060,2025-01-12,Operations,5010-Software,Vendor 19,590.41,Posted
+TXN-10061,2025-01-12,Operations,5040-Travel,Vendor 1,3371.7,Posted
+TXN-10062,2025-01-13,Operations,5010-Software,Vendor 6,364.44,Posted
+TXN-10063,2025-01-13,Sales,5060-Rent,Vendor 3,113.86,Posted
+TXN-10064,2025-01-13,Marketing,5050-Office Supplies,Vendor 14,600.95,Posted
+TXN-10065,2025-01-13,IT Infrastructure,5020-Consulting,Vendor 16,1865.97,Posted
+TXN-10066,2025-01-13,HR,5010-Software,Vendor 4,390.24,Posted
+TXN-10067,2025-01-13,Marketing,5060-Rent,Vendor 8,690.45,Posted
+TXN-10068,2025-01-14,Marketing,5010-Software,Vendor 19,1273.1,Posted
+TXN-10069,2025-01-14,R&D,5060-Rent,Vendor 6,519.55,Posted
+TXN-10070,2025-01-14,R&D,5050-Office Supplies,Vendor 8,1100.47,Posted
+TXN-10071,2025-01-14,Operations,5030-Cloud Hosting,Vendor 1,2475.74,Posted
+TXN-10072,2025-01-14,Sales,5010-Software,Vendor 16,425.82,Posted
+TXN-10073,2025-01-15,Sales,5030-Cloud Hosting,Vendor 17,2295.11,Posted
+TXN-10074,2025-01-15,Sales,5040-Travel,Vendor 14,1052.16,Posted
+TXN-10075,2025-01-15,HR,5060-Rent,Vendor 9,793.43,Posted
+TXN-10076,2025-01-15,HR,5050-Office Supplies,Vendor 3,938.41,Posted
+TXN-10077,2025-01-15,Sales,5010-Software,Vendor 1,217.5,Posted
+TXN-10078,2025-01-16,IT Infrastructure,5010-Software,Vendor 3,853.03,Posted
+TXN-10079,2025-01-16,R&D,5020-Consulting,Vendor 2,1531.8,Posted
+TXN-10080,2025-01-16,Operations,5020-Consulting,Vendor 17,3247.91,Posted
+TXN-10081,2025-01-16,Marketing,5010-Software,Vendor 16,1918.43,Posted
+TXN-10082,2025-01-16,HR,5020-Consulting,Vendor 3,2586.06,Posted
+TXN-10083,2025-01-17,Marketing,5050-Office Supplies,Vendor 7,227.67,Posted
+TXN-10084,2025-01-17,Marketing,5040-Travel,Vendor 1,2501.42,Posted
+TXN-10085,2025-01-17,R&D,5060-Rent,Vendor 15,3410.99,Posted
+TXN-10086,2025-01-17,Sales,5020-Consulting,Vendor 19,248.04,Posted
+TXN-10087,2025-01-18,IT Infrastructure,5060-Rent,Vendor 17,606.45,Posted
+TXN-10088,2025-01-18,Sales,5020-Consulting,Vendor 11,2694.03,Posted
+TXN-10089,2025-01-18,Sales,5050-Office Supplies,Vendor 12,1207.98,Posted
+TXN-10090,2025-01-19,HR,5040-Travel,Vendor 15,2867.96,Posted
+TXN-10091,2025-01-19,Operations,5040-Travel,Vendor 18,313.63,Posted
+TXN-10092,2025-01-19,Sales,5020-Consulting,Vendor 17,685.03,Posted
+TXN-10093,2025-01-19,Operations,5040-Travel,Vendor 5,2144.12,Posted
+TXN-10094,2025-01-19,IT Infrastructure,5050-Office Supplies,Vendor 9,226.5,Posted
+TXN-10095,2025-01-19,Sales,5050-Office Supplies,Vendor 1,189.93,Posted
+TXN-10096,2025-01-20,R&D,5060-Rent,Vendor 8,1980.77,Posted
+TXN-10097,2025-01-20,HR,5050-Office Supplies,Vendor 7,1625.29,Posted
+TXN-10098,2025-01-20,HR,5060-Rent,Vendor 3,2064.22,Posted
+TXN-10099,2025-01-20,Sales,5020-Consulting,Vendor 5,760.02,Posted
+TXN-10100,2025-01-21,Marketing,5050-Office Supplies,Vendor 5,285.07,Posted
+TXN-10101,2025-01-21,Marketing,5060-Rent,Vendor 5,3001.3,Posted
+TXN-10102,2025-01-21,Sales,5020-Consulting,Vendor 7,2261.85,Posted
+TXN-10103,2025-01-21,Sales,5010-Software,Vendor 5,1037.32,Posted
+TXN-10104,2025-01-21,IT Infrastructure,5020-Consulting,Vendor 4,4568.19,Posted
+TXN-10105,2025-01-21,IT Infrastructure,5040-Travel,Vendor 19,804.08,Posted
+TXN-10106,2025-01-21,IT Infrastructure,5010-Software,Vendor 13,1262.76,Posted
+TXN-10107,2025-01-21,Sales,5020-Consulting,Vendor 12,140.3,Posted
+TXN-10108,2025-01-22,Operations,5040-Travel,Vendor 19,306.31,Posted
+TXN-10109,2025-01-22,Operations,5050-Office Supplies,Vendor 1,1575.01,Posted
+TXN-10110,2025-01-22,Marketing,5020-Consulting,Vendor 13,447.3,Posted
+TXN-10111,2025-01-22,Sales,5060-Rent,Vendor 19,127.58,Posted
+TXN-10112,2025-01-23,Operations,5010-Software,Vendor 10,1699.46,Posted
+TXN-10113,2025-01-23,IT Infrastructure,5060-Rent,Vendor 9,2626.8,Posted
+TXN-10114,2025-01-23,Sales,5020-Consulting,Vendor 13,1889.73,Posted
+TXN-10115,2025-01-23,Operations,5050-Office Supplies,Vendor 4,159.96,Posted
+TXN-10116,2025-01-24,HR,5010-Software,Vendor 3,1360.8,Posted
+TXN-10117,2025-01-24,Marketing,5030-Cloud Hosting,Vendor 18,898.12,Posted
+TXN-10118,2025-01-24,Marketing,5060-Rent,Vendor 12,1337.85,Posted
+TXN-10119,2025-01-24,Marketing,5050-Office Supplies,Vendor 3,2120.08,Posted
+TXN-10120,2025-01-25,R&D,5010-Software,Vendor 16,1246.41,Posted
+TXN-10121,2025-01-25,Marketing,5060-Rent,Vendor 19,629.95,Posted
+TXN-10122,2025-01-25,Marketing,5040-Travel,Vendor 9,116.35,Posted
+TXN-10123,2025-01-26,Sales,5010-Software,Vendor 14,676.98,Posted
+TXN-10124,2025-01-26,Sales,5030-Cloud Hosting,Vendor 16,1118.94,Posted
+TXN-10125,2025-01-26,HR,5050-Office Supplies,Vendor 4,620.53,Posted
+TXN-10126,2025-01-26,HR,5010-Software,Vendor 10,280.65,Posted
+TXN-10127,2025-01-26,IT Infrastructure,5060-Rent,Vendor 5,1296.19,Posted
+TXN-10128,2025-01-27,HR,5030-Cloud Hosting,Vendor 15,1935.4,Posted
+TXN-10129,2025-01-27,Sales,5010-Software,Vendor 12,2250.15,Posted
+TXN-10130,2025-01-27,Marketing,5050-Office Supplies,Vendor 14,2834.7,Posted
+TXN-10131,2025-01-27,HR,5020-Consulting,Vendor 2,857.89,Posted
+TXN-10132,2025-01-27,HR,5050-Office Supplies,Vendor 19,232.98,Posted
+TXN-10133,2025-01-28,Marketing,5060-Rent,Vendor 7,2613.36,Posted
+TXN-10134,2025-01-28,Marketing,5050-Office Supplies,Vendor 6,2199.85,Posted
+TXN-10135,2025-01-28,Sales,5030-Cloud Hosting,Vendor 7,2351.86,Posted
+TXN-10136,2025-01-28,Operations,5020-Consulting,Vendor 7,3652.36,Posted
+TXN-10137,2025-01-28,R&D,5030-Cloud Hosting,Vendor 18,538.91,Posted
+TXN-10138,2025-01-28,Sales,5060-Rent,Vendor 8,186.93,Posted
+TXN-10139,2025-01-28,HR,5010-Software,Vendor 3,2145.11,Posted
+TXN-10140,2025-01-29,Sales,5060-Rent,Vendor 17,866.8,Posted
+TXN-10141,2025-01-29,Marketing,5010-Software,Vendor 6,479.62,Posted
+TXN-10142,2025-01-29,IT Infrastructure,5040-Travel,Vendor 13,5818.31,Posted
+TXN-10143,2025-01-29,HR,5050-Office Supplies,Vendor 11,166.56,Posted
+TXN-10144,2025-01-29,Sales,5050-Office Supplies,Vendor 19,537.52,Posted
+TXN-10145,2025-01-29,Sales,5010-Software,Vendor 9,1210.67,Posted
+TXN-10146,2025-01-29,Marketing,5060-Rent,Vendor 1,623.26,Posted
+TXN-10147,2025-01-30,R&D,5060-Rent,Vendor 11,827.25,Posted
+TXN-10148,2025-01-30,Sales,5020-Consulting,Vendor 8,4605.99,Posted
+TXN-10149,2025-01-30,R&D,5040-Travel,Vendor 8,269.34,Posted
+TXN-10150,2025-01-30,IT Infrastructure,5040-Travel,Vendor 8,1661.29,Posted
+TXN-10151,2025-01-30,IT Infrastructure,5040-Travel,Vendor 5,1414.37,Posted
+TXN-10152,2025-01-30,Marketing,5040-Travel,Vendor 17,6525.8,Posted
+TXN-10153,2025-01-30,Marketing,5010-Software,Vendor 13,894.52,Posted
+TXN-10154,2025-01-31,HR,5050-Office Supplies,Vendor 6,3727.45,Posted
+TXN-10155,2025-01-31,IT Infrastructure,5030-Cloud Hosting,Vendor 15,2040.41,Posted
+TXN-10156,2025-01-31,Marketing,5020-Consulting,Vendor 18,229.56,Posted
+TXN-10157,2025-01-31,Operations,5050-Office Supplies,Vendor 1,370.19,Posted
+TXN-10158,2025-01-31,R&D,5010-Software,Vendor 15,1081.96,Posted
+TXN-10159,2025-01-31,Marketing,5030-Cloud Hosting,Vendor 17,1452.59,Posted
+TXN-10160,2025-02-01,Marketing,5020-Consulting,Vendor 1,156.28,Posted
+TXN-10161,2025-02-01,HR,5060-Rent,Vendor 5,1865.09,Posted
+TXN-10162,2025-02-01,HR,5060-Rent,Vendor 5,3765.63,Posted
+TXN-10163,2025-02-01,HR,5050-Office Supplies,Vendor 19,2222.54,Posted
+TXN-10164,2025-02-01,Marketing,5050-Office Supplies,Vendor 14,998.24,Posted
+TXN-10165,2025-02-01,Marketing,5030-Cloud Hosting,Vendor 4,581.82,Posted
+TXN-10166,2025-02-01,R&D,5010-Software,Vendor 2,1770.74,Posted
+TXN-10167,2025-02-02,IT Infrastructure,5020-Consulting,Vendor 3,1201.92,Posted
+TXN-10168,2025-02-02,Operations,5020-Consulting,Vendor 12,2967.66,Posted
+TXN-10169,2025-02-02,HR,5060-Rent,Vendor 17,3239.14,Posted
+TXN-10170,2025-02-02,HR,5050-Office Supplies,Vendor 11,1629.82,Posted
+TXN-10171,2025-02-02,Operations,5060-Rent,Vendor 2,1540.61,Posted
+TXN-10172,2025-02-02,R&D,5020-Consulting,Vendor 15,1437.1,Posted
+TXN-10173,2025-02-03,Operations,5020-Consulting,Vendor 6,742.15,Posted
+TXN-10174,2025-02-03,Marketing,5040-Travel,Vendor 10,630.65,Posted
+TXN-10175,2025-02-03,Operations,5010-Software,Vendor 4,4579.29,Posted
+TXN-10176,2025-02-03,IT Infrastructure,5010-Software,Vendor 5,1116.25,Posted
+TXN-10177,2025-02-03,IT Infrastructure,5060-Rent,Vendor 13,1117.74,Posted
+TXN-10178,2025-02-04,Operations,5030-Cloud Hosting,Vendor 19,511.94,Posted
+TXN-10179,2025-02-04,Marketing,5030-Cloud Hosting,Vendor 8,324.19,Posted
+TXN-10180,2025-02-04,Sales,5040-Travel,Vendor 3,736.21,Posted
+TXN-10181,2025-02-04,Operations,5030-Cloud Hosting,Vendor 18,1751.93,Posted
+TXN-10182,2025-02-04,HR,5020-Consulting,Vendor 5,480.11,Posted
+TXN-10183,2025-02-04,IT Infrastructure,5040-Travel,Vendor 6,740.69,Posted
+TXN-10184,2025-02-04,Marketing,5050-Office Supplies,Vendor 14,1026.44,Posted
+TXN-10185,2025-02-04,IT Infrastructure,5010-Software,Vendor 13,1150.01,Posted
+TXN-10186,2025-02-05,Marketing,5020-Consulting,Vendor 15,2509.74,Posted
+TXN-10187,2025-02-05,R&D,5030-Cloud Hosting,Vendor 17,3905.04,Posted
+TXN-10188,2025-02-05,IT Infrastructure,5040-Travel,Vendor 17,2561.4,Posted
+TXN-10189,2025-02-05,Operations,5050-Office Supplies,Vendor 15,6530.84,Posted
+TXN-10190,2025-02-05,R&D,5060-Rent,Vendor 14,1544.5,Posted
+TXN-10191,2025-02-06,HR,5020-Consulting,Vendor 19,156.06,Posted
+TXN-10192,2025-02-06,Operations,5060-Rent,Vendor 13,2177.14,Posted
+TXN-10193,2025-02-06,IT Infrastructure,5020-Consulting,Vendor 19,755.77,Posted
+TXN-10194,2025-02-06,Marketing,5050-Office Supplies,Vendor 7,401.86,Posted
+TXN-10195,2025-02-07,Marketing,5060-Rent,Vendor 12,695.12,Posted
+TXN-10196,2025-02-07,Marketing,5010-Software,Vendor 4,729.94,Posted
+TXN-10197,2025-02-07,IT Infrastructure,5030-Cloud Hosting,Vendor 18,1669.7,Posted
+TXN-10198,2025-02-08,R&D,5020-Consulting,Vendor 8,1323.79,Posted
+TXN-10199,2025-02-08,Marketing,5040-Travel,Vendor 9,304.73,Posted
+TXN-10200,2025-02-08,HR,5060-Rent,Vendor 2,3548.6,Posted
+TXN-10201,2025-02-08,Operations,5030-Cloud Hosting,Vendor 5,6559.29,Posted
+TXN-10202,2025-02-08,Marketing,5010-Software,Vendor 6,111.34,Posted
+TXN-10203,2025-02-08,R&D,5040-Travel,Vendor 9,2953.88,Posted
+TXN-10204,2025-02-09,Operations,5050-Office Supplies,Vendor 6,6157.96,Posted
+TXN-10205,2025-02-09,IT Infrastructure,5040-Travel,Vendor 4,5333.59,Posted
+TXN-10206,2025-02-09,R&D,5060-Rent,Vendor 6,547.41,Posted
+TXN-10207,2025-02-09,Operations,5060-Rent,Vendor 15,4075.58,Posted
+TXN-10208,2025-02-09,Operations,5020-Consulting,Vendor 12,592.71,Posted
+TXN-10209,2025-02-10,R&D,5020-Consulting,Vendor 19,686.63,Posted
+TXN-10210,2025-02-10,Sales,5010-Software,Vendor 12,2099.11,Posted
+TXN-10211,2025-02-10,Marketing,5020-Consulting,Vendor 6,2290.1,Posted
+TXN-10212,2025-02-10,HR,5060-Rent,Vendor 4,351.5,Posted
+TXN-10213,2025-02-10,HR,5030-Cloud Hosting,Vendor 6,1451.67,Posted
+TXN-10214,2025-02-10,IT Infrastructure,5020-Consulting,Vendor 10,1293.11,Posted
+TXN-10215,2025-02-10,Sales,5020-Consulting,Vendor 2,683.7,Posted
+TXN-10216,2025-02-11,Marketing,5050-Office Supplies,Vendor 9,104.07,Posted
+TXN-10217,2025-02-11,Operations,5060-Rent,Vendor 17,896.14,Posted
+TXN-10218,2025-02-11,HR,5060-Rent,Vendor 18,2155.48,Posted
+TXN-10219,2025-02-11,R&D,5050-Office Supplies,Vendor 9,2068.83,Posted
+TXN-10220,2025-02-11,IT Infrastructure,5040-Travel,Vendor 1,815.19,Posted
+TXN-10221,2025-02-11,R&D,5040-Travel,Vendor 8,2866.12,Posted
+TXN-10222,2025-02-12,Marketing,5050-Office Supplies,Vendor 3,437.77,Posted
+TXN-10223,2025-02-12,HR,5050-Office Supplies,Vendor 14,2627.65,Posted
+TXN-10224,2025-02-12,IT Infrastructure,5060-Rent,Vendor 13,766.69,Posted
+TXN-10225,2025-02-12,IT Infrastructure,5010-Software,Vendor 8,1823.2,Posted
+TXN-10226,2025-02-12,R&D,5030-Cloud Hosting,Vendor 1,1567.65,Posted
+TXN-10227,2025-02-13,Marketing,5010-Software,Vendor 2,3547.51,Posted
+TXN-10228,2025-02-13,R&D,5050-Office Supplies,Vendor 19,3654.24,Posted
+TXN-10229,2025-02-13,Operations,5060-Rent,Vendor 7,4315.93,Posted
+TXN-10230,2025-02-14,IT Infrastructure,5040-Travel,Vendor 1,2470.0,Posted
+TXN-10231,2025-02-14,Sales,5060-Rent,Vendor 4,3464.95,Posted
+TXN-10232,2025-02-14,HR,5060-Rent,Vendor 5,2193.93,Posted
+TXN-10233,2025-02-14,Operations,5010-Software,Vendor 2,151.16,Posted
+TXN-10234,2025-02-14,IT Infrastructure,5050-Office Supplies,Vendor 1,3240.5,Posted
+TXN-10235,2025-02-15,R&D,5050-Office Supplies,Vendor 4,275.87,Posted
+TXN-10236,2025-02-15,HR,5040-Travel,Vendor 8,859.47,Posted
+TXN-10237,2025-02-15,HR,5050-Office Supplies,Vendor 12,490.59,Posted
+TXN-10238,2025-02-15,HR,5020-Consulting,Vendor 19,118.42,Posted
+TXN-10239,2025-02-15,Operations,5040-Travel,Vendor 11,1273.7,Posted
+TXN-10240,2025-02-15,Operations,5050-Office Supplies,Vendor 10,2729.95,Posted
+TXN-10241,2025-02-15,R&D,5060-Rent,Vendor 15,868.37,Posted
+TXN-10242,2025-02-15,IT Infrastructure,5060-Rent,Vendor 13,1531.57,Posted
+TXN-10243,2025-02-16,IT Infrastructure,5010-Software,Vendor 8,543.6,Posted
+TXN-10244,2025-02-16,Sales,5030-Cloud Hosting,Vendor 4,4134.98,Posted
+TXN-10245,2025-02-16,Sales,5050-Office Supplies,Vendor 8,3936.2,Posted
+TXN-10246,2025-02-16,IT Infrastructure,5010-Software,Vendor 9,1388.05,Posted
+TXN-10247,2025-02-16,R&D,5030-Cloud Hosting,Vendor 8,2100.24,Posted
+TXN-10248,2025-02-16,Marketing,5060-Rent,Vendor 1,3723.4,Posted
+TXN-10249,2025-02-16,R&D,5050-Office Supplies,Vendor 14,6383.76,Posted
+TXN-10250,2025-02-16,Sales,5060-Rent,Vendor 1,2825.53,Posted
+TXN-10251,2025-02-17,Operations,5050-Office Supplies,Vendor 9,815.37,Posted
+TXN-10252,2025-02-17,IT Infrastructure,5040-Travel,Vendor 9,2425.27,Posted
+TXN-10253,2025-02-17,Operations,5040-Travel,Vendor 11,1256.32,Posted
+TXN-10254,2025-02-17,R&D,5020-Consulting,Vendor 2,1040.2,Posted
+TXN-10255,2025-02-17,Operations,5010-Software,Vendor 12,1426.71,Posted
+TXN-10256,2025-02-17,Operations,5030-Cloud Hosting,Vendor 7,527.98,Posted
+TXN-10257,2025-02-17,Sales,5060-Rent,Vendor 1,151.7,Posted
+TXN-10258,2025-02-17,Marketing,5050-Office Supplies,Vendor 18,1403.35,Posted
+TXN-10259,2025-02-18,Marketing,5010-Software,Vendor 17,4969.0,Posted
+TXN-10260,2025-02-18,Sales,5060-Rent,Vendor 8,3055.96,Posted
+TXN-10261,2025-02-18,Marketing,5010-Software,Vendor 19,656.46,Posted
+TXN-10262,2025-02-18,Operations,5030-Cloud Hosting,Vendor 17,744.76,Posted
+TXN-10263,2025-02-18,HR,5050-Office Supplies,Vendor 8,1058.18,Posted
+TXN-10264,2025-02-18,Operations,5020-Consulting,Vendor 19,622.3,Posted
+TXN-10265,2025-02-18,IT Infrastructure,5020-Consulting,Vendor 17,1246.82,Posted
+TXN-10266,2025-02-19,R&D,5060-Rent,Vendor 4,2274.53,Posted
+TXN-10267,2025-02-19,Marketing,5050-Office Supplies,Vendor 3,217.76,Posted
+TXN-10268,2025-02-19,IT Infrastructure,5020-Consulting,Vendor 2,3515.82,Posted
+TXN-10269,2025-02-19,Sales,5010-Software,Vendor 18,138.57,Posted
+TXN-10270,2025-02-20,Marketing,5010-Software,Vendor 8,476.49,Posted
+TXN-10271,2025-02-20,R&D,5010-Software,Vendor 3,2513.53,Posted
+TXN-10272,2025-02-20,Operations,5010-Software,Vendor 8,1320.34,Posted
+TXN-10273,2025-02-20,IT Infrastructure,5030-Cloud Hosting,Vendor 14,517.93,Posted
+TXN-10274,2025-02-20,R&D,5030-Cloud Hosting,Vendor 5,5031.11,Posted
+TXN-10275,2025-02-20,R&D,5050-Office Supplies,Vendor 16,882.3,Posted
+TXN-10276,2025-02-20,IT Infrastructure,5020-Consulting,Vendor 19,234.08,Posted
+TXN-10277,2025-02-21,Operations,5040-Travel,Vendor 18,1644.72,Posted
+TXN-10278,2025-02-21,IT Infrastructure,5010-Software,Vendor 11,2651.04,Posted
+TXN-10279,2025-02-21,IT Infrastructure,5020-Consulting,Vendor 12,776.62,Posted
+TXN-10280,2025-02-21,Sales,5050-Office Supplies,Vendor 9,735.12,Posted
+TXN-10281,2025-02-21,IT Infrastructure,5050-Office Supplies,Vendor 12,623.2,Posted
+TXN-10282,2025-02-21,Marketing,5020-Consulting,Vendor 14,1351.29,Posted
+TXN-10283,2025-02-21,Marketing,5020-Consulting,Vendor 14,134.09,Posted
+TXN-10284,2025-02-22,IT Infrastructure,5050-Office Supplies,Vendor 9,872.63,Posted
+TXN-10285,2025-02-22,R&D,5060-Rent,Vendor 4,2802.08,Posted
+TXN-10286,2025-02-22,IT Infrastructure,5020-Consulting,Vendor 2,3562.49,Posted
+TXN-10287,2025-02-23,Operations,5060-Rent,Vendor 10,3785.33,Posted
+TXN-10288,2025-02-23,Sales,5010-Software,Vendor 17,580.42,Posted
+TXN-10289,2025-02-23,HR,5010-Software,Vendor 12,1132.13,Posted
+TXN-10290,2025-02-23,HR,5020-Consulting,Vendor 6,326.27,Posted
+TXN-10291,2025-02-23,Operations,5020-Consulting,Vendor 7,1476.38,Posted
+TXN-10292,2025-02-23,IT Infrastructure,5050-Office Supplies,Vendor 14,2831.23,Posted
+TXN-10293,2025-02-23,IT Infrastructure,5040-Travel,Vendor 1,4877.7,Posted
+TXN-10294,2025-02-24,HR,5040-Travel,Vendor 11,2310.96,Posted
+TXN-10295,2025-02-24,Operations,5040-Travel,Vendor 7,2004.35,Posted
+TXN-10296,2025-02-24,Operations,5060-Rent,Vendor 15,1069.54,Posted
+TXN-10297,2025-02-24,R&D,5060-Rent,Vendor 1,2078.36,Posted
+TXN-10298,2025-02-24,IT Infrastructure,5040-Travel,Vendor 19,1264.28,Posted
+TXN-10299,2025-02-25,Sales,5030-Cloud Hosting,Vendor 13,2910.18,Posted
+TXN-10300,2025-02-25,Operations,5020-Consulting,Vendor 2,1564.59,Posted
+TXN-10301,2025-02-25,HR,5010-Software,Vendor 17,217.17,Posted
+TXN-10302,2025-02-25,Marketing,5010-Software,Vendor 8,1930.79,Posted
+TXN-10303,2025-02-25,IT Infrastructure,5010-Software,Vendor 3,524.34,Posted
+TXN-10304,2025-02-26,HR,5040-Travel,Vendor 6,1879.67,Posted
+TXN-10305,2025-02-26,IT Infrastructure,5040-Travel,Vendor 12,771.71,Posted
+TXN-10306,2025-02-26,Operations,5030-Cloud Hosting,Vendor 17,5009.16,Posted
+TXN-10307,2025-02-26,IT Infrastructure,5010-Software,Vendor 15,985.9,Posted
+TXN-10308,2025-02-27,R&D,5030-Cloud Hosting,Vendor 17,2076.41,Posted
+TXN-10309,2025-02-27,HR,5060-Rent,Vendor 8,1620.99,Posted
+TXN-10310,2025-02-27,Marketing,5020-Consulting,Vendor 15,1108.33,Posted
+TXN-10311,2025-02-27,Operations,5020-Consulting,Vendor 15,179.46,Posted
+TXN-10312,2025-02-27,IT Infrastructure,5010-Software,Vendor 7,398.73,Posted
+TXN-10313,2025-02-27,R&D,5050-Office Supplies,Vendor 19,2069.7,Posted
+TXN-10314,2025-02-28,Operations,5050-Office Supplies,Vendor 7,1064.29,Posted
+TXN-10315,2025-02-28,Operations,5020-Consulting,Vendor 7,1208.58,Posted
+TXN-10316,2025-02-28,Marketing,5060-Rent,Vendor 3,1460.51,Posted
+TXN-10317,2025-02-28,Sales,5040-Travel,Vendor 3,1083.96,Posted
+TXN-10318,2025-03-01,Operations,5020-Consulting,Vendor 12,2035.2,Posted
+TXN-10319,2025-03-01,Marketing,5040-Travel,Vendor 13,2446.15,Posted
+TXN-10320,2025-03-01,IT Infrastructure,5010-Software,Vendor 10,3357.04,Posted
+TXN-10321,2025-03-01,Sales,5060-Rent,Vendor 3,910.65,Posted
+TXN-10322,2025-03-01,IT Infrastructure,5020-Consulting,Vendor 13,132.25,Posted
+TXN-10323,2025-03-01,HR,5020-Consulting,Vendor 3,4296.99,Posted
+TXN-10324,2025-03-01,Operations,5060-Rent,Vendor 17,747.82,Posted
+TXN-10325,2025-03-02,R&D,5050-Office Supplies,Vendor 16,1080.26,Posted
+TXN-10326,2025-03-02,Sales,5010-Software,Vendor 7,2293.3,Posted
+TXN-10327,2025-03-02,Sales,5050-Office Supplies,Vendor 17,2076.67,Posted
+TXN-10328,2025-03-02,Operations,5050-Office Supplies,Vendor 18,756.88,Posted
+TXN-10329,2025-03-02,Sales,5020-Consulting,Vendor 16,499.09,Posted
+TXN-10330,2025-03-02,Marketing,5050-Office Supplies,Vendor 9,6699.97,Posted
+TXN-10331,2025-03-02,Marketing,5010-Software,Vendor 12,1807.5,Posted
+TXN-10332,2025-03-03,IT Infrastructure,5050-Office Supplies,Vendor 11,2415.09,Posted
+TXN-10333,2025-03-03,Sales,5060-Rent,Vendor 14,6153.87,Posted
+TXN-10334,2025-03-03,Operations,5060-Rent,Vendor 7,1525.59,Posted
+TXN-10335,2025-03-03,Sales,5040-Travel,Vendor 19,495.31,Posted
+TXN-10336,2025-03-03,HR,5060-Rent,Vendor 2,493.35,Posted
+TXN-10337,2025-03-04,IT Infrastructure,5010-Software,Vendor 3,409.5,Posted
+TXN-10338,2025-03-04,R&D,5050-Office Supplies,Vendor 15,189.37,Posted
+TXN-10339,2025-03-04,Marketing,5010-Software,Vendor 17,4041.48,Posted
+TXN-10340,2025-03-05,Operations,5020-Consulting,Vendor 18,1186.18,Posted
+TXN-10341,2025-03-05,R&D,5010-Software,Vendor 3,350.67,Posted
+TXN-10342,2025-03-05,R&D,5050-Office Supplies,Vendor 15,480.05,Posted
+TXN-10343,2025-03-05,Marketing,5010-Software,Vendor 5,3479.57,Posted
+TXN-10344,2025-03-05,IT Infrastructure,5030-Cloud Hosting,Vendor 3,3248.99,Posted
+TXN-10345,2025-03-05,Operations,5040-Travel,Vendor 3,1071.33,Posted
+TXN-10346,2025-03-05,Marketing,5020-Consulting,Vendor 9,3072.14,Posted
+TXN-10347,2025-03-06,HR,5030-Cloud Hosting,Vendor 15,236.51,Posted
+TXN-10348,2025-03-06,R&D,5030-Cloud Hosting,Vendor 18,2027.88,Posted
+TXN-10349,2025-03-06,R&D,5050-Office Supplies,Vendor 13,473.04,Posted
+TXN-10350,2025-03-07,HR,5050-Office Supplies,Vendor 8,2957.8,Posted
+TXN-10351,2025-03-07,HR,5060-Rent,Vendor 3,1446.23,Posted
+TXN-10352,2025-03-07,IT Infrastructure,5030-Cloud Hosting,Vendor 1,3098.1,Posted
+TXN-10353,2025-03-07,R&D,5030-Cloud Hosting,Vendor 1,3139.26,Posted
+TXN-10354,2025-03-07,Operations,5030-Cloud Hosting,Vendor 13,362.24,Posted
+TXN-10355,2025-03-07,Operations,5050-Office Supplies,Vendor 10,1893.37,Posted
+TXN-10356,2025-03-08,Operations,5060-Rent,Vendor 5,414.64,Posted
+TXN-10357,2025-03-08,Operations,5050-Office Supplies,Vendor 19,3181.75,Posted
+TXN-10358,2025-03-08,IT Infrastructure,5020-Consulting,Vendor 7,2671.76,Posted
+TXN-10359,2025-03-08,IT Infrastructure,5040-Travel,Vendor 13,1318.51,Posted
+TXN-10360,2025-03-08,HR,5040-Travel,Vendor 13,109.61,Posted
+TXN-10361,2025-03-08,R&D,5030-Cloud Hosting,Vendor 17,6059.75,Posted
+TXN-10362,2025-03-09,Sales,5050-Office Supplies,Vendor 6,2370.14,Posted
+TXN-10363,2025-03-09,Operations,5060-Rent,Vendor 9,127.9,Posted
+TXN-10364,2025-03-09,IT Infrastructure,5040-Travel,Vendor 5,1602.05,Posted
+TXN-10365,2025-03-09,HR,5060-Rent,Vendor 4,4252.38,Posted
+TXN-10366,2025-03-10,Sales,5030-Cloud Hosting,Vendor 12,372.96,Posted
+TXN-10367,2025-03-10,R&D,5010-Software,Vendor 1,1409.02,Posted
+TXN-10368,2025-03-10,R&D,5020-Consulting,Vendor 18,216.45,Posted
+TXN-10369,2025-03-10,IT Infrastructure,5060-Rent,Vendor 12,5545.29,Posted
+TXN-10370,2025-03-11,Operations,5030-Cloud Hosting,Vendor 12,1453.57,Posted
+TXN-10371,2025-03-11,HR,5030-Cloud Hosting,Vendor 15,2684.86,Posted
+TXN-10372,2025-03-11,Operations,5030-Cloud Hosting,Vendor 2,1824.68,Posted
+TXN-10373,2025-03-11,R&D,5020-Consulting,Vendor 17,8877.29,Posted
+TXN-10374,2025-03-11,Operations,5050-Office Supplies,Vendor 15,2988.38,Posted
+TXN-10375,2025-03-11,HR,5050-Office Supplies,Vendor 2,631.53,Posted
+TXN-10376,2025-03-12,Sales,5060-Rent,Vendor 3,311.2,Posted
+TXN-10377,2025-03-12,Marketing,5060-Rent,Vendor 15,345.65,Posted
+TXN-10378,2025-03-12,HR,5030-Cloud Hosting,Vendor 19,5108.2,Posted
+TXN-10379,2025-03-12,Marketing,5050-Office Supplies,Vendor 1,6300.66,Posted
+TXN-10380,2025-03-12,IT Infrastructure,5040-Travel,Vendor 2,2033.33,Posted
+TXN-10381,2025-03-12,HR,5030-Cloud Hosting,Vendor 12,147.44,Posted
+TXN-10382,2025-03-12,IT Infrastructure,5040-Travel,Vendor 8,1061.43,Posted
+TXN-10383,2025-03-12,Sales,5060-Rent,Vendor 8,441.67,Posted
+TXN-10384,2025-03-13,R&D,5020-Consulting,Vendor 3,2247.09,Posted
+TXN-10385,2025-03-13,HR,5040-Travel,Vendor 3,149.6,Posted
+TXN-10386,2025-03-13,Sales,5060-Rent,Vendor 14,1030.12,Posted
+TXN-10387,2025-03-13,Marketing,5060-Rent,Vendor 4,1835.47,Posted
+TXN-10388,2025-03-13,Marketing,5060-Rent,Vendor 2,483.38,Posted
+TXN-10389,2025-03-14,HR,5010-Software,Vendor 18,117.53,Posted
+TXN-10390,2025-03-14,R&D,5020-Consulting,Vendor 6,1080.71,Posted
+TXN-10391,2025-03-14,Operations,5050-Office Supplies,Vendor 6,2222.41,Posted
+TXN-10392,2025-03-14,Marketing,5030-Cloud Hosting,Vendor 9,1082.35,Posted
+TXN-10393,2025-03-14,Marketing,5040-Travel,Vendor 15,6575.77,Posted
+TXN-10394,2025-03-15,R&D,5040-Travel,Vendor 10,1918.33,Posted
+TXN-10395,2025-03-15,IT Infrastructure,5040-Travel,Vendor 1,212.76,Posted
+TXN-10396,2025-03-15,Marketing,5010-Software,Vendor 1,747.62,Posted
+TXN-10397,2025-03-15,HR,5040-Travel,Vendor 7,764.29,Posted
+TXN-10398,2025-03-15,IT Infrastructure,5060-Rent,Vendor 14,1357.4,Posted
+TXN-10399,2025-03-15,IT Infrastructure,5020-Consulting,Vendor 10,2684.25,Posted
+TXN-10400,2025-03-15,Sales,5010-Software,Vendor 3,4640.83,Posted
+TXN-10401,2025-03-15,Operations,5060-Rent,Vendor 9,1454.98,Posted
+TXN-10402,2025-03-16,IT Infrastructure,5040-Travel,Vendor 18,3171.56,Posted
+TXN-10403,2025-03-16,Sales,5060-Rent,Vendor 15,2394.71,Posted
+TXN-10404,2025-03-16,Operations,5030-Cloud Hosting,Vendor 4,3478.08,Posted
+TXN-10405,2025-03-17,IT Infrastructure,5060-Rent,Vendor 3,1003.09,Posted
+TXN-10406,2025-03-17,Marketing,5040-Travel,Vendor 11,2072.86,Posted
+TXN-10407,2025-03-17,IT Infrastructure,5060-Rent,Vendor 12,1449.44,Posted
+TXN-10408,2025-03-17,HR,5010-Software,Vendor 19,3181.05,Posted
+TXN-10409,2025-03-17,R&D,5040-Travel,Vendor 19,2145.5,Posted
+TXN-10410,2025-03-17,Sales,5020-Consulting,Vendor 19,131.62,Posted
+TXN-10411,2025-03-17,R&D,5050-Office Supplies,Vendor 9,8512.95,Posted
+TXN-10412,2025-03-17,Operations,5030-Cloud Hosting,Vendor 19,227.56,Posted
+TXN-10413,2025-03-18,HR,5050-Office Supplies,Vendor 15,912.96,Posted
+TXN-10414,2025-03-18,Marketing,5040-Travel,Vendor 5,387.09,Posted
+TXN-10415,2025-03-18,Sales,5040-Travel,Vendor 18,795.53,Posted
+TXN-10416,2025-03-18,Marketing,5030-Cloud Hosting,Vendor 4,1396.53,Posted
+TXN-10417,2025-03-18,IT Infrastructure,5050-Office Supplies,Vendor 4,855.07,Posted
+TXN-10418,2025-03-19,IT Infrastructure,5040-Travel,Vendor 10,921.55,Posted
+TXN-10419,2025-03-19,Operations,5030-Cloud Hosting,Vendor 12,600.81,Posted
+TXN-10420,2025-03-19,Operations,5050-Office Supplies,Vendor 15,1040.51,Posted
+TXN-10421,2025-03-19,Marketing,5030-Cloud Hosting,Vendor 4,2344.17,Posted
+TXN-10422,2025-03-20,IT Infrastructure,5040-Travel,Vendor 2,799.85,Posted
+TXN-10423,2025-03-20,HR,5050-Office Supplies,Vendor 9,207.46,Posted
+TXN-10424,2025-03-20,R&D,5060-Rent,Vendor 15,3169.01,Posted
+TXN-10425,2025-03-20,R&D,5010-Software,Vendor 7,1729.82,Posted
+TXN-10426,2025-03-20,R&D,5010-Software,Vendor 2,844.11,Posted
+TXN-10427,2025-03-20,Operations,5050-Office Supplies,Vendor 1,113.61,Posted
+TXN-10428,2025-03-20,Sales,5040-Travel,Vendor 15,5350.92,Posted
+TXN-10429,2025-03-20,Operations,5020-Consulting,Vendor 14,214.51,Posted
+TXN-10430,2025-03-21,HR,5020-Consulting,Vendor 9,1760.23,Posted
+TXN-10431,2025-03-21,Marketing,5050-Office Supplies,Vendor 11,528.95,Posted
+TXN-10432,2025-03-21,Sales,5010-Software,Vendor 11,536.59,Posted
+TXN-10433,2025-03-21,HR,5050-Office Supplies,Vendor 17,1243.78,Posted
+TXN-10434,2025-03-22,Sales,5040-Travel,Vendor 6,3095.04,Posted
+TXN-10435,2025-03-22,Sales,5030-Cloud Hosting,Vendor 18,278.04,Posted
+TXN-10436,2025-03-22,R&D,5020-Consulting,Vendor 5,296.82,Posted
+TXN-10437,2025-03-23,IT Infrastructure,5050-Office Supplies,Vendor 3,1632.49,Posted
+TXN-10438,2025-03-23,R&D,5050-Office Supplies,Vendor 5,4174.31,Posted
+TXN-10439,2025-03-23,Marketing,5010-Software,Vendor 12,1418.03,Posted
+TXN-10440,2025-03-23,IT Infrastructure,5040-Travel,Vendor 11,6572.13,Posted
+TXN-10441,2025-03-23,R&D,5020-Consulting,Vendor 7,685.42,Posted
+TXN-10442,2025-03-23,Operations,5020-Consulting,Vendor 6,729.32,Posted
+TXN-10443,2025-03-24,R&D,5050-Office Supplies,Vendor 18,332.43,Posted
+TXN-10444,2025-03-24,IT Infrastructure,5040-Travel,Vendor 18,1778.68,Posted
+TXN-10445,2025-03-24,HR,5010-Software,Vendor 6,2068.62,Posted
+TXN-10446,2025-03-24,HR,5060-Rent,Vendor 1,542.17,Posted
+TXN-10447,2025-03-24,IT Infrastructure,5030-Cloud Hosting,Vendor 18,1824.45,Posted
+TXN-10448,2025-03-24,IT Infrastructure,5010-Software,Vendor 15,2765.7,Posted
+TXN-10449,2025-03-25,Sales,5030-Cloud Hosting,Vendor 14,4109.36,Posted
+TXN-10450,2025-03-25,Sales,5010-Software,Vendor 16,1476.72,Posted
+TXN-10451,2025-03-25,R&D,5050-Office Supplies,Vendor 9,1749.29,Posted
+TXN-10452,2025-03-26,R&D,5040-Travel,Vendor 6,360.26,Posted
+TXN-10453,2025-03-26,Marketing,5010-Software,Vendor 16,883.61,Posted
+TXN-10454,2025-03-26,HR,5010-Software,Vendor 9,242.26,Posted
+TXN-10455,2025-03-26,Operations,5040-Travel,Vendor 6,1676.93,Posted
+TXN-10456,2025-03-27,Sales,5060-Rent,Vendor 2,964.84,Posted
+TXN-10457,2025-03-27,IT Infrastructure,5050-Office Supplies,Vendor 19,2497.85,Posted
+TXN-10458,2025-03-27,HR,5030-Cloud Hosting,Vendor 7,806.62,Posted
+TXN-10459,2025-03-27,Marketing,5050-Office Supplies,Vendor 12,688.64,Posted
+TXN-10460,2025-03-27,IT Infrastructure,5050-Office Supplies,Vendor 1,818.07,Posted
+TXN-10461,2025-03-27,Marketing,5010-Software,Vendor 6,981.61,Posted
+TXN-10462,2025-03-27,IT Infrastructure,5030-Cloud Hosting,Vendor 14,1487.42,Posted
+TXN-10463,2025-03-27,R&D,5020-Consulting,Vendor 9,2236.58,Posted
+TXN-10464,2025-03-28,HR,5020-Consulting,Vendor 2,4638.62,Posted
+TXN-10465,2025-03-28,R&D,5040-Travel,Vendor 12,138.96,Posted
+TXN-10466,2025-03-28,HR,5020-Consulting,Vendor 15,1221.8,Posted
+TXN-10467,2025-03-28,Sales,5040-Travel,Vendor 16,1504.38,Posted
+TXN-10468,2025-03-28,R&D,5060-Rent,Vendor 11,1999.43,Posted
+TXN-10469,2025-03-29,HR,5030-Cloud Hosting,Vendor 15,111.39,Posted
+TXN-10470,2025-03-29,HR,5040-Travel,Vendor 4,4740.35,Posted
+TXN-10471,2025-03-29,Operations,5030-Cloud Hosting,Vendor 13,193.24,Posted
+TXN-10472,2025-03-29,R&D,5030-Cloud Hosting,Vendor 4,260.41,Posted
+TXN-10473,2025-03-29,HR,5040-Travel,Vendor 15,1763.43,Posted
+TXN-10474,2025-03-29,Sales,5030-Cloud Hosting,Vendor 10,1404.58,Posted
+TXN-10475,2025-03-29,Sales,5060-Rent,Vendor 17,1988.97,Posted
+TXN-10476,2025-03-30,Sales,5020-Consulting,Vendor 11,294.97,Posted
+TXN-10477,2025-03-30,Sales,5020-Consulting,Vendor 7,2512.52,Posted
+TXN-10478,2025-03-30,Marketing,5020-Consulting,Vendor 4,407.27,Posted
+TXN-10479,2025-03-30,Sales,5040-Travel,Vendor 1,236.59,Posted
+TXN-10480,2025-03-30,Sales,5050-Office Supplies,Vendor 13,1604.21,Posted
+TXN-10481,2025-03-30,R&D,5060-Rent,Vendor 9,1185.95,Posted
+TXN-10482,2025-03-30,IT Infrastructure,5010-Software,Vendor 10,1660.26,Posted
+TXN-10483,2025-03-31,IT Infrastructure,5030-Cloud Hosting,Vendor 18,2374.78,Posted
+TXN-10484,2025-03-31,Operations,5040-Travel,Vendor 10,926.79,Posted
+TXN-10485,2025-03-31,Marketing,5020-Consulting,Vendor 10,2282.86,Posted
+TXN-10486,2025-04-01,IT Infrastructure,5050-Office Supplies,Vendor 3,375.91,Posted
+TXN-10487,2025-04-01,Sales,5020-Consulting,Vendor 17,1060.52,Posted
+TXN-10488,2025-04-01,R&D,5050-Office Supplies,Vendor 7,1640.71,Posted
+TXN-10489,2025-04-02,IT Infrastructure,5010-Software,Vendor 2,843.67,Posted
+TXN-10490,2025-04-02,Operations,5050-Office Supplies,Vendor 10,1789.78,Posted
+TXN-10491,2025-04-02,R&D,5050-Office Supplies,Vendor 17,1996.63,Posted
+TXN-10492,2025-04-02,Operations,5040-Travel,Vendor 4,2661.46,Posted
+TXN-10493,2025-04-02,IT Infrastructure,5060-Rent,Vendor 7,1395.5,Posted
+TXN-10494,2025-04-03,R&D,5040-Travel,Vendor 1,234.33,Posted
+TXN-10495,2025-04-03,Sales,5030-Cloud Hosting,Vendor 1,869.21,Posted
+TXN-10496,2025-04-03,Operations,5060-Rent,Vendor 4,757.75,Posted
+TXN-10497,2025-04-03,HR,5010-Software,Vendor 5,2774.47,Posted
+TXN-10498,2025-04-03,Sales,5030-Cloud Hosting,Vendor 8,1633.18,Posted
+TXN-10499,2025-04-03,R&D,5020-Consulting,Vendor 12,1809.77,Posted
+TXN-10500,2025-04-03,HR,5020-Consulting,Vendor 6,707.45,Posted
+TXN-10501,2025-04-04,Sales,5020-Consulting,Vendor 3,776.35,Posted
+TXN-10502,2025-04-04,IT Infrastructure,5060-Rent,Vendor 12,708.73,Posted
+TXN-10503,2025-04-04,IT Infrastructure,5040-Travel,Vendor 15,4992.12,Posted
+TXN-10504,2025-04-04,Marketing,5020-Consulting,Vendor 16,252.51,Posted
+TXN-10505,2025-04-05,Marketing,5040-Travel,Vendor 3,6063.75,Posted
+TXN-10506,2025-04-05,R&D,5050-Office Supplies,Vendor 19,291.46,Posted
+TXN-10507,2025-04-05,R&D,5050-Office Supplies,Vendor 12,2104.43,Posted
+TXN-10508,2025-04-05,Marketing,5010-Software,Vendor 6,1770.09,Posted
+TXN-10509,2025-04-05,R&D,5020-Consulting,Vendor 1,2426.06,Posted
+TXN-10510,2025-04-05,HR,5040-Travel,Vendor 2,2385.08,Posted
+TXN-10511,2025-04-06,R&D,5040-Travel,Vendor 18,641.73,Posted
+TXN-10512,2025-04-06,HR,5020-Consulting,Vendor 2,819.26,Posted
+TXN-10513,2025-04-06,Operations,5010-Software,Vendor 11,1310.49,Posted
+TXN-10514,2025-04-06,Operations,5040-Travel,Vendor 4,592.14,Posted
+TXN-10515,2025-04-06,IT Infrastructure,5060-Rent,Vendor 11,3877.24,Posted
+TXN-10516,2025-04-06,R&D,5040-Travel,Vendor 10,2960.0,Posted
+TXN-10517,2025-04-06,Sales,5010-Software,Vendor 18,285.57,Posted
+TXN-10518,2025-04-07,Operations,5060-Rent,Vendor 14,3255.29,Posted
+TXN-10519,2025-04-07,R&D,5030-Cloud Hosting,Vendor 14,2441.19,Posted
+TXN-10520,2025-04-07,Marketing,5050-Office Supplies,Vendor 2,134.74,Posted
+TXN-10521,2025-04-07,Operations,5020-Consulting,Vendor 18,4831.14,Posted
+TXN-10522,2025-04-07,IT Infrastructure,5010-Software,Vendor 1,1384.08,Posted
+TXN-10523,2025-04-07,Sales,5060-Rent,Vendor 16,324.84,Posted
+TXN-10524,2025-04-07,R&D,5060-Rent,Vendor 3,388.26,Posted
+TXN-10525,2025-04-08,Marketing,5060-Rent,Vendor 2,337.39,Posted
+TXN-10526,2025-04-08,HR,5020-Consulting,Vendor 15,1158.16,Posted
+TXN-10527,2025-04-08,Sales,5050-Office Supplies,Vendor 13,1296.19,Posted
+TXN-10528,2025-04-08,R&D,5040-Travel,Vendor 6,968.42,Posted
+TXN-10529,2025-04-08,HR,5030-Cloud Hosting,Vendor 19,1549.75,Posted
+TXN-10530,2025-04-09,HR,5030-Cloud Hosting,Vendor 2,419.39,Posted
+TXN-10531,2025-04-09,R&D,5030-Cloud Hosting,Vendor 15,2205.18,Posted
+TXN-10532,2025-04-09,Marketing,5030-Cloud Hosting,Vendor 9,380.7,Posted
+TXN-10533,2025-04-09,Sales,5060-Rent,Vendor 7,562.62,Posted
+TXN-10534,2025-04-09,Sales,5010-Software,Vendor 7,1168.26,Posted
+TXN-10535,2025-04-10,HR,5040-Travel,Vendor 4,648.47,Posted
+TXN-10536,2025-04-10,Sales,5060-Rent,Vendor 5,932.91,Posted
+TXN-10537,2025-04-10,Sales,5060-Rent,Vendor 3,1692.3,Posted
+TXN-10538,2025-04-11,Sales,5060-Rent,Vendor 5,2736.37,Posted
+TXN-10539,2025-04-11,HR,5060-Rent,Vendor 2,5078.97,Posted
+TXN-10540,2025-04-11,R&D,5030-Cloud Hosting,Vendor 6,913.42,Posted
+TXN-10541,2025-04-11,HR,5020-Consulting,Vendor 7,1813.73,Posted
+TXN-10542,2025-04-11,HR,5010-Software,Vendor 18,686.24,Posted
+TXN-10543,2025-04-12,HR,5050-Office Supplies,Vendor 13,2525.73,Posted
+TXN-10544,2025-04-12,Sales,5010-Software,Vendor 11,274.36,Posted
+TXN-10545,2025-04-12,HR,5040-Travel,Vendor 4,563.91,Posted
+TXN-10546,2025-04-12,IT Infrastructure,5040-Travel,Vendor 18,518.54,Posted
+TXN-10547,2025-04-12,Operations,5010-Software,Vendor 6,1528.19,Posted
+TXN-10548,2025-04-12,IT Infrastructure,5050-Office Supplies,Vendor 17,4792.94,Posted
+TXN-10549,2025-04-12,Marketing,5010-Software,Vendor 9,1712.46,Posted
+TXN-10550,2025-04-13,IT Infrastructure,5040-Travel,Vendor 1,219.24,Posted
+TXN-10551,2025-04-13,IT Infrastructure,5020-Consulting,Vendor 8,158.78,Posted
+TXN-10552,2025-04-13,HR,5040-Travel,Vendor 2,1620.86,Posted
+TXN-10553,2025-04-14,R&D,5010-Software,Vendor 13,1527.62,Posted
+TXN-10554,2025-04-14,Operations,5050-Office Supplies,Vendor 1,2105.88,Posted
+TXN-10555,2025-04-14,HR,5050-Office Supplies,Vendor 11,158.15,Posted
+TXN-10556,2025-04-14,Marketing,5050-Office Supplies,Vendor 3,2530.22,Posted
+TXN-10557,2025-04-14,Marketing,5050-Office Supplies,Vendor 8,1165.68,Posted
+TXN-10558,2025-04-15,R&D,5040-Travel,Vendor 15,745.49,Posted
+TXN-10559,2025-04-15,Operations,5030-Cloud Hosting,Vendor 11,407.21,Posted
+TXN-10560,2025-04-15,IT Infrastructure,5050-Office Supplies,Vendor 8,1296.48,Posted
+TXN-10561,2025-04-15,IT Infrastructure,5060-Rent,Vendor 16,229.35,Posted
+TXN-10562,2025-04-16,Marketing,5010-Software,Vendor 15,5693.98,Posted
+TXN-10563,2025-04-16,IT Infrastructure,5030-Cloud Hosting,Vendor 4,294.12,Posted
+TXN-10564,2025-04-16,R&D,5010-Software,Vendor 18,1648.83,Posted
+TXN-10565,2025-04-16,IT Infrastructure,5050-Office Supplies,Vendor 8,300.7,Posted
+TXN-10566,2025-04-16,IT Infrastructure,5060-Rent,Vendor 16,1098.34,Posted
+TXN-10567,2025-04-16,Sales,5020-Consulting,Vendor 15,305.61,Posted
+TXN-10568,2025-04-17,IT Infrastructure,5010-Software,Vendor 14,798.22,Posted
+TXN-10569,2025-04-17,Sales,5020-Consulting,Vendor 12,1523.76,Posted
+TXN-10570,2025-04-17,Operations,5060-Rent,Vendor 3,119.19,Posted
+TXN-10571,2025-04-18,R&D,5010-Software,Vendor 15,548.48,Posted
+TXN-10572,2025-04-18,IT Infrastructure,5050-Office Supplies,Vendor 8,2210.0,Posted
+TXN-10573,2025-04-18,R&D,5060-Rent,Vendor 12,2347.16,Posted
+TXN-10574,2025-04-18,Operations,5060-Rent,Vendor 13,2198.69,Posted
+TXN-10575,2025-04-19,IT Infrastructure,5050-Office Supplies,Vendor 18,1834.19,Posted
+TXN-10576,2025-04-19,Operations,5040-Travel,Vendor 11,2079.65,Posted
+TXN-10577,2025-04-19,HR,5050-Office Supplies,Vendor 3,2140.49,Posted
+TXN-10578,2025-04-19,R&D,5030-Cloud Hosting,Vendor 7,346.55,Posted
+TXN-10579,2025-04-20,Marketing,5050-Office Supplies,Vendor 10,361.66,Posted
+TXN-10580,2025-04-20,IT Infrastructure,5010-Software,Vendor 3,2130.52,Posted
+TXN-10581,2025-04-20,Marketing,5040-Travel,Vendor 10,256.67,Posted
+TXN-10582,2025-04-20,IT Infrastructure,5030-Cloud Hosting,Vendor 14,658.62,Posted
+TXN-10583,2025-04-20,Operations,5030-Cloud Hosting,Vendor 16,1846.57,Posted
+TXN-10584,2025-04-20,HR,5010-Software,Vendor 10,1311.92,Posted
+TXN-10585,2025-04-21,IT Infrastructure,5060-Rent,Vendor 14,2781.77,Posted
+TXN-10586,2025-04-21,R&D,5010-Software,Vendor 11,4857.76,Posted
+TXN-10587,2025-04-21,Operations,5060-Rent,Vendor 5,3239.1,Posted
+TXN-10588,2025-04-21,IT Infrastructure,5040-Travel,Vendor 4,830.12,Posted
+TXN-10589,2025-04-22,IT Infrastructure,5060-Rent,Vendor 5,1448.58,Posted
+TXN-10590,2025-04-22,R&D,5050-Office Supplies,Vendor 7,102.82,Posted
+TXN-10591,2025-04-22,HR,5020-Consulting,Vendor 4,1549.76,Posted
+TXN-10592,2025-04-22,Sales,5010-Software,Vendor 17,835.73,Posted
+TXN-10593,2025-04-22,Sales,5050-Office Supplies,Vendor 5,1642.2,Posted
+TXN-10594,2025-04-22,IT Infrastructure,5040-Travel,Vendor 2,1333.72,Posted
+TXN-10595,2025-04-23,IT Infrastructure,5030-Cloud Hosting,Vendor 19,571.7,Posted
+TXN-10596,2025-04-23,Marketing,5060-Rent,Vendor 13,342.01,Posted
+TXN-10597,2025-04-23,Sales,5060-Rent,Vendor 4,6123.51,Posted
+TXN-10598,2025-04-23,Operations,5050-Office Supplies,Vendor 17,339.29,Posted
+TXN-10599,2025-04-23,Marketing,5020-Consulting,Vendor 17,796.44,Posted
+TXN-10600,2025-04-23,Operations,5040-Travel,Vendor 11,2095.8,Posted
+TXN-10601,2025-04-23,Marketing,5040-Travel,Vendor 1,633.82,Posted
+TXN-10602,2025-04-23,Marketing,5060-Rent,Vendor 16,1616.63,Posted
+TXN-10603,2025-04-24,R&D,5060-Rent,Vendor 7,2162.85,Posted
+TXN-10604,2025-04-24,Marketing,5020-Consulting,Vendor 10,1429.26,Posted
+TXN-10605,2025-04-24,IT Infrastructure,5030-Cloud Hosting,Vendor 17,139.82,Posted
+TXN-10606,2025-04-24,R&D,5060-Rent,Vendor 6,1424.57,Posted
+TXN-10607,2025-04-24,Marketing,5030-Cloud Hosting,Vendor 19,632.28,Posted
+TXN-10608,2025-04-25,Operations,5060-Rent,Vendor 5,483.39,Posted
+TXN-10609,2025-04-25,HR,5050-Office Supplies,Vendor 10,1083.51,Posted
+TXN-10610,2025-04-25,HR,5040-Travel,Vendor 4,314.91,Posted
+TXN-10611,2025-04-25,R&D,5020-Consulting,Vendor 4,3701.79,Posted
+TXN-10612,2025-04-26,Marketing,5060-Rent,Vendor 12,482.77,Posted
+TXN-10613,2025-04-26,Sales,5010-Software,Vendor 4,2187.71,Posted
+TXN-10614,2025-04-26,HR,5060-Rent,Vendor 10,598.49,Posted
+TXN-10615,2025-04-26,R&D,5060-Rent,Vendor 3,555.12,Posted
+TXN-10616,2025-04-26,Sales,5060-Rent,Vendor 16,530.62,Posted
+TXN-10617,2025-04-26,R&D,5020-Consulting,Vendor 6,2894.46,Posted
+TXN-10618,2025-04-26,Sales,5010-Software,Vendor 11,1102.89,Posted
+TXN-10619,2025-04-26,Sales,5020-Consulting,Vendor 4,3653.69,Posted
+TXN-10620,2025-04-27,Marketing,5030-Cloud Hosting,Vendor 15,740.06,Posted
+TXN-10621,2025-04-27,IT Infrastructure,5030-Cloud Hosting,Vendor 15,5061.33,Posted
+TXN-10622,2025-04-27,HR,5020-Consulting,Vendor 14,2739.24,Posted
+TXN-10623,2025-04-27,Marketing,5050-Office Supplies,Vendor 18,6068.61,Posted
+TXN-10624,2025-04-28,Operations,5020-Consulting,Vendor 17,418.29,Posted
+TXN-10625,2025-04-28,Operations,5030-Cloud Hosting,Vendor 12,5463.61,Posted
+TXN-10626,2025-04-28,Marketing,5050-Office Supplies,Vendor 18,281.72,Posted
+TXN-10627,2025-04-28,HR,5040-Travel,Vendor 7,911.9,Posted
+TXN-10628,2025-04-28,R&D,5010-Software,Vendor 2,1211.59,Posted
+TXN-10629,2025-04-28,Sales,5020-Consulting,Vendor 7,1273.12,Posted
+TXN-10630,2025-04-28,R&D,5010-Software,Vendor 6,1276.38,Posted
+TXN-10631,2025-04-29,R&D,5020-Consulting,Vendor 5,1094.5,Posted
+TXN-10632,2025-04-29,IT Infrastructure,5060-Rent,Vendor 2,2945.43,Posted
+TXN-10633,2025-04-29,IT Infrastructure,5020-Consulting,Vendor 19,3070.61,Posted
+TXN-10634,2025-04-29,HR,5060-Rent,Vendor 15,614.98,Posted
+TXN-10635,2025-04-29,R&D,5040-Travel,Vendor 3,760.02,Posted
+TXN-10636,2025-04-29,Operations,5010-Software,Vendor 7,437.27,Posted
+TXN-10637,2025-04-29,HR,5040-Travel,Vendor 4,1280.68,Posted
+TXN-10638,2025-04-29,R&D,5040-Travel,Vendor 8,1199.04,Posted
+TXN-10639,2025-04-30,R&D,5040-Travel,Vendor 9,3167.02,Posted
+TXN-10640,2025-04-30,IT Infrastructure,5040-Travel,Vendor 2,2317.7,Posted
+TXN-10641,2025-04-30,Marketing,5060-Rent,Vendor 12,731.62,Posted
+TXN-10642,2025-04-30,Marketing,5020-Consulting,Vendor 6,1133.17,Posted
+TXN-10643,2025-04-30,Sales,5010-Software,Vendor 11,859.71,Posted
+TXN-10644,2025-04-30,Operations,5050-Office Supplies,Vendor 12,5106.35,Posted
+TXN-10645,2025-04-30,IT Infrastructure,5040-Travel,Vendor 4,2461.5,Posted
+TXN-10646,2025-05-01,HR,5010-Software,Vendor 16,856.2,Posted
+TXN-10647,2025-05-01,R&D,5020-Consulting,Vendor 6,357.88,Posted
+TXN-10648,2025-05-01,Sales,5020-Consulting,Vendor 3,671.37,Posted
+TXN-10649,2025-05-01,HR,5030-Cloud Hosting,Vendor 11,3512.26,Posted
+TXN-10650,2025-05-01,R&D,5010-Software,Vendor 8,1467.38,Posted
+TXN-10651,2025-05-01,HR,5040-Travel,Vendor 5,2675.35,Posted
+TXN-10652,2025-05-01,Sales,5060-Rent,Vendor 19,1532.93,Posted
+TXN-10653,2025-05-02,Sales,5030-Cloud Hosting,Vendor 16,1155.42,Posted
+TXN-10654,2025-05-02,Marketing,5050-Office Supplies,Vendor 13,6313.13,Posted
+TXN-10655,2025-05-02,IT Infrastructure,5040-Travel,Vendor 5,8853.31,Posted
+TXN-10656,2025-05-03,Operations,5010-Software,Vendor 2,144.71,Posted
+TXN-10657,2025-05-03,IT Infrastructure,5060-Rent,Vendor 3,814.7,Posted
+TXN-10658,2025-05-03,HR,5040-Travel,Vendor 6,3029.76,Posted
+TXN-10659,2025-05-04,R&D,5030-Cloud Hosting,Vendor 11,2238.07,Posted
+TXN-10660,2025-05-04,IT Infrastructure,5040-Travel,Vendor 2,1022.24,Posted
+TXN-10661,2025-05-04,R&D,5030-Cloud Hosting,Vendor 16,3278.17,Posted
+TXN-10662,2025-05-04,HR,5040-Travel,Vendor 1,2722.86,Posted
+TXN-10663,2025-05-05,Operations,5040-Travel,Vendor 19,3636.51,Posted
+TXN-10664,2025-05-05,IT Infrastructure,5020-Consulting,Vendor 16,1527.01,Posted
+TXN-10665,2025-05-05,R&D,5010-Software,Vendor 11,2862.5,Posted
+TXN-10666,2025-05-05,R&D,5030-Cloud Hosting,Vendor 16,1608.27,Posted
+TXN-10667,2025-05-05,IT Infrastructure,5020-Consulting,Vendor 15,667.33,Posted
+TXN-10668,2025-05-05,R&D,5010-Software,Vendor 1,1697.54,Posted
+TXN-10669,2025-05-05,Operations,5040-Travel,Vendor 15,3119.21,Posted
+TXN-10670,2025-05-06,HR,5030-Cloud Hosting,Vendor 14,2260.53,Posted
+TXN-10671,2025-05-06,Sales,5060-Rent,Vendor 17,3609.0,Posted
+TXN-10672,2025-05-06,Marketing,5030-Cloud Hosting,Vendor 15,191.37,Posted
+TXN-10673,2025-05-06,IT Infrastructure,5030-Cloud Hosting,Vendor 2,3665.88,Posted
+TXN-10674,2025-05-06,R&D,5060-Rent,Vendor 8,485.69,Posted
+TXN-10675,2025-05-06,R&D,5030-Cloud Hosting,Vendor 14,898.49,Posted
+TXN-10676,2025-05-06,Operations,5040-Travel,Vendor 8,127.25,Posted
+TXN-10677,2025-05-06,R&D,5020-Consulting,Vendor 16,5182.87,Posted
+TXN-10678,2025-05-07,Operations,5060-Rent,Vendor 10,3724.81,Posted
+TXN-10679,2025-05-07,Operations,5010-Software,Vendor 13,2843.83,Posted
+TXN-10680,2025-05-07,R&D,5010-Software,Vendor 19,645.23,Posted
+TXN-10681,2025-05-08,R&D,5060-Rent,Vendor 4,292.17,Posted
+TXN-10682,2025-05-08,Marketing,5060-Rent,Vendor 1,170.83,Posted
+TXN-10683,2025-05-08,Sales,5010-Software,Vendor 3,2710.47,Posted
+TXN-10684,2025-05-08,Marketing,5030-Cloud Hosting,Vendor 9,2065.37,Posted
+TXN-10685,2025-05-08,Sales,5030-Cloud Hosting,Vendor 8,3597.94,Posted
+TXN-10686,2025-05-08,IT Infrastructure,5010-Software,Vendor 9,701.63,Posted
+TXN-10687,2025-05-09,R&D,5010-Software,Vendor 12,603.82,Posted
+TXN-10688,2025-05-09,Operations,5030-Cloud Hosting,Vendor 18,8184.83,Posted
+TXN-10689,2025-05-09,HR,5050-Office Supplies,Vendor 5,198.63,Posted
+TXN-10690,2025-05-09,Operations,5040-Travel,Vendor 9,283.14,Posted
+TXN-10691,2025-05-09,HR,5010-Software,Vendor 17,1759.36,Posted
+TXN-10692,2025-05-09,IT Infrastructure,5010-Software,Vendor 15,138.2,Posted
+TXN-10693,2025-05-09,Sales,5060-Rent,Vendor 15,955.32,Posted
+TXN-10694,2025-05-10,Operations,5020-Consulting,Vendor 8,370.17,Posted
+TXN-10695,2025-05-10,HR,5030-Cloud Hosting,Vendor 19,983.85,Posted
+TXN-10696,2025-05-10,Sales,5040-Travel,Vendor 12,265.1,Posted
+TXN-10697,2025-05-11,Operations,5060-Rent,Vendor 2,557.09,Posted
+TXN-10698,2025-05-11,Operations,5010-Software,Vendor 6,1158.64,Posted
+TXN-10699,2025-05-11,R&D,5060-Rent,Vendor 17,540.33,Posted
+TXN-10700,2025-05-11,HR,5040-Travel,Vendor 8,1489.78,Posted
+TXN-10701,2025-05-11,Operations,5040-Travel,Vendor 13,1051.3,Posted
+TXN-10702,2025-05-11,Marketing,5030-Cloud Hosting,Vendor 3,427.42,Posted
+TXN-10703,2025-05-11,HR,5040-Travel,Vendor 13,447.88,Posted
+TXN-10704,2025-05-12,R&D,5010-Software,Vendor 8,111.54,Posted
+TXN-10705,2025-05-12,Operations,5040-Travel,Vendor 7,271.48,Posted
+TXN-10706,2025-05-12,HR,5050-Office Supplies,Vendor 10,1373.12,Posted
+TXN-10707,2025-05-12,Operations,5060-Rent,Vendor 9,4126.95,Posted
+TXN-10708,2025-05-12,HR,5010-Software,Vendor 19,1539.84,Posted
+TXN-10709,2025-05-12,Operations,5010-Software,Vendor 11,145.18,Posted
+TXN-10710,2025-05-12,R&D,5030-Cloud Hosting,Vendor 14,998.38,Posted
+TXN-10711,2025-05-13,Marketing,5040-Travel,Vendor 8,2063.22,Posted
+TXN-10712,2025-05-13,HR,5050-Office Supplies,Vendor 16,547.96,Posted
+TXN-10713,2025-05-13,Marketing,5050-Office Supplies,Vendor 5,2001.06,Posted
+TXN-10714,2025-05-13,Marketing,5030-Cloud Hosting,Vendor 13,103.16,Posted
+TXN-10715,2025-05-13,Marketing,5040-Travel,Vendor 2,1840.36,Posted
+TXN-10716,2025-05-13,Sales,5060-Rent,Vendor 4,2516.82,Posted
+TXN-10717,2025-05-13,IT Infrastructure,5050-Office Supplies,Vendor 8,293.5,Posted
+TXN-10718,2025-05-14,Marketing,5010-Software,Vendor 19,876.88,Posted
+TXN-10719,2025-05-14,Marketing,5020-Consulting,Vendor 9,1756.52,Posted
+TXN-10720,2025-05-14,IT Infrastructure,5020-Consulting,Vendor 13,3384.41,Posted
+TXN-10721,2025-05-14,IT Infrastructure,5060-Rent,Vendor 9,1616.3,Posted
+TXN-10722,2025-05-14,Marketing,5040-Travel,Vendor 6,382.84,Posted
+TXN-10723,2025-05-14,Operations,5050-Office Supplies,Vendor 6,3591.14,Posted
+TXN-10724,2025-05-15,R&D,5020-Consulting,Vendor 12,117.66,Posted
+TXN-10725,2025-05-15,Operations,5030-Cloud Hosting,Vendor 13,1098.3,Posted
+TXN-10726,2025-05-15,IT Infrastructure,5050-Office Supplies,Vendor 17,296.88,Posted
+TXN-10727,2025-05-15,Marketing,5010-Software,Vendor 11,204.64,Posted
+TXN-10728,2025-05-15,IT Infrastructure,5040-Travel,Vendor 9,1776.54,Posted
+TXN-10729,2025-05-16,R&D,5020-Consulting,Vendor 12,1438.44,Posted
+TXN-10730,2025-05-16,IT Infrastructure,5030-Cloud Hosting,Vendor 12,997.09,Posted
+TXN-10731,2025-05-16,Marketing,5030-Cloud Hosting,Vendor 4,1409.12,Posted
+TXN-10732,2025-05-16,Sales,5010-Software,Vendor 2,1219.23,Posted
+TXN-10733,2025-05-16,Sales,5050-Office Supplies,Vendor 5,1656.59,Posted
+TXN-10734,2025-05-16,Marketing,5010-Software,Vendor 19,4496.17,Posted
+TXN-10735,2025-05-16,HR,5020-Consulting,Vendor 3,1656.94,Posted
+TXN-10736,2025-05-17,Operations,5060-Rent,Vendor 17,1459.47,Posted
+TXN-10737,2025-05-17,R&D,5050-Office Supplies,Vendor 16,1236.0,Posted
+TXN-10738,2025-05-17,Sales,5040-Travel,Vendor 4,1330.41,Posted
+TXN-10739,2025-05-17,Marketing,5050-Office Supplies,Vendor 3,5464.68,Posted
+TXN-10740,2025-05-17,Operations,5050-Office Supplies,Vendor 14,827.27,Posted
+TXN-10741,2025-05-18,Operations,5030-Cloud Hosting,Vendor 18,361.57,Posted
+TXN-10742,2025-05-18,R&D,5030-Cloud Hosting,Vendor 10,338.6,Posted
+TXN-10743,2025-05-18,HR,5020-Consulting,Vendor 10,285.18,Posted
+TXN-10744,2025-05-18,Sales,5050-Office Supplies,Vendor 6,1063.7,Posted
+TXN-10745,2025-05-18,Sales,5020-Consulting,Vendor 17,2729.16,Posted
+TXN-10746,2025-05-18,HR,5050-Office Supplies,Vendor 17,1500.45,Posted
+TXN-10747,2025-05-18,HR,5060-Rent,Vendor 5,1269.39,Posted
+TXN-10748,2025-05-18,Marketing,5010-Software,Vendor 13,1239.76,Posted
+TXN-10749,2025-05-19,HR,5030-Cloud Hosting,Vendor 3,2835.33,Posted
+TXN-10750,2025-05-19,IT Infrastructure,5020-Consulting,Vendor 19,550.31,Posted
+TXN-10751,2025-05-19,IT Infrastructure,5010-Software,Vendor 12,1162.23,Posted
+TXN-10752,2025-05-19,HR,5040-Travel,Vendor 4,2764.02,Posted
+TXN-10753,2025-05-19,Operations,5010-Software,Vendor 3,1402.92,Posted
+TXN-10754,2025-05-19,HR,5020-Consulting,Vendor 19,1106.78,Posted
+TXN-10755,2025-05-19,HR,5010-Software,Vendor 18,2089.65,Posted
+TXN-10756,2025-05-19,R&D,5010-Software,Vendor 19,2459.09,Posted
+TXN-10757,2025-05-20,HR,5040-Travel,Vendor 5,2971.48,Posted
+TXN-10758,2025-05-20,Sales,5060-Rent,Vendor 2,487.67,Posted
+TXN-10759,2025-05-20,Operations,5060-Rent,Vendor 12,1243.38,Posted
+TXN-10760,2025-05-20,R&D,5050-Office Supplies,Vendor 7,2154.81,Posted
+TXN-10761,2025-05-20,Sales,5050-Office Supplies,Vendor 9,2471.35,Posted
+TXN-10762,2025-05-20,R&D,5020-Consulting,Vendor 17,4424.73,Posted
+TXN-10763,2025-05-20,Operations,5030-Cloud Hosting,Vendor 12,1178.94,Posted
+TXN-10764,2025-05-21,Sales,5060-Rent,Vendor 4,1432.76,Posted
+TXN-10765,2025-05-21,R&D,5030-Cloud Hosting,Vendor 15,440.77,Posted
+TXN-10766,2025-05-21,Operations,5030-Cloud Hosting,Vendor 19,3865.05,Posted
+TXN-10767,2025-05-21,IT Infrastructure,5010-Software,Vendor 14,3110.15,Posted
+TXN-10768,2025-05-21,Operations,5020-Consulting,Vendor 15,979.01,Posted
+TXN-10769,2025-05-21,Sales,5050-Office Supplies,Vendor 9,1070.78,Posted
+TXN-10770,2025-05-22,HR,5010-Software,Vendor 1,1633.3,Posted
+TXN-10771,2025-05-22,Operations,5060-Rent,Vendor 5,543.67,Posted
+TXN-10772,2025-05-22,HR,5060-Rent,Vendor 16,474.13,Posted
+TXN-10773,2025-05-22,IT Infrastructure,5060-Rent,Vendor 11,1845.79,Posted
+TXN-10774,2025-05-22,Operations,5060-Rent,Vendor 16,1223.71,Posted
+TXN-10775,2025-05-22,Sales,5020-Consulting,Vendor 3,708.36,Posted
+TXN-10776,2025-05-23,Marketing,5060-Rent,Vendor 19,113.35,Posted
+TXN-10777,2025-05-23,IT Infrastructure,5020-Consulting,Vendor 7,2744.49,Posted
+TXN-10778,2025-05-23,R&D,5030-Cloud Hosting,Vendor 5,2108.37,Posted
+TXN-10779,2025-05-23,Marketing,5050-Office Supplies,Vendor 8,108.52,Posted
+TXN-10780,2025-05-23,HR,5040-Travel,Vendor 1,1711.79,Posted
+TXN-10781,2025-05-23,Sales,5030-Cloud Hosting,Vendor 8,1526.34,Posted
+TXN-10782,2025-05-23,Marketing,5020-Consulting,Vendor 4,221.24,Posted
+TXN-10783,2025-05-23,R&D,5060-Rent,Vendor 8,648.22,Posted
+TXN-10784,2025-05-24,R&D,5040-Travel,Vendor 2,1390.72,Posted
+TXN-10785,2025-05-24,HR,5050-Office Supplies,Vendor 6,259.61,Posted
+TXN-10786,2025-05-24,IT Infrastructure,5010-Software,Vendor 10,1141.59,Posted
+TXN-10787,2025-05-24,Sales,5060-Rent,Vendor 2,177.3,Posted
+TXN-10788,2025-05-24,IT Infrastructure,5050-Office Supplies,Vendor 2,1748.76,Posted
+TXN-10789,2025-05-25,R&D,5060-Rent,Vendor 7,564.21,Posted
+TXN-10790,2025-05-25,HR,5010-Software,Vendor 13,1294.37,Posted
+TXN-10791,2025-05-25,HR,5030-Cloud Hosting,Vendor 17,764.32,Posted
+TXN-10792,2025-05-25,R&D,5020-Consulting,Vendor 8,1422.34,Posted
+TXN-10793,2025-05-25,R&D,5040-Travel,Vendor 18,1620.4,Posted
+TXN-10794,2025-05-26,IT Infrastructure,5040-Travel,Vendor 15,501.14,Posted
+TXN-10795,2025-05-26,R&D,5060-Rent,Vendor 13,1201.48,Posted
+TXN-10796,2025-05-26,Operations,5020-Consulting,Vendor 14,869.86,Posted
+TXN-10797,2025-05-26,IT Infrastructure,5020-Consulting,Vendor 11,2704.02,Posted
+TXN-10798,2025-05-26,Marketing,5040-Travel,Vendor 17,872.37,Posted
+TXN-10799,2025-05-26,IT Infrastructure,5050-Office Supplies,Vendor 6,171.98,Posted
+TXN-10800,2025-05-26,Marketing,5020-Consulting,Vendor 6,1043.76,Posted
+TXN-10801,2025-05-26,HR,5040-Travel,Vendor 11,2125.84,Posted
+TXN-10802,2025-05-27,Marketing,5030-Cloud Hosting,Vendor 2,572.87,Posted
+TXN-10803,2025-05-27,Sales,5040-Travel,Vendor 15,2433.37,Posted
+TXN-10804,2025-05-27,Operations,5050-Office Supplies,Vendor 6,923.27,Posted
+TXN-10805,2025-05-28,Operations,5050-Office Supplies,Vendor 1,284.99,Posted
+TXN-10806,2025-05-28,Sales,5030-Cloud Hosting,Vendor 10,2889.24,Posted
+TXN-10807,2025-05-28,HR,5050-Office Supplies,Vendor 5,3225.31,Posted
+TXN-10808,2025-05-28,Marketing,5040-Travel,Vendor 4,308.2,Posted
+TXN-10809,2025-05-28,Marketing,5060-Rent,Vendor 19,569.95,Posted
+TXN-10810,2025-05-28,Operations,5040-Travel,Vendor 17,11403.37,Posted
+TXN-10811,2025-05-29,R&D,5040-Travel,Vendor 3,3112.86,Posted
+TXN-10812,2025-05-29,IT Infrastructure,5060-Rent,Vendor 9,2309.61,Posted
+TXN-10813,2025-05-29,Sales,5010-Software,Vendor 5,408.73,Posted
+TXN-10814,2025-05-29,HR,5040-Travel,Vendor 16,2949.16,Posted
+TXN-10815,2025-05-29,Marketing,5010-Software,Vendor 1,3157.6,Posted
+TXN-10816,2025-05-29,Sales,5050-Office Supplies,Vendor 13,2203.78,Posted
+TXN-10817,2025-05-29,IT Infrastructure,5010-Software,Vendor 7,320.32,Posted
+TXN-10818,2025-05-30,IT Infrastructure,5030-Cloud Hosting,Vendor 12,668.88,Posted
+TXN-10819,2025-05-30,Sales,5050-Office Supplies,Vendor 1,1819.47,Posted
+TXN-10820,2025-05-30,Sales,5050-Office Supplies,Vendor 3,608.27,Posted
+TXN-10821,2025-05-30,HR,5010-Software,Vendor 10,2700.03,Posted
+TXN-10822,2025-05-30,HR,5040-Travel,Vendor 10,257.82,Posted
+TXN-10823,2025-05-30,R&D,5050-Office Supplies,Vendor 2,814.86,Posted
+TXN-10824,2025-05-31,Marketing,5040-Travel,Vendor 3,4559.37,Posted
+TXN-10825,2025-05-31,Marketing,5030-Cloud Hosting,Vendor 17,877.0,Posted
+TXN-10826,2025-05-31,Sales,5060-Rent,Vendor 11,565.25,Posted
+TXN-10827,2025-05-31,Marketing,5040-Travel,Vendor 6,163.82,Posted
+TXN-10828,2025-05-31,Marketing,5040-Travel,Vendor 16,1010.23,Posted
+TXN-10829,2025-05-31,Marketing,5040-Travel,Vendor 10,5695.42,Posted
+TXN-10830,2025-05-31,Operations,5060-Rent,Vendor 5,787.67,Posted
+TXN-10831,2025-05-31,R&D,5050-Office Supplies,Vendor 7,727.38,Posted
+TXN-10832,2025-06-01,Marketing,5060-Rent,Vendor 16,1368.22,Posted
+TXN-10833,2025-06-01,Operations,5050-Office Supplies,Vendor 7,1659.63,Posted
+TXN-10834,2025-06-01,Sales,5030-Cloud Hosting,Vendor 11,135.82,Posted
+TXN-10835,2025-06-01,Marketing,5010-Software,Vendor 13,616.15,Posted
+TXN-10836,2025-06-01,R&D,5030-Cloud Hosting,Vendor 3,641.27,Posted
+TXN-10837,2025-06-01,HR,5010-Software,Vendor 2,4255.97,Posted
+TXN-10838,2025-06-02,HR,5040-Travel,Vendor 4,1063.14,Posted
+TXN-10839,2025-06-02,IT Infrastructure,5010-Software,Vendor 18,510.0,Posted
+TXN-10840,2025-06-02,Operations,5040-Travel,Vendor 17,2350.39,Posted
+TXN-10841,2025-06-02,Operations,5020-Consulting,Vendor 10,426.92,Posted
+TXN-10842,2025-06-02,Marketing,5020-Consulting,Vendor 13,2917.88,Posted
+TXN-10843,2025-06-02,Operations,5030-Cloud Hosting,Vendor 8,6097.46,Posted
+TXN-10844,2025-06-03,Sales,5030-Cloud Hosting,Vendor 17,551.47,Posted
+TXN-10845,2025-06-03,Sales,5060-Rent,Vendor 15,614.8,Posted
+TXN-10846,2025-06-03,Marketing,5060-Rent,Vendor 17,196.33,Posted
+TXN-10847,2025-06-03,IT Infrastructure,5050-Office Supplies,Vendor 9,1131.68,Posted
+TXN-10848,2025-06-03,Operations,5060-Rent,Vendor 6,905.86,Posted
+TXN-10849,2025-06-03,Operations,5020-Consulting,Vendor 14,515.4,Posted
+TXN-10850,2025-06-04,R&D,5060-Rent,Vendor 18,4060.45,Posted
+TXN-10851,2025-06-04,R&D,5020-Consulting,Vendor 3,398.24,Posted
+TXN-10852,2025-06-04,R&D,5060-Rent,Vendor 12,984.65,Posted
+TXN-10853,2025-06-04,HR,5030-Cloud Hosting,Vendor 17,1782.89,Posted
+TXN-10854,2025-06-04,Operations,5050-Office Supplies,Vendor 12,1223.73,Posted
+TXN-10855,2025-06-04,R&D,5010-Software,Vendor 3,428.96,Posted
+TXN-10856,2025-06-04,Sales,5030-Cloud Hosting,Vendor 12,6056.36,Posted
+TXN-10857,2025-06-05,HR,5010-Software,Vendor 6,3877.15,Posted
+TXN-10858,2025-06-05,R&D,5020-Consulting,Vendor 4,6059.08,Posted
+TXN-10859,2025-06-05,Sales,5030-Cloud Hosting,Vendor 2,2075.84,Posted
+TXN-10860,2025-06-05,Marketing,5030-Cloud Hosting,Vendor 16,854.3,Posted
+TXN-10861,2025-06-05,IT Infrastructure,5020-Consulting,Vendor 13,2223.96,Posted
+TXN-10862,2025-06-06,R&D,5040-Travel,Vendor 1,526.21,Posted
+TXN-10863,2025-06-06,Operations,5010-Software,Vendor 18,366.36,Posted
+TXN-10864,2025-06-06,R&D,5050-Office Supplies,Vendor 9,1136.41,Posted
+TXN-10865,2025-06-06,HR,5020-Consulting,Vendor 10,2401.64,Posted
+TXN-10866,2025-06-07,HR,5020-Consulting,Vendor 2,682.18,Posted
+TXN-10867,2025-06-07,Operations,5060-Rent,Vendor 3,939.77,Posted
+TXN-10868,2025-06-07,Sales,5050-Office Supplies,Vendor 4,100.66,Posted
+TXN-10869,2025-06-07,Marketing,5060-Rent,Vendor 2,860.84,Posted
+TXN-10870,2025-06-07,Operations,5010-Software,Vendor 7,168.93,Posted
+TXN-10871,2025-06-08,Operations,5040-Travel,Vendor 3,242.66,Posted
+TXN-10872,2025-06-08,Operations,5010-Software,Vendor 14,981.47,Posted
+TXN-10873,2025-06-08,Marketing,5020-Consulting,Vendor 18,7427.78,Posted
+TXN-10874,2025-06-09,Marketing,5020-Consulting,Vendor 13,3587.8,Posted
+TXN-10875,2025-06-09,Sales,5040-Travel,Vendor 11,141.86,Posted
+TXN-10876,2025-06-09,Marketing,5010-Software,Vendor 1,489.51,Posted
+TXN-10877,2025-06-09,Marketing,5060-Rent,Vendor 13,3123.52,Posted
+TXN-10878,2025-06-09,Marketing,5050-Office Supplies,Vendor 11,946.82,Posted
+TXN-10879,2025-06-09,Operations,5050-Office Supplies,Vendor 19,1190.67,Posted
+TXN-10880,2025-06-10,HR,5040-Travel,Vendor 7,943.45,Posted
+TXN-10881,2025-06-10,IT Infrastructure,5050-Office Supplies,Vendor 4,915.66,Posted
+TXN-10882,2025-06-10,IT Infrastructure,5040-Travel,Vendor 13,1132.36,Posted
+TXN-10883,2025-06-10,HR,5010-Software,Vendor 16,625.81,Posted
+TXN-10884,2025-06-10,R&D,5040-Travel,Vendor 4,1616.08,Posted
+TXN-10885,2025-06-11,Operations,5050-Office Supplies,Vendor 15,1024.29,Posted
+TXN-10886,2025-06-11,Operations,5050-Office Supplies,Vendor 10,2046.05,Posted
+TXN-10887,2025-06-11,Sales,5030-Cloud Hosting,Vendor 17,1187.45,Posted
+TXN-10888,2025-06-11,HR,5040-Travel,Vendor 5,930.67,Posted
+TXN-10889,2025-06-12,HR,5060-Rent,Vendor 6,1239.0,Posted
+TXN-10890,2025-06-12,HR,5010-Software,Vendor 7,5522.23,Posted
+TXN-10891,2025-06-12,R&D,5050-Office Supplies,Vendor 3,643.48,Posted
+TXN-10892,2025-06-12,Operations,5060-Rent,Vendor 12,2060.36,Posted
+TXN-10893,2025-06-12,R&D,5030-Cloud Hosting,Vendor 15,1731.72,Posted
+TXN-10894,2025-06-12,Marketing,5050-Office Supplies,Vendor 18,2234.87,Posted
+TXN-10895,2025-06-12,R&D,5060-Rent,Vendor 16,2655.84,Posted
+TXN-10896,2025-06-12,Operations,5030-Cloud Hosting,Vendor 16,400.63,Posted
+TXN-10897,2025-06-13,R&D,5040-Travel,Vendor 8,6385.46,Posted
+TXN-10898,2025-06-13,Marketing,5030-Cloud Hosting,Vendor 10,902.86,Posted
+TXN-10899,2025-06-13,IT Infrastructure,5030-Cloud Hosting,Vendor 9,570.05,Posted
+TXN-10900,2025-06-13,Marketing,5030-Cloud Hosting,Vendor 17,1585.04,Posted
+TXN-10901,2025-06-13,Sales,5040-Travel,Vendor 5,1600.16,Posted
+TXN-10902,2025-06-14,Marketing,5010-Software,Vendor 19,1949.02,Posted
+TXN-10903,2025-06-14,Sales,5010-Software,Vendor 2,4152.91,Posted
+TXN-10904,2025-06-14,Operations,5060-Rent,Vendor 7,3907.36,Posted
+TXN-10905,2025-06-14,HR,5060-Rent,Vendor 2,733.77,Posted
+TXN-10906,2025-06-14,Operations,5010-Software,Vendor 13,425.82,Posted
+TXN-10907,2025-06-14,R&D,5060-Rent,Vendor 3,1741.09,Posted
+TXN-10908,2025-06-14,Marketing,5010-Software,Vendor 15,2047.74,Posted
+TXN-10909,2025-06-14,HR,5010-Software,Vendor 15,660.91,Posted
+TXN-10910,2025-06-15,Sales,5020-Consulting,Vendor 11,124.29,Posted
+TXN-10911,2025-06-15,Sales,5030-Cloud Hosting,Vendor 1,117.23,Posted
+TXN-10912,2025-06-15,R&D,5020-Consulting,Vendor 4,963.48,Posted
+TXN-10913,2025-06-15,Operations,5050-Office Supplies,Vendor 1,2648.45,Posted
+TXN-10914,2025-06-15,Marketing,5030-Cloud Hosting,Vendor 5,942.12,Posted
+TXN-10915,2025-06-15,Operations,5060-Rent,Vendor 16,289.18,Posted
+TXN-10916,2025-06-16,Operations,5030-Cloud Hosting,Vendor 11,857.65,Posted
+TXN-10917,2025-06-16,IT Infrastructure,5010-Software,Vendor 4,356.67,Posted
+TXN-10918,2025-06-16,Sales,5020-Consulting,Vendor 19,3176.74,Posted
+TXN-10919,2025-06-16,Marketing,5050-Office Supplies,Vendor 14,210.29,Posted
+TXN-10920,2025-06-16,Operations,5020-Consulting,Vendor 19,2783.12,Posted
+TXN-10921,2025-06-16,Operations,5020-Consulting,Vendor 8,526.55,Posted
+TXN-10922,2025-06-16,Sales,5010-Software,Vendor 11,1293.96,Posted
+TXN-10923,2025-06-16,HR,5030-Cloud Hosting,Vendor 6,895.66,Posted
+TXN-10924,2025-06-17,HR,5010-Software,Vendor 5,3255.41,Posted
+TXN-10925,2025-06-17,R&D,5030-Cloud Hosting,Vendor 18,759.75,Posted
+TXN-10926,2025-06-17,Marketing,5030-Cloud Hosting,Vendor 2,1797.67,Posted
+TXN-10927,2025-06-18,Sales,5010-Software,Vendor 7,1639.72,Posted
+TXN-10928,2025-06-18,R&D,5030-Cloud Hosting,Vendor 18,2407.55,Posted
+TXN-10929,2025-06-18,IT Infrastructure,5010-Software,Vendor 10,5995.95,Posted
+TXN-10930,2025-06-18,Marketing,5020-Consulting,Vendor 5,5394.05,Posted
+TXN-10931,2025-06-18,Sales,5060-Rent,Vendor 18,1316.19,Posted
+TXN-10932,2025-06-18,IT Infrastructure,5040-Travel,Vendor 17,924.16,Posted
+TXN-10933,2025-06-18,Sales,5030-Cloud Hosting,Vendor 2,1495.14,Posted
+TXN-10934,2025-06-18,Marketing,5030-Cloud Hosting,Vendor 10,569.06,Posted
+TXN-10935,2025-06-19,R&D,5020-Consulting,Vendor 7,1488.14,Posted
+TXN-10936,2025-06-19,Operations,5050-Office Supplies,Vendor 9,3995.88,Posted
+TXN-10937,2025-06-19,R&D,5040-Travel,Vendor 3,1470.86,Posted
+TXN-10938,2025-06-19,IT Infrastructure,5060-Rent,Vendor 3,1639.29,Posted
+TXN-10939,2025-06-19,R&D,5030-Cloud Hosting,Vendor 1,1790.64,Posted
+TXN-10940,2025-06-19,R&D,5010-Software,Vendor 2,1219.05,Posted
+TXN-10941,2025-06-19,HR,5040-Travel,Vendor 10,4498.68,Posted
+TXN-10942,2025-06-19,HR,5030-Cloud Hosting,Vendor 16,2100.75,Posted
+TXN-10943,2025-06-20,Operations,5060-Rent,Vendor 13,1572.06,Posted
+TXN-10944,2025-06-20,Sales,5010-Software,Vendor 4,123.27,Posted
+TXN-10945,2025-06-20,Marketing,5010-Software,Vendor 1,997.45,Posted
+TXN-10946,2025-06-20,IT Infrastructure,5040-Travel,Vendor 14,2040.44,Posted
+TXN-10947,2025-06-20,IT Infrastructure,5060-Rent,Vendor 17,5758.85,Posted
+TXN-10948,2025-06-20,IT Infrastructure,5020-Consulting,Vendor 18,2137.0,Posted
+TXN-10949,2025-06-20,Operations,5040-Travel,Vendor 15,2169.78,Posted
+TXN-10950,2025-06-21,HR,5030-Cloud Hosting,Vendor 19,2028.03,Posted
+TXN-10951,2025-06-21,Sales,5010-Software,Vendor 9,1287.38,Posted
+TXN-10952,2025-06-21,IT Infrastructure,5020-Consulting,Vendor 8,1977.92,Posted
+TXN-10953,2025-06-21,Marketing,5050-Office Supplies,Vendor 15,3249.1,Posted
+TXN-10954,2025-06-21,Marketing,5010-Software,Vendor 11,123.91,Posted
+TXN-10955,2025-06-21,IT Infrastructure,5030-Cloud Hosting,Vendor 3,1021.34,Posted
+TXN-10956,2025-06-22,IT Infrastructure,5010-Software,Vendor 18,1776.1,Posted
+TXN-10957,2025-06-22,R&D,5020-Consulting,Vendor 19,3343.77,Posted
+TXN-10958,2025-06-22,Sales,5030-Cloud Hosting,Vendor 14,599.66,Posted
+TXN-10959,2025-06-22,Operations,5020-Consulting,Vendor 14,1181.12,Posted
+TXN-10960,2025-06-22,Operations,5060-Rent,Vendor 9,795.71,Posted
+TXN-10961,2025-06-22,HR,5060-Rent,Vendor 7,2512.05,Posted
+TXN-10962,2025-06-22,Marketing,5040-Travel,Vendor 5,789.36,Posted
+TXN-10963,2025-06-22,Marketing,5020-Consulting,Vendor 2,2422.42,Posted
+TXN-10964,2025-06-23,IT Infrastructure,5030-Cloud Hosting,Vendor 6,1623.98,Posted
+TXN-10965,2025-06-23,IT Infrastructure,5040-Travel,Vendor 11,1248.66,Posted
+TXN-10966,2025-06-23,HR,5040-Travel,Vendor 11,915.51,Posted
+TXN-10967,2025-06-23,IT Infrastructure,5010-Software,Vendor 7,436.78,Posted
+TXN-10968,2025-06-23,HR,5030-Cloud Hosting,Vendor 4,1113.24,Posted
+TXN-10969,2025-06-23,Sales,5010-Software,Vendor 14,2268.69,Posted
+TXN-10970,2025-06-23,R&D,5020-Consulting,Vendor 6,888.34,Posted
+TXN-10971,2025-06-24,HR,5050-Office Supplies,Vendor 10,209.65,Posted
+TXN-10972,2025-06-24,Sales,5050-Office Supplies,Vendor 3,2160.22,Posted
+TXN-10973,2025-06-24,HR,5040-Travel,Vendor 4,986.43,Posted
+TXN-10974,2025-06-24,HR,5010-Software,Vendor 10,656.18,Posted
+TXN-10975,2025-06-24,Marketing,5050-Office Supplies,Vendor 13,2135.28,Posted
+TXN-10976,2025-06-24,R&D,5050-Office Supplies,Vendor 10,693.44,Posted
+TXN-10977,2025-06-24,Marketing,5020-Consulting,Vendor 16,575.15,Posted
+TXN-10978,2025-06-24,Marketing,5010-Software,Vendor 9,262.33,Posted
+TXN-10979,2025-06-25,Operations,5050-Office Supplies,Vendor 9,1149.15,Posted
+TXN-10980,2025-06-25,R&D,5050-Office Supplies,Vendor 17,1794.88,Posted
+TXN-10981,2025-06-25,Sales,5030-Cloud Hosting,Vendor 9,902.97,Posted
+TXN-10982,2025-06-25,HR,5050-Office Supplies,Vendor 14,894.23,Posted
+TXN-10983,2025-06-25,Sales,5050-Office Supplies,Vendor 8,371.0,Posted
+TXN-10984,2025-06-25,HR,5020-Consulting,Vendor 12,1238.58,Posted
+TXN-10985,2025-06-25,IT Infrastructure,5060-Rent,Vendor 1,363.97,Posted
+TXN-10986,2025-06-25,R&D,5010-Software,Vendor 10,902.17,Posted
+TXN-10987,2025-06-26,R&D,5020-Consulting,Vendor 19,756.06,Posted
+TXN-10988,2025-06-26,Sales,5020-Consulting,Vendor 11,1198.53,Posted
+TXN-10989,2025-06-26,R&D,5060-Rent,Vendor 15,567.14,Posted
+TXN-10990,2025-06-26,R&D,5040-Travel,Vendor 11,1372.64,Posted
+TXN-10991,2025-06-26,HR,5010-Software,Vendor 1,906.2,Posted
+TXN-10992,2025-06-27,Operations,5020-Consulting,Vendor 10,896.2,Posted
+TXN-10993,2025-06-27,Marketing,5050-Office Supplies,Vendor 19,1140.06,Posted
+TXN-10994,2025-06-27,HR,5060-Rent,Vendor 16,1384.94,Posted
+TXN-10995,2025-06-27,HR,5010-Software,Vendor 7,1126.89,Posted
+TXN-10996,2025-06-27,IT Infrastructure,5010-Software,Vendor 5,446.48,Posted
+TXN-10997,2025-06-28,Marketing,5030-Cloud Hosting,Vendor 17,442.83,Posted
+TXN-10998,2025-06-28,HR,5010-Software,Vendor 17,127.44,Posted
+TXN-10999,2025-06-28,Operations,5010-Software,Vendor 3,1777.82,Posted
+TXN-11000,2025-06-28,HR,5050-Office Supplies,Vendor 16,476.35,Posted
+TXN-11001,2025-06-29,R&D,5040-Travel,Vendor 1,1892.4,Posted
+TXN-11002,2025-06-29,HR,5010-Software,Vendor 9,3209.24,Posted
+TXN-11003,2025-06-29,Operations,5040-Travel,Vendor 9,708.86,Posted
+TXN-11004,2025-06-30,HR,5030-Cloud Hosting,Vendor 9,2677.2,Posted
+TXN-11005,2025-06-30,HR,5030-Cloud Hosting,Vendor 14,120.19,Posted
+TXN-11006,2025-06-30,R&D,5010-Software,Vendor 19,2540.93,Posted
+TXN-11007,2025-06-30,IT Infrastructure,5060-Rent,Vendor 15,1078.76,Posted
+TXN-11008,2025-06-30,Marketing,5040-Travel,Vendor 17,2925.1,Posted
+TXN-11009,2025-06-30,HR,5020-Consulting,Vendor 13,806.13,Posted
+TXN-11010,2025-06-30,R&D,5040-Travel,Vendor 10,8907.78,Posted
+TXN-11011,2025-06-30,HR,5030-Cloud Hosting,Vendor 14,472.91,Posted
+TXN-11012,2025-07-01,R&D,5040-Travel,Vendor 11,1036.1,Posted
+TXN-11013,2025-07-01,IT Infrastructure,5030-Cloud Hosting,Vendor 11,4073.72,Posted
+TXN-11014,2025-07-01,IT Infrastructure,5060-Rent,Vendor 9,2870.83,Posted
+TXN-11015,2025-07-01,Sales,5040-Travel,Vendor 15,250.35,Posted
+TXN-11016,2025-07-01,Marketing,5040-Travel,Vendor 5,2281.96,Posted
+TXN-11017,2025-07-02,R&D,5020-Consulting,Vendor 3,2231.34,Posted
+TXN-11018,2025-07-02,HR,5030-Cloud Hosting,Vendor 7,1553.25,Posted
+TXN-11019,2025-07-02,Sales,5010-Software,Vendor 6,739.18,Posted
+TXN-11020,2025-07-02,HR,5020-Consulting,Vendor 3,3682.68,Posted
+TXN-11021,2025-07-02,HR,5020-Consulting,Vendor 5,3399.07,Posted
+TXN-11022,2025-07-02,HR,5060-Rent,Vendor 12,2229.88,Posted
+TXN-11023,2025-07-02,IT Infrastructure,5050-Office Supplies,Vendor 16,1990.27,Posted
+TXN-11024,2025-07-03,Marketing,5050-Office Supplies,Vendor 12,462.94,Posted
+TXN-11025,2025-07-03,IT Infrastructure,5040-Travel,Vendor 16,2154.18,Posted
+TXN-11026,2025-07-03,Marketing,5020-Consulting,Vendor 12,1886.86,Posted
+TXN-11027,2025-07-03,Operations,5020-Consulting,Vendor 17,998.87,Posted
+TXN-11028,2025-07-03,R&D,5060-Rent,Vendor 3,1242.95,Posted
+TXN-11029,2025-07-04,Operations,5060-Rent,Vendor 13,482.42,Posted
+TXN-11030,2025-07-04,Sales,5050-Office Supplies,Vendor 13,1879.4,Posted
+TXN-11031,2025-07-04,Operations,5040-Travel,Vendor 10,2703.93,Posted
+TXN-11032,2025-07-04,HR,5040-Travel,Vendor 6,1028.52,Posted
+TXN-11033,2025-07-04,Sales,5020-Consulting,Vendor 12,1900.71,Posted
+TXN-11034,2025-07-04,Marketing,5040-Travel,Vendor 5,467.38,Posted
+TXN-11035,2025-07-04,R&D,5060-Rent,Vendor 3,904.83,Posted
+TXN-11036,2025-07-04,HR,5040-Travel,Vendor 18,159.64,Posted
+TXN-11037,2025-07-05,Marketing,5060-Rent,Vendor 8,3385.47,Posted
+TXN-11038,2025-07-05,HR,5050-Office Supplies,Vendor 2,2718.02,Posted
+TXN-11039,2025-07-05,Operations,5010-Software,Vendor 6,1389.52,Posted
+TXN-11040,2025-07-05,Operations,5040-Travel,Vendor 10,3601.02,Posted
+TXN-11041,2025-07-05,Operations,5050-Office Supplies,Vendor 15,1040.55,Posted
+TXN-11042,2025-07-05,HR,5050-Office Supplies,Vendor 11,309.03,Posted
+TXN-11043,2025-07-05,Operations,5050-Office Supplies,Vendor 11,2396.9,Posted
+TXN-11044,2025-07-05,R&D,5040-Travel,Vendor 3,1693.46,Posted
+TXN-11045,2025-07-06,R&D,5060-Rent,Vendor 17,3826.22,Posted
+TXN-11046,2025-07-06,Sales,5030-Cloud Hosting,Vendor 3,108.04,Posted
+TXN-11047,2025-07-06,HR,5050-Office Supplies,Vendor 19,872.09,Posted
+TXN-11048,2025-07-06,Marketing,5040-Travel,Vendor 19,7113.25,Posted
+TXN-11049,2025-07-06,Operations,5020-Consulting,Vendor 11,1943.41,Posted
+TXN-11050,2025-07-06,Marketing,5040-Travel,Vendor 11,1364.16,Posted
+TXN-11051,2025-07-06,R&D,5020-Consulting,Vendor 5,727.61,Posted
+TXN-11052,2025-07-06,Operations,5050-Office Supplies,Vendor 12,8249.87,Posted
+TXN-11053,2025-07-07,Sales,5060-Rent,Vendor 6,2547.63,Posted
+TXN-11054,2025-07-07,Marketing,5060-Rent,Vendor 11,182.24,Posted
+TXN-11055,2025-07-07,HR,5020-Consulting,Vendor 18,775.14,Posted
+TXN-11056,2025-07-07,Operations,5050-Office Supplies,Vendor 9,1598.06,Posted
+TXN-11057,2025-07-08,Marketing,5010-Software,Vendor 19,208.53,Posted
+TXN-11058,2025-07-08,Marketing,5040-Travel,Vendor 8,901.21,Posted
+TXN-11059,2025-07-08,Sales,5060-Rent,Vendor 15,1010.93,Posted
+TXN-11060,2025-07-08,Marketing,5050-Office Supplies,Vendor 18,4556.4,Posted
+TXN-11061,2025-07-08,Sales,5020-Consulting,Vendor 11,2365.09,Posted
+TXN-11062,2025-07-09,R&D,5040-Travel,Vendor 3,4963.22,Posted
+TXN-11063,2025-07-09,Sales,5020-Consulting,Vendor 13,870.96,Posted
+TXN-11064,2025-07-09,IT Infrastructure,5050-Office Supplies,Vendor 2,2791.77,Posted
+TXN-11065,2025-07-09,Sales,5060-Rent,Vendor 8,1412.69,Posted
+TXN-11066,2025-07-09,Sales,5030-Cloud Hosting,Vendor 8,180.08,Posted
+TXN-11067,2025-07-09,HR,5020-Consulting,Vendor 16,232.53,Posted
+TXN-11068,2025-07-10,R&D,5030-Cloud Hosting,Vendor 13,455.92,Posted
+TXN-11069,2025-07-10,Operations,5030-Cloud Hosting,Vendor 9,2105.83,Posted
+TXN-11070,2025-07-10,Operations,5030-Cloud Hosting,Vendor 10,145.73,Posted
+TXN-11071,2025-07-10,Marketing,5010-Software,Vendor 14,1038.26,Posted
+TXN-11072,2025-07-10,Sales,5040-Travel,Vendor 12,204.05,Posted
+TXN-11073,2025-07-10,Marketing,5010-Software,Vendor 19,2971.37,Posted
+TXN-11074,2025-07-10,R&D,5030-Cloud Hosting,Vendor 7,2436.76,Posted
+TXN-11075,2025-07-10,Sales,5020-Consulting,Vendor 18,490.81,Posted
+TXN-11076,2025-07-11,IT Infrastructure,5040-Travel,Vendor 3,965.6,Posted
+TXN-11077,2025-07-11,HR,5060-Rent,Vendor 8,372.32,Posted
+TXN-11078,2025-07-11,Sales,5030-Cloud Hosting,Vendor 8,692.35,Posted
+TXN-11079,2025-07-11,HR,5060-Rent,Vendor 10,131.1,Posted
+TXN-11080,2025-07-11,Sales,5010-Software,Vendor 13,754.73,Posted
+TXN-11081,2025-07-11,Sales,5050-Office Supplies,Vendor 4,379.7,Posted
+TXN-11082,2025-07-11,IT Infrastructure,5060-Rent,Vendor 2,3099.94,Posted
+TXN-11083,2025-07-11,Operations,5040-Travel,Vendor 5,1540.44,Posted
+TXN-11084,2025-07-12,IT Infrastructure,5060-Rent,Vendor 12,660.27,Posted
+TXN-11085,2025-07-12,Sales,5060-Rent,Vendor 1,3224.04,Posted
+TXN-11086,2025-07-12,IT Infrastructure,5010-Software,Vendor 2,1983.88,Posted
+TXN-11087,2025-07-12,Marketing,5060-Rent,Vendor 16,2036.51,Posted
+TXN-11088,2025-07-12,IT Infrastructure,5030-Cloud Hosting,Vendor 17,7300.48,Posted
+TXN-11089,2025-07-12,IT Infrastructure,5050-Office Supplies,Vendor 9,6927.6,Posted
+TXN-11090,2025-07-12,Sales,5020-Consulting,Vendor 18,425.68,Posted
+TXN-11091,2025-07-12,HR,5010-Software,Vendor 12,1117.59,Posted
+TXN-11092,2025-07-13,Operations,5040-Travel,Vendor 3,772.72,Posted
+TXN-11093,2025-07-13,IT Infrastructure,5040-Travel,Vendor 8,907.15,Posted
+TXN-11094,2025-07-13,HR,5050-Office Supplies,Vendor 5,4637.58,Posted
+TXN-11095,2025-07-13,R&D,5030-Cloud Hosting,Vendor 14,2099.07,Posted
+TXN-11096,2025-07-13,R&D,5040-Travel,Vendor 8,5371.65,Posted
+TXN-11097,2025-07-13,Marketing,5050-Office Supplies,Vendor 6,1725.59,Posted
+TXN-11098,2025-07-13,R&D,5040-Travel,Vendor 3,371.03,Posted
+TXN-11099,2025-07-13,Sales,5030-Cloud Hosting,Vendor 2,402.88,Posted
+TXN-11100,2025-07-14,HR,5060-Rent,Vendor 8,5356.17,Posted
+TXN-11101,2025-07-14,R&D,5010-Software,Vendor 3,2410.17,Posted
+TXN-11102,2025-07-14,IT Infrastructure,5030-Cloud Hosting,Vendor 12,3466.26,Posted
+TXN-11103,2025-07-14,Marketing,5030-Cloud Hosting,Vendor 5,2897.67,Posted
+TXN-11104,2025-07-14,R&D,5040-Travel,Vendor 9,1775.61,Posted
+TXN-11105,2025-07-14,R&D,5050-Office Supplies,Vendor 7,3208.06,Posted
+TXN-11106,2025-07-14,R&D,5040-Travel,Vendor 10,100.98,Posted
+TXN-11107,2025-07-14,IT Infrastructure,5010-Software,Vendor 13,1580.59,Posted
+TXN-11108,2025-07-15,R&D,5040-Travel,Vendor 15,1019.63,Posted
+TXN-11109,2025-07-15,HR,5010-Software,Vendor 8,622.1,Posted
+TXN-11110,2025-07-15,IT Infrastructure,5030-Cloud Hosting,Vendor 14,161.33,Posted
+TXN-11111,2025-07-16,IT Infrastructure,5030-Cloud Hosting,Vendor 5,1437.21,Posted
+TXN-11112,2025-07-16,Marketing,5040-Travel,Vendor 16,2244.28,Posted
+TXN-11113,2025-07-16,IT Infrastructure,5060-Rent,Vendor 17,943.14,Posted
+TXN-11114,2025-07-16,R&D,5050-Office Supplies,Vendor 14,2300.92,Posted
+TXN-11115,2025-07-16,R&D,5020-Consulting,Vendor 16,380.78,Posted
+TXN-11116,2025-07-17,Operations,5040-Travel,Vendor 10,1763.14,Posted
+TXN-11117,2025-07-17,Sales,5050-Office Supplies,Vendor 1,177.32,Posted
+TXN-11118,2025-07-17,Marketing,5040-Travel,Vendor 15,4054.64,Posted
+TXN-11119,2025-07-18,Sales,5030-Cloud Hosting,Vendor 16,2202.01,Posted
+TXN-11120,2025-07-18,Marketing,5040-Travel,Vendor 14,2034.29,Posted
+TXN-11121,2025-07-18,Marketing,5010-Software,Vendor 12,414.49,Posted
+TXN-11122,2025-07-19,Operations,5020-Consulting,Vendor 11,846.6,Posted
+TXN-11123,2025-07-19,Operations,5010-Software,Vendor 8,455.07,Posted
+TXN-11124,2025-07-19,R&D,5060-Rent,Vendor 5,202.68,Posted
+TXN-11125,2025-07-20,Operations,5060-Rent,Vendor 17,237.43,Posted
+TXN-11126,2025-07-20,Operations,5030-Cloud Hosting,Vendor 17,734.87,Posted
+TXN-11127,2025-07-20,HR,5030-Cloud Hosting,Vendor 8,621.73,Posted
+TXN-11128,2025-07-20,Operations,5040-Travel,Vendor 6,1464.32,Posted
+TXN-11129,2025-07-20,Operations,5060-Rent,Vendor 6,625.73,Posted
+TXN-11130,2025-07-20,HR,5030-Cloud Hosting,Vendor 17,1158.83,Posted
+TXN-11131,2025-07-20,Operations,5040-Travel,Vendor 17,5059.94,Posted
+TXN-11132,2025-07-21,Sales,5040-Travel,Vendor 3,7024.17,Posted
+TXN-11133,2025-07-21,R&D,5030-Cloud Hosting,Vendor 10,2941.03,Posted
+TXN-11134,2025-07-21,IT Infrastructure,5010-Software,Vendor 8,4211.27,Posted
+TXN-11135,2025-07-22,Sales,5060-Rent,Vendor 9,195.7,Posted
+TXN-11136,2025-07-22,Sales,5060-Rent,Vendor 2,993.43,Posted
+TXN-11137,2025-07-22,Operations,5020-Consulting,Vendor 10,107.56,Posted
+TXN-11138,2025-07-22,Marketing,5020-Consulting,Vendor 8,1664.13,Posted
+TXN-11139,2025-07-23,Operations,5030-Cloud Hosting,Vendor 3,622.78,Posted
+TXN-11140,2025-07-23,IT Infrastructure,5030-Cloud Hosting,Vendor 15,185.82,Posted
+TXN-11141,2025-07-23,Operations,5040-Travel,Vendor 12,3103.31,Posted
+TXN-11142,2025-07-23,IT Infrastructure,5020-Consulting,Vendor 18,3008.29,Posted
+TXN-11143,2025-07-24,Sales,5040-Travel,Vendor 16,665.05,Posted
+TXN-11144,2025-07-24,Marketing,5060-Rent,Vendor 3,417.21,Posted
+TXN-11145,2025-07-24,IT Infrastructure,5050-Office Supplies,Vendor 17,943.07,Posted
+TXN-11146,2025-07-24,Sales,5060-Rent,Vendor 1,385.55,Posted
+TXN-11147,2025-07-24,Sales,5060-Rent,Vendor 14,1819.28,Posted
+TXN-11148,2025-07-24,Sales,5060-Rent,Vendor 5,1600.48,Posted
+TXN-11149,2025-07-25,Marketing,5030-Cloud Hosting,Vendor 15,732.29,Posted
+TXN-11150,2025-07-25,Sales,5030-Cloud Hosting,Vendor 3,4122.59,Posted
+TXN-11151,2025-07-25,R&D,5030-Cloud Hosting,Vendor 10,893.63,Posted
+TXN-11152,2025-07-25,Marketing,5040-Travel,Vendor 11,116.3,Posted
+TXN-11153,2025-07-25,HR,5050-Office Supplies,Vendor 5,255.94,Posted
+TXN-11154,2025-07-25,Operations,5050-Office Supplies,Vendor 5,1419.5,Posted
+TXN-11155,2025-07-25,Marketing,5030-Cloud Hosting,Vendor 1,1455.24,Posted
+TXN-11156,2025-07-25,Sales,5030-Cloud Hosting,Vendor 12,1712.57,Posted
+TXN-11157,2025-07-26,IT Infrastructure,5050-Office Supplies,Vendor 9,1358.91,Posted
+TXN-11158,2025-07-26,IT Infrastructure,5050-Office Supplies,Vendor 2,511.79,Posted
+TXN-11159,2025-07-26,Sales,5010-Software,Vendor 8,1866.54,Posted
+TXN-11160,2025-07-26,HR,5010-Software,Vendor 10,537.25,Posted
+TXN-11161,2025-07-26,R&D,5020-Consulting,Vendor 17,2702.1,Posted
+TXN-11162,2025-07-26,R&D,5060-Rent,Vendor 16,3493.38,Posted
+TXN-11163,2025-07-27,Marketing,5010-Software,Vendor 13,1322.33,Posted
+TXN-11164,2025-07-27,Marketing,5060-Rent,Vendor 14,1042.99,Posted
+TXN-11165,2025-07-27,HR,5060-Rent,Vendor 14,1350.99,Posted
+TXN-11166,2025-07-27,HR,5060-Rent,Vendor 13,2252.49,Posted
+TXN-11167,2025-07-27,Marketing,5050-Office Supplies,Vendor 6,442.7,Posted
+TXN-11168,2025-07-27,HR,5060-Rent,Vendor 2,219.49,Posted
+TXN-11169,2025-07-27,IT Infrastructure,5050-Office Supplies,Vendor 6,660.52,Posted
+TXN-11170,2025-07-27,R&D,5030-Cloud Hosting,Vendor 18,1702.46,Posted
+TXN-11171,2025-07-28,Marketing,5010-Software,Vendor 13,1981.6,Posted
+TXN-11172,2025-07-28,Sales,5030-Cloud Hosting,Vendor 15,2327.99,Posted
+TXN-11173,2025-07-28,Sales,5030-Cloud Hosting,Vendor 19,219.87,Posted
+TXN-11174,2025-07-28,Sales,5040-Travel,Vendor 16,1815.51,Posted
+TXN-11175,2025-07-28,Sales,5050-Office Supplies,Vendor 7,964.85,Posted
+TXN-11176,2025-07-28,Operations,5020-Consulting,Vendor 4,267.86,Posted
+TXN-11177,2025-07-29,R&D,5020-Consulting,Vendor 5,1257.58,Posted
+TXN-11178,2025-07-29,R&D,5040-Travel,Vendor 16,1319.0,Posted
+TXN-11179,2025-07-29,Sales,5060-Rent,Vendor 13,354.91,Posted
+TXN-11180,2025-07-29,IT Infrastructure,5030-Cloud Hosting,Vendor 15,494.74,Posted
+TXN-11181,2025-07-29,Operations,5010-Software,Vendor 2,663.24,Posted
+TXN-11182,2025-07-29,Sales,5030-Cloud Hosting,Vendor 16,816.13,Posted
+TXN-11183,2025-07-29,Operations,5060-Rent,Vendor 18,2193.9,Posted
+TXN-11184,2025-07-30,HR,5050-Office Supplies,Vendor 2,939.13,Posted
+TXN-11185,2025-07-30,Operations,5060-Rent,Vendor 5,337.5,Posted
+TXN-11186,2025-07-30,R&D,5060-Rent,Vendor 14,4401.66,Posted
+TXN-11187,2025-07-30,Sales,5040-Travel,Vendor 6,2292.36,Posted
+TXN-11188,2025-07-31,IT Infrastructure,5020-Consulting,Vendor 5,1182.61,Posted
+TXN-11189,2025-07-31,IT Infrastructure,5040-Travel,Vendor 3,463.5,Posted
+TXN-11190,2025-07-31,IT Infrastructure,5030-Cloud Hosting,Vendor 4,1971.6,Posted
+TXN-11191,2025-07-31,Sales,5010-Software,Vendor 5,2054.98,Posted
+TXN-11192,2025-08-01,R&D,5030-Cloud Hosting,Vendor 16,4499.31,Posted
+TXN-11193,2025-08-01,Operations,5050-Office Supplies,Vendor 3,7058.45,Posted
+TXN-11194,2025-08-01,Marketing,5040-Travel,Vendor 14,418.18,Posted
+TXN-11195,2025-08-01,Marketing,5020-Consulting,Vendor 9,292.41,Posted
+TXN-11196,2025-08-01,Marketing,5020-Consulting,Vendor 15,1562.28,Posted
+TXN-11197,2025-08-01,HR,5040-Travel,Vendor 2,1286.0,Posted
+TXN-11198,2025-08-01,HR,5010-Software,Vendor 10,2493.38,Posted
+TXN-11199,2025-08-01,Marketing,5060-Rent,Vendor 9,849.1,Posted
+TXN-11200,2025-08-02,R&D,5030-Cloud Hosting,Vendor 2,1483.65,Posted
+TXN-11201,2025-08-02,IT Infrastructure,5030-Cloud Hosting,Vendor 13,501.81,Posted
+TXN-11202,2025-08-02,Marketing,5060-Rent,Vendor 12,3142.09,Posted
+TXN-11203,2025-08-03,IT Infrastructure,5020-Consulting,Vendor 11,177.92,Posted
+TXN-11204,2025-08-03,Marketing,5030-Cloud Hosting,Vendor 16,848.58,Posted
+TXN-11205,2025-08-03,R&D,5010-Software,Vendor 15,2422.32,Posted
+TXN-11206,2025-08-04,Sales,5040-Travel,Vendor 7,860.46,Posted
+TXN-11207,2025-08-04,R&D,5020-Consulting,Vendor 15,195.83,Posted
+TXN-11208,2025-08-04,R&D,5040-Travel,Vendor 11,933.01,Posted
+TXN-11209,2025-08-04,Marketing,5050-Office Supplies,Vendor 4,673.11,Posted
+TXN-11210,2025-08-05,HR,5020-Consulting,Vendor 15,250.33,Posted
+TXN-11211,2025-08-05,Sales,5050-Office Supplies,Vendor 16,230.83,Posted
+TXN-11212,2025-08-05,R&D,5020-Consulting,Vendor 5,1730.6,Posted
+TXN-11213,2025-08-05,HR,5030-Cloud Hosting,Vendor 15,1093.61,Posted
+TXN-11214,2025-08-05,R&D,5040-Travel,Vendor 10,363.97,Posted
+TXN-11215,2025-08-05,HR,5050-Office Supplies,Vendor 6,2241.68,Posted
+TXN-11216,2025-08-05,Sales,5020-Consulting,Vendor 16,887.53,Posted
+TXN-11217,2025-08-06,HR,5060-Rent,Vendor 13,152.93,Posted
+TXN-11218,2025-08-06,Operations,5020-Consulting,Vendor 4,422.46,Posted
+TXN-11219,2025-08-06,R&D,5040-Travel,Vendor 4,3490.58,Posted
+TXN-11220,2025-08-06,Marketing,5030-Cloud Hosting,Vendor 6,894.77,Posted
+TXN-11221,2025-08-07,Marketing,5040-Travel,Vendor 4,1777.12,Posted
+TXN-11222,2025-08-07,IT Infrastructure,5020-Consulting,Vendor 11,169.53,Posted
+TXN-11223,2025-08-07,HR,5060-Rent,Vendor 12,1768.78,Posted
+TXN-11224,2025-08-07,IT Infrastructure,5050-Office Supplies,Vendor 10,7455.73,Posted
+TXN-11225,2025-08-07,Sales,5030-Cloud Hosting,Vendor 3,377.8,Posted
+TXN-11226,2025-08-07,Marketing,5050-Office Supplies,Vendor 19,3116.01,Posted
+TXN-11227,2025-08-08,IT Infrastructure,5030-Cloud Hosting,Vendor 2,894.48,Posted
+TXN-11228,2025-08-08,IT Infrastructure,5040-Travel,Vendor 16,1742.07,Posted
+TXN-11229,2025-08-08,R&D,5050-Office Supplies,Vendor 1,942.19,Posted
+TXN-11230,2025-08-08,Operations,5050-Office Supplies,Vendor 15,2367.9,Posted
+TXN-11231,2025-08-08,IT Infrastructure,5040-Travel,Vendor 1,161.45,Posted
+TXN-11232,2025-08-08,Operations,5040-Travel,Vendor 15,425.39,Posted
+TXN-11233,2025-08-08,Sales,5050-Office Supplies,Vendor 2,2274.58,Posted
+TXN-11234,2025-08-09,Sales,5040-Travel,Vendor 11,194.42,Posted
+TXN-11235,2025-08-09,IT Infrastructure,5030-Cloud Hosting,Vendor 3,5079.0,Posted
+TXN-11236,2025-08-09,Sales,5030-Cloud Hosting,Vendor 17,1792.76,Posted
+TXN-11237,2025-08-09,R&D,5020-Consulting,Vendor 2,2277.56,Posted
+TXN-11238,2025-08-10,R&D,5060-Rent,Vendor 10,812.47,Posted
+TXN-11239,2025-08-10,Sales,5020-Consulting,Vendor 13,498.55,Posted
+TXN-11240,2025-08-10,Marketing,5060-Rent,Vendor 5,470.22,Posted
+TXN-11241,2025-08-10,R&D,5050-Office Supplies,Vendor 18,1497.1,Posted
+TXN-11242,2025-08-10,Operations,5030-Cloud Hosting,Vendor 2,2087.24,Posted
+TXN-11243,2025-08-10,IT Infrastructure,5010-Software,Vendor 8,4064.65,Posted
+TXN-11244,2025-08-11,Sales,5020-Consulting,Vendor 2,120.67,Posted
+TXN-11245,2025-08-11,Sales,5040-Travel,Vendor 19,2353.94,Posted
+TXN-11246,2025-08-11,Sales,5040-Travel,Vendor 2,387.92,Posted
+TXN-11247,2025-08-12,R&D,5020-Consulting,Vendor 12,177.6,Posted
+TXN-11248,2025-08-12,HR,5040-Travel,Vendor 7,372.1,Posted
+TXN-11249,2025-08-12,HR,5020-Consulting,Vendor 5,1286.79,Posted
+TXN-11250,2025-08-13,R&D,5020-Consulting,Vendor 12,3838.22,Posted
+TXN-11251,2025-08-13,R&D,5060-Rent,Vendor 4,1981.42,Posted
+TXN-11252,2025-08-13,R&D,5060-Rent,Vendor 4,2404.07,Posted
+TXN-11253,2025-08-13,Marketing,5010-Software,Vendor 18,2825.9,Posted
+TXN-11254,2025-08-14,Operations,5050-Office Supplies,Vendor 5,576.09,Posted
+TXN-11255,2025-08-14,Sales,5050-Office Supplies,Vendor 14,1606.5,Posted
+TXN-11256,2025-08-14,R&D,5060-Rent,Vendor 17,1830.99,Posted
+TXN-11257,2025-08-14,HR,5060-Rent,Vendor 14,304.36,Posted
+TXN-11258,2025-08-14,Sales,5010-Software,Vendor 15,2771.39,Posted
+TXN-11259,2025-08-14,Sales,5020-Consulting,Vendor 8,674.66,Posted
+TXN-11260,2025-08-14,Operations,5060-Rent,Vendor 1,288.72,Posted
+TXN-11261,2025-08-14,HR,5030-Cloud Hosting,Vendor 19,761.47,Posted
+TXN-11262,2025-08-15,R&D,5060-Rent,Vendor 8,1265.77,Posted
+TXN-11263,2025-08-15,HR,5030-Cloud Hosting,Vendor 5,2702.56,Posted
+TXN-11264,2025-08-15,Marketing,5050-Office Supplies,Vendor 2,233.34,Posted
+TXN-11265,2025-08-15,HR,5050-Office Supplies,Vendor 8,838.32,Posted
+TXN-11266,2025-08-15,Marketing,5040-Travel,Vendor 11,322.78,Posted
+TXN-11267,2025-08-15,R&D,5030-Cloud Hosting,Vendor 16,1238.52,Posted
+TXN-11268,2025-08-15,Operations,5040-Travel,Vendor 1,1410.98,Posted
+TXN-11269,2025-08-15,IT Infrastructure,5050-Office Supplies,Vendor 17,647.37,Posted
+TXN-11270,2025-08-16,HR,5040-Travel,Vendor 16,1819.46,Posted
+TXN-11271,2025-08-16,Operations,5010-Software,Vendor 3,1601.12,Posted
+TXN-11272,2025-08-16,HR,5030-Cloud Hosting,Vendor 13,291.0,Posted
+TXN-11273,2025-08-16,Sales,5010-Software,Vendor 19,2545.19,Posted
+TXN-11274,2025-08-17,Operations,5060-Rent,Vendor 11,245.59,Posted
+TXN-11275,2025-08-17,HR,5050-Office Supplies,Vendor 15,139.04,Posted
+TXN-11276,2025-08-17,HR,5050-Office Supplies,Vendor 19,2945.27,Posted
+TXN-11277,2025-08-17,Sales,5020-Consulting,Vendor 19,1212.13,Posted
+TXN-11278,2025-08-17,IT Infrastructure,5030-Cloud Hosting,Vendor 9,588.27,Posted
+TXN-11279,2025-08-17,Sales,5030-Cloud Hosting,Vendor 19,2779.42,Posted
+TXN-11280,2025-08-17,Sales,5060-Rent,Vendor 10,173.93,Posted
+TXN-11281,2025-08-17,Operations,5030-Cloud Hosting,Vendor 11,163.7,Posted
+TXN-11282,2025-08-18,R&D,5060-Rent,Vendor 17,1469.18,Posted
+TXN-11283,2025-08-18,IT Infrastructure,5040-Travel,Vendor 8,3523.22,Posted
+TXN-11284,2025-08-18,Operations,5040-Travel,Vendor 7,2065.23,Posted
+TXN-11285,2025-08-18,Operations,5050-Office Supplies,Vendor 12,8610.89,Posted
+TXN-11286,2025-08-18,IT Infrastructure,5060-Rent,Vendor 11,1319.47,Posted
+TXN-11287,2025-08-19,HR,5050-Office Supplies,Vendor 16,131.73,Posted
+TXN-11288,2025-08-19,Marketing,5050-Office Supplies,Vendor 4,2282.04,Posted
+TXN-11289,2025-08-19,Operations,5010-Software,Vendor 11,1791.0,Posted
+TXN-11290,2025-08-19,Sales,5060-Rent,Vendor 13,1299.33,Posted
+TXN-11291,2025-08-19,IT Infrastructure,5040-Travel,Vendor 19,1400.29,Posted
+TXN-11292,2025-08-20,Sales,5060-Rent,Vendor 17,364.97,Posted
+TXN-11293,2025-08-20,Operations,5060-Rent,Vendor 13,757.13,Posted
+TXN-11294,2025-08-20,R&D,5010-Software,Vendor 10,903.77,Posted
+TXN-11295,2025-08-21,HR,5060-Rent,Vendor 6,1667.18,Posted
+TXN-11296,2025-08-21,Marketing,5020-Consulting,Vendor 17,2066.74,Posted
+TXN-11297,2025-08-21,IT Infrastructure,5010-Software,Vendor 10,346.31,Posted
+TXN-11298,2025-08-21,Marketing,5050-Office Supplies,Vendor 1,276.84,Posted
+TXN-11299,2025-08-21,Marketing,5040-Travel,Vendor 2,845.74,Posted
+TXN-11300,2025-08-22,Marketing,5040-Travel,Vendor 4,451.37,Posted
+TXN-11301,2025-08-22,Marketing,5060-Rent,Vendor 3,778.0,Posted
+TXN-11302,2025-08-22,HR,5030-Cloud Hosting,Vendor 11,625.33,Posted
+TXN-11303,2025-08-22,Operations,5060-Rent,Vendor 16,340.89,Posted
+TXN-11304,2025-08-22,Operations,5030-Cloud Hosting,Vendor 4,950.49,Posted
+TXN-11305,2025-08-22,HR,5010-Software,Vendor 14,1212.45,Posted
+TXN-11306,2025-08-23,Marketing,5040-Travel,Vendor 11,436.16,Posted
+TXN-11307,2025-08-23,IT Infrastructure,5040-Travel,Vendor 4,3811.63,Posted
+TXN-11308,2025-08-23,IT Infrastructure,5020-Consulting,Vendor 7,586.66,Posted
+TXN-11309,2025-08-23,HR,5010-Software,Vendor 13,685.35,Posted
+TXN-11310,2025-08-24,R&D,5040-Travel,Vendor 19,161.68,Posted
+TXN-11311,2025-08-24,HR,5020-Consulting,Vendor 5,1403.56,Posted
+TXN-11312,2025-08-24,R&D,5010-Software,Vendor 10,3481.63,Posted
+TXN-11313,2025-08-24,HR,5040-Travel,Vendor 7,4609.67,Posted
+TXN-11314,2025-08-24,Marketing,5060-Rent,Vendor 1,235.1,Posted
+TXN-11315,2025-08-24,Operations,5060-Rent,Vendor 2,749.74,Posted
+TXN-11316,2025-08-24,Sales,5050-Office Supplies,Vendor 18,285.73,Posted
+TXN-11317,2025-08-24,Operations,5030-Cloud Hosting,Vendor 6,1022.42,Posted
+TXN-11318,2025-08-25,IT Infrastructure,5010-Software,Vendor 11,2806.11,Posted
+TXN-11319,2025-08-25,Sales,5030-Cloud Hosting,Vendor 17,1430.1,Posted
+TXN-11320,2025-08-25,IT Infrastructure,5050-Office Supplies,Vendor 2,205.81,Posted
+TXN-11321,2025-08-25,Sales,5060-Rent,Vendor 16,1041.37,Posted
+TXN-11322,2025-08-25,R&D,5040-Travel,Vendor 19,904.54,Posted
+TXN-11323,2025-08-25,Marketing,5010-Software,Vendor 5,131.87,Posted
+TXN-11324,2025-08-25,HR,5020-Consulting,Vendor 10,599.78,Posted
+TXN-11325,2025-08-26,IT Infrastructure,5050-Office Supplies,Vendor 3,118.63,Posted
+TXN-11326,2025-08-26,Operations,5020-Consulting,Vendor 15,439.02,Posted
+TXN-11327,2025-08-26,Operations,5060-Rent,Vendor 6,829.45,Posted
+TXN-11328,2025-08-26,HR,5050-Office Supplies,Vendor 8,1090.42,Posted
+TXN-11329,2025-08-26,IT Infrastructure,5040-Travel,Vendor 19,1064.92,Posted
+TXN-11330,2025-08-27,Operations,5050-Office Supplies,Vendor 16,1308.77,Posted
+TXN-11331,2025-08-27,HR,5030-Cloud Hosting,Vendor 14,3256.01,Posted
+TXN-11332,2025-08-27,HR,5050-Office Supplies,Vendor 15,174.88,Posted
+TXN-11333,2025-08-27,R&D,5020-Consulting,Vendor 17,407.36,Posted
+TXN-11334,2025-08-27,HR,5040-Travel,Vendor 11,169.99,Posted
+TXN-11335,2025-08-27,R&D,5010-Software,Vendor 12,220.49,Posted
+TXN-11336,2025-08-27,Marketing,5010-Software,Vendor 14,2488.02,Posted
+TXN-11337,2025-08-28,Marketing,5040-Travel,Vendor 11,765.08,Posted
+TXN-11338,2025-08-28,R&D,5050-Office Supplies,Vendor 18,4563.33,Posted
+TXN-11339,2025-08-28,R&D,5050-Office Supplies,Vendor 18,243.35,Posted
+TXN-11340,2025-08-28,Operations,5040-Travel,Vendor 19,379.26,Posted
+TXN-11341,2025-08-28,Operations,5010-Software,Vendor 1,905.35,Posted
+TXN-11342,2025-08-28,Sales,5060-Rent,Vendor 16,6803.34,Posted
+TXN-11343,2025-08-28,Operations,5020-Consulting,Vendor 16,1472.04,Posted
+TXN-11344,2025-08-28,R&D,5050-Office Supplies,Vendor 18,505.6,Posted
+TXN-11345,2025-08-29,IT Infrastructure,5020-Consulting,Vendor 18,1287.56,Posted
+TXN-11346,2025-08-29,Sales,5050-Office Supplies,Vendor 11,594.01,Posted
+TXN-11347,2025-08-29,Operations,5030-Cloud Hosting,Vendor 14,689.39,Posted
+TXN-11348,2025-08-29,R&D,5060-Rent,Vendor 9,2065.35,Posted
+TXN-11349,2025-08-30,Operations,5030-Cloud Hosting,Vendor 19,5840.19,Posted
+TXN-11350,2025-08-30,IT Infrastructure,5040-Travel,Vendor 1,2068.84,Posted
+TXN-11351,2025-08-30,Operations,5040-Travel,Vendor 17,2545.73,Posted
+TXN-11352,2025-08-31,IT Infrastructure,5030-Cloud Hosting,Vendor 3,326.21,Posted
+TXN-11353,2025-08-31,R&D,5050-Office Supplies,Vendor 16,1545.9,Posted
+TXN-11354,2025-08-31,Sales,5030-Cloud Hosting,Vendor 14,856.27,Posted
+TXN-11355,2025-08-31,Sales,5060-Rent,Vendor 8,3275.42,Posted
+TXN-11356,2025-08-31,HR,5010-Software,Vendor 6,889.13,Posted
+TXN-11357,2025-08-31,Operations,5030-Cloud Hosting,Vendor 13,1909.59,Posted
+TXN-11358,2025-08-31,Operations,5020-Consulting,Vendor 1,1385.6,Posted
+TXN-11359,2025-09-01,Marketing,5030-Cloud Hosting,Vendor 18,1366.96,Posted
+TXN-11360,2025-09-01,Operations,5030-Cloud Hosting,Vendor 18,757.37,Posted
+TXN-11361,2025-09-01,Sales,5030-Cloud Hosting,Vendor 9,554.02,Posted
+TXN-11362,2025-09-01,HR,5050-Office Supplies,Vendor 8,897.57,Posted
+TXN-11363,2025-09-01,HR,5050-Office Supplies,Vendor 5,971.17,Posted
+TXN-11364,2025-09-01,R&D,5050-Office Supplies,Vendor 9,194.3,Posted
+TXN-11365,2025-09-01,IT Infrastructure,5010-Software,Vendor 9,676.39,Posted
+TXN-11366,2025-09-02,Operations,5010-Software,Vendor 6,516.75,Posted
+TXN-11367,2025-09-02,HR,5030-Cloud Hosting,Vendor 8,1418.59,Posted
+TXN-11368,2025-09-02,Operations,5050-Office Supplies,Vendor 19,1056.99,Posted
+TXN-11369,2025-09-02,IT Infrastructure,5010-Software,Vendor 13,773.3,Posted
+TXN-11370,2025-09-02,Operations,5060-Rent,Vendor 13,1641.2,Posted
+TXN-11371,2025-09-02,Marketing,5040-Travel,Vendor 2,294.64,Posted
+TXN-11372,2025-09-02,Marketing,5020-Consulting,Vendor 19,1579.14,Posted
+TXN-11373,2025-09-02,Marketing,5060-Rent,Vendor 1,3763.49,Posted
+TXN-11374,2025-09-03,Operations,5010-Software,Vendor 12,569.6,Posted
+TXN-11375,2025-09-03,IT Infrastructure,5020-Consulting,Vendor 13,959.04,Posted
+TXN-11376,2025-09-03,R&D,5050-Office Supplies,Vendor 9,934.0,Posted
+TXN-11377,2025-09-03,Operations,5020-Consulting,Vendor 18,2322.04,Posted
+TXN-11378,2025-09-04,Sales,5050-Office Supplies,Vendor 15,2605.9,Posted
+TXN-11379,2025-09-04,Sales,5010-Software,Vendor 4,653.99,Posted
+TXN-11380,2025-09-04,Marketing,5030-Cloud Hosting,Vendor 5,1322.65,Posted
+TXN-11381,2025-09-04,HR,5040-Travel,Vendor 15,2573.19,Posted
+TXN-11382,2025-09-04,IT Infrastructure,5050-Office Supplies,Vendor 10,4126.66,Posted
+TXN-11383,2025-09-04,HR,5020-Consulting,Vendor 9,450.55,Posted
+TXN-11384,2025-09-05,R&D,5010-Software,Vendor 11,322.11,Posted
+TXN-11385,2025-09-05,Operations,5050-Office Supplies,Vendor 13,322.97,Posted
+TXN-11386,2025-09-05,Sales,5050-Office Supplies,Vendor 10,1785.4,Posted
+TXN-11387,2025-09-05,Sales,5010-Software,Vendor 2,2240.71,Posted
+TXN-11388,2025-09-05,R&D,5040-Travel,Vendor 8,453.0,Posted
+TXN-11389,2025-09-06,HR,5060-Rent,Vendor 5,802.48,Posted
+TXN-11390,2025-09-06,Marketing,5020-Consulting,Vendor 17,697.49,Posted
+TXN-11391,2025-09-06,HR,5020-Consulting,Vendor 7,5137.62,Posted
+TXN-11392,2025-09-06,Sales,5020-Consulting,Vendor 3,2042.55,Posted
+TXN-11393,2025-09-06,IT Infrastructure,5030-Cloud Hosting,Vendor 5,936.53,Posted
+TXN-11394,2025-09-06,Operations,5060-Rent,Vendor 19,879.61,Posted
+TXN-11395,2025-09-06,R&D,5060-Rent,Vendor 9,2394.47,Posted
+TXN-11396,2025-09-07,Marketing,5040-Travel,Vendor 14,3509.47,Posted
+TXN-11397,2025-09-07,Marketing,5030-Cloud Hosting,Vendor 7,4795.33,Posted
+TXN-11398,2025-09-07,R&D,5030-Cloud Hosting,Vendor 16,2426.54,Posted
+TXN-11399,2025-09-07,R&D,5030-Cloud Hosting,Vendor 16,528.61,Posted
+TXN-11400,2025-09-07,Sales,5030-Cloud Hosting,Vendor 13,3225.04,Posted
+TXN-11401,2025-09-07,HR,5030-Cloud Hosting,Vendor 4,2406.26,Posted
+TXN-11402,2025-09-08,R&D,5020-Consulting,Vendor 17,4451.29,Posted
+TXN-11403,2025-09-08,R&D,5030-Cloud Hosting,Vendor 19,1171.77,Posted
+TXN-11404,2025-09-08,R&D,5020-Consulting,Vendor 11,198.7,Posted
+TXN-11405,2025-09-09,HR,5060-Rent,Vendor 16,984.29,Posted
+TXN-11406,2025-09-09,HR,5060-Rent,Vendor 8,1728.46,Posted
+TXN-11407,2025-09-09,Operations,5040-Travel,Vendor 7,612.55,Posted
+TXN-11408,2025-09-09,Marketing,5050-Office Supplies,Vendor 8,1931.38,Posted
+TXN-11409,2025-09-09,R&D,5040-Travel,Vendor 3,1571.16,Posted
+TXN-11410,2025-09-09,R&D,5050-Office Supplies,Vendor 1,182.69,Posted
+TXN-11411,2025-09-09,Operations,5060-Rent,Vendor 9,238.42,Posted
+TXN-11412,2025-09-09,Operations,5030-Cloud Hosting,Vendor 1,1793.51,Posted
+TXN-11413,2025-09-10,Sales,5050-Office Supplies,Vendor 17,1173.44,Posted
+TXN-11414,2025-09-10,Operations,5050-Office Supplies,Vendor 3,6064.17,Posted
+TXN-11415,2025-09-10,Sales,5060-Rent,Vendor 14,871.81,Posted
+TXN-11416,2025-09-10,HR,5050-Office Supplies,Vendor 17,776.44,Posted
+TXN-11417,2025-09-11,Sales,5020-Consulting,Vendor 14,885.81,Posted
+TXN-11418,2025-09-11,IT Infrastructure,5060-Rent,Vendor 18,745.7,Posted
+TXN-11419,2025-09-11,Sales,5030-Cloud Hosting,Vendor 13,1589.87,Posted
+TXN-11420,2025-09-11,Marketing,5020-Consulting,Vendor 17,2340.85,Posted
+TXN-11421,2025-09-11,HR,5010-Software,Vendor 15,186.7,Posted
+TXN-11422,2025-09-11,Sales,5060-Rent,Vendor 2,732.6,Posted
+TXN-11423,2025-09-12,R&D,5050-Office Supplies,Vendor 6,150.75,Posted
+TXN-11424,2025-09-12,R&D,5030-Cloud Hosting,Vendor 17,531.47,Posted
+TXN-11425,2025-09-12,HR,5060-Rent,Vendor 3,3150.84,Posted
+TXN-11426,2025-09-12,HR,5020-Consulting,Vendor 17,1669.37,Posted
+TXN-11427,2025-09-13,Marketing,5020-Consulting,Vendor 4,170.74,Posted
+TXN-11428,2025-09-13,HR,5020-Consulting,Vendor 17,2157.78,Posted
+TXN-11429,2025-09-13,Marketing,5050-Office Supplies,Vendor 16,550.85,Posted
+TXN-11430,2025-09-13,Operations,5010-Software,Vendor 9,1368.61,Posted
+TXN-11431,2025-09-13,HR,5020-Consulting,Vendor 9,471.99,Posted
+TXN-11432,2025-09-14,Sales,5060-Rent,Vendor 2,2885.69,Posted
+TXN-11433,2025-09-14,HR,5060-Rent,Vendor 1,2079.97,Posted
+TXN-11434,2025-09-14,IT Infrastructure,5010-Software,Vendor 1,495.64,Posted
+TXN-11435,2025-09-14,Sales,5040-Travel,Vendor 11,515.95,Posted
+TXN-11436,2025-09-14,Operations,5010-Software,Vendor 9,2002.6,Posted
+TXN-11437,2025-09-15,Sales,5060-Rent,Vendor 2,271.48,Posted
+TXN-11438,2025-09-15,IT Infrastructure,5020-Consulting,Vendor 17,581.36,Posted
+TXN-11439,2025-09-15,HR,5020-Consulting,Vendor 17,1002.77,Posted
+TXN-11440,2025-09-15,HR,5030-Cloud Hosting,Vendor 10,1788.61,Posted
+TXN-11441,2025-09-15,Marketing,5020-Consulting,Vendor 19,3115.27,Posted
+TXN-11442,2025-09-15,R&D,5020-Consulting,Vendor 4,1248.47,Posted
+TXN-11443,2025-09-16,IT Infrastructure,5020-Consulting,Vendor 6,1339.78,Posted
+TXN-11444,2025-09-16,R&D,5020-Consulting,Vendor 14,1259.57,Posted
+TXN-11445,2025-09-16,Marketing,5040-Travel,Vendor 14,3080.81,Posted
+TXN-11446,2025-09-16,Marketing,5030-Cloud Hosting,Vendor 10,691.52,Posted
+TXN-11447,2025-09-16,Operations,5030-Cloud Hosting,Vendor 6,127.67,Posted
+TXN-11448,2025-09-17,R&D,5010-Software,Vendor 15,321.05,Posted
+TXN-11449,2025-09-17,Operations,5060-Rent,Vendor 3,1316.38,Posted
+TXN-11450,2025-09-17,R&D,5060-Rent,Vendor 11,966.11,Posted
+TXN-11451,2025-09-18,R&D,5050-Office Supplies,Vendor 10,2105.74,Posted
+TXN-11452,2025-09-18,IT Infrastructure,5010-Software,Vendor 16,4699.32,Posted
+TXN-11453,2025-09-18,IT Infrastructure,5020-Consulting,Vendor 14,630.87,Posted
+TXN-11454,2025-09-18,Marketing,5060-Rent,Vendor 3,3811.98,Posted
+TXN-11455,2025-09-18,Operations,5010-Software,Vendor 3,209.72,Posted
+TXN-11456,2025-09-18,IT Infrastructure,5050-Office Supplies,Vendor 6,165.52,Posted
+TXN-11457,2025-09-19,Marketing,5030-Cloud Hosting,Vendor 16,1070.9,Posted
+TXN-11458,2025-09-19,Sales,5030-Cloud Hosting,Vendor 8,2985.64,Posted
+TXN-11459,2025-09-19,IT Infrastructure,5040-Travel,Vendor 10,2300.88,Posted
+TXN-11460,2025-09-19,Operations,5010-Software,Vendor 7,2669.07,Posted
+TXN-11461,2025-09-19,Sales,5050-Office Supplies,Vendor 15,601.5,Posted
+TXN-11462,2025-09-19,IT Infrastructure,5060-Rent,Vendor 14,4671.07,Posted
+TXN-11463,2025-09-19,R&D,5030-Cloud Hosting,Vendor 18,1910.64,Posted
+TXN-11464,2025-09-20,Marketing,5050-Office Supplies,Vendor 9,2756.36,Posted
+TXN-11465,2025-09-20,Sales,5010-Software,Vendor 6,354.0,Posted
+TXN-11466,2025-09-20,Operations,5020-Consulting,Vendor 1,473.67,Posted
+TXN-11467,2025-09-20,IT Infrastructure,5050-Office Supplies,Vendor 12,4773.45,Posted
+TXN-11468,2025-09-20,Operations,5020-Consulting,Vendor 4,2090.39,Posted
+TXN-11469,2025-09-20,HR,5030-Cloud Hosting,Vendor 2,4528.43,Posted
+TXN-11470,2025-09-20,IT Infrastructure,5010-Software,Vendor 6,1164.35,Posted
+TXN-11471,2025-09-21,HR,5020-Consulting,Vendor 3,2291.33,Posted
+TXN-11472,2025-09-21,HR,5020-Consulting,Vendor 9,997.53,Posted
+TXN-11473,2025-09-21,Operations,5020-Consulting,Vendor 18,1572.98,Posted
+TXN-11474,2025-09-21,Operations,5010-Software,Vendor 14,711.48,Posted
+TXN-11475,2025-09-21,Sales,5060-Rent,Vendor 7,759.99,Posted
+TXN-11476,2025-09-21,IT Infrastructure,5020-Consulting,Vendor 17,1851.03,Posted
+TXN-11477,2025-09-21,Marketing,5020-Consulting,Vendor 15,5251.02,Posted
+TXN-11478,2025-09-21,IT Infrastructure,5030-Cloud Hosting,Vendor 16,1644.17,Posted
+TXN-11479,2025-09-22,R&D,5030-Cloud Hosting,Vendor 14,1970.66,Posted
+TXN-11480,2025-09-22,Operations,5020-Consulting,Vendor 4,1059.45,Posted
+TXN-11481,2025-09-22,IT Infrastructure,5050-Office Supplies,Vendor 1,729.95,Posted
+TXN-11482,2025-09-23,IT Infrastructure,5010-Software,Vendor 11,1511.69,Posted
+TXN-11483,2025-09-23,HR,5060-Rent,Vendor 8,438.75,Posted
+TXN-11484,2025-09-23,R&D,5010-Software,Vendor 5,241.07,Posted
+TXN-11485,2025-09-23,Marketing,5020-Consulting,Vendor 9,859.43,Posted
+TXN-11486,2025-09-23,Sales,5010-Software,Vendor 18,277.31,Posted
+TXN-11487,2025-09-24,IT Infrastructure,5030-Cloud Hosting,Vendor 18,512.09,Posted
+TXN-11488,2025-09-24,HR,5020-Consulting,Vendor 18,1247.16,Posted
+TXN-11489,2025-09-24,IT Infrastructure,5040-Travel,Vendor 18,3824.17,Posted
+TXN-11490,2025-09-24,Marketing,5010-Software,Vendor 4,3414.14,Posted
+TXN-11491,2025-09-24,IT Infrastructure,5030-Cloud Hosting,Vendor 15,2108.7,Posted
+TXN-11492,2025-09-24,Operations,5040-Travel,Vendor 15,176.32,Posted
+TXN-11493,2025-09-24,Operations,5040-Travel,Vendor 19,486.17,Posted
+TXN-11494,2025-09-24,IT Infrastructure,5040-Travel,Vendor 14,1102.34,Posted
+TXN-11495,2025-09-25,Marketing,5020-Consulting,Vendor 3,2752.52,Posted
+TXN-11496,2025-09-25,IT Infrastructure,5010-Software,Vendor 17,3704.41,Posted
+TXN-11497,2025-09-25,Sales,5010-Software,Vendor 3,945.44,Posted
+TXN-11498,2025-09-25,Operations,5010-Software,Vendor 3,2930.48,Posted
+TXN-11499,2025-09-25,Sales,5040-Travel,Vendor 7,4345.13,Posted
+TXN-11500,2025-09-25,R&D,5060-Rent,Vendor 1,1279.85,Posted
+TXN-11501,2025-09-26,Marketing,5020-Consulting,Vendor 16,196.82,Posted
+TXN-11502,2025-09-26,IT Infrastructure,5050-Office Supplies,Vendor 6,1036.0,Posted
+TXN-11503,2025-09-26,Sales,5010-Software,Vendor 14,471.01,Posted
+TXN-11504,2025-09-27,IT Infrastructure,5010-Software,Vendor 3,1088.41,Posted
+TXN-11505,2025-09-27,Sales,5040-Travel,Vendor 11,1983.56,Posted
+TXN-11506,2025-09-27,IT Infrastructure,5060-Rent,Vendor 17,2556.77,Posted
+TXN-11507,2025-09-28,IT Infrastructure,5040-Travel,Vendor 14,1250.62,Posted
+TXN-11508,2025-09-28,R&D,5020-Consulting,Vendor 16,1748.21,Posted
+TXN-11509,2025-09-28,Sales,5020-Consulting,Vendor 15,133.5,Posted
+TXN-11510,2025-09-28,HR,5010-Software,Vendor 2,2840.46,Posted
+TXN-11511,2025-09-28,Sales,5040-Travel,Vendor 3,2053.57,Posted
+TXN-11512,2025-09-28,Sales,5020-Consulting,Vendor 14,3002.24,Posted
+TXN-11513,2025-09-29,IT Infrastructure,5040-Travel,Vendor 6,1668.17,Posted
+TXN-11514,2025-09-29,HR,5040-Travel,Vendor 12,290.7,Posted
+TXN-11515,2025-09-29,Sales,5030-Cloud Hosting,Vendor 19,1528.39,Posted
+TXN-11516,2025-09-29,Operations,5060-Rent,Vendor 11,447.89,Posted
+TXN-11517,2025-09-29,HR,5030-Cloud Hosting,Vendor 15,1810.95,Posted
+TXN-11518,2025-09-30,IT Infrastructure,5050-Office Supplies,Vendor 5,1939.35,Posted
+TXN-11519,2025-09-30,Marketing,5030-Cloud Hosting,Vendor 17,428.14,Posted
+TXN-11520,2025-09-30,IT Infrastructure,5050-Office Supplies,Vendor 11,2167.58,Posted
+TXN-11521,2025-09-30,R&D,5020-Consulting,Vendor 3,1749.09,Posted
+TXN-11522,2025-09-30,R&D,5060-Rent,Vendor 6,1887.04,Posted
+TXN-DUPE-01,2025-08-15,IT Infrastructure,5030-Cloud Hosting,CloudCorp Global,45250.0,Posted
+TXN-DUPE-02,2025-08-15,IT Infrastructure,5030-Cloud Hosting,CloudCorp Global,45250.0,Posted
+TXN-SPIKE-99,2025-09-12,Marketing,5020-Consulting,Apex Advisory Group,185000.0,Posted

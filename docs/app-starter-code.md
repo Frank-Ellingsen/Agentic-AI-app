@@ -1,0 +1,328 @@
+# App Starter Code Package
+**Autonomous Data-to-Decision Application (Skills 01–37)**
+
+This package contains the complete setup to start building your application with **SQLite**, the **Gemini API**, and a lightweight **FastAPI** backend.
+
+---
+
+## 1. `app/index.html` (Single-Page App Frontend)
+
+Copy the code below into `app/index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-900 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Analytics Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="h-full flex flex-col font-sans antialiased">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-800 border-b border-slate-700 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <i data-lucide="brain-circuit" class="w-8 h-8 text-blue-400"></i>
+            <h1 class="text-xl font-bold tracking-tight text-white">Data-to-Decision Studio</h1>
+            <span class="bg-blue-900/50 text-blue-300 text-xs px-2.5 py-1 rounded-full border border-blue-700">Skills 01–37 Active</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="text-right">
+                <p class="text-xs text-slate-400">Tenant: <span class="text-white font-medium">Acme Corp</span></p>
+                <p class="text-xs text-emerald-400 font-mono">SQLite: Healthy | Gemini 2.0</p>
+            </div>
+            <button class="bg-slate-700 hover:bg-slate-600 text-slate-200 p-2 rounded-lg transition">
+                <i data-lucide="user" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto p-6 space-y-6">
+
+        <!-- Executive KPI Scorecard Strip -->
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Revenue YTD</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-900/60 text-emerald-400 border border-emerald-700">GREEN</span>
+                </div>
+                <div class="mt-2 text-2xl font-black text-white">$14.2M</div>
+                <p class="text-xs text-emerald-400 mt-1 flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-1"></i> +8.4% vs Target</p>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Operating Margin</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-amber-900/60 text-amber-400 border border-amber-700">AMBER</span>
+                </div>
+                <div class="mt-2 text-2xl font-black text-white">18.5%</div>
+                <p class="text-xs text-amber-400 mt-1 flex items-center"><i data-lucide="trending-down" class="w-3.5 h-3.5 mr-1"></i> -1.2% Variance</p>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Net Savings Potential</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-blue-900/60 text-blue-400 border border-blue-700">OPTIMIZED</span>
+                </div>
+                <div class="mt-2 text-2xl font-black text-white">$1.85M</div>
+                <p class="text-xs text-slate-400 mt-1">Via 4 Candidate Actions</p>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Gemini API Quota</span>
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-slate-300">TOKEN COST</span>
+                </div>
+                <div class="mt-2 text-2xl font-black text-white">$2.41</div>
+                <p class="text-xs text-slate-400 mt-1">142,500 Tokens used today</p>
+            </div>
+        </section>
+
+        <!-- Charts & Agent Thought Stream Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Left 2 Columns: Visual Analytics -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Forecast Fan Chart Container -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-base font-bold text-white flex items-center">
+                            <i data-lucide="line-chart" class="w-5 h-5 mr-2 text-blue-400"></i>
+                            P10 / P50 / P90 Revenue Projection (Skills 18–19)
+                        </h3>
+                        <button onclick="triggerAnalysis()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-3 py-1.5 rounded-lg font-semibold transition">
+                            Run Analysis
+                        </button>
+                    </div>
+                    <div class="h-64 relative">
+                        <canvas id="forecastChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- HITL Action Approval Table -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+                    <h3 class="text-base font-bold text-white mb-4 flex items-center">
+                        <i data-lucide="check-square" class="w-5 h-5 mr-2 text-emerald-400"></i>
+                        Human-in-the-Loop Action Approvals (Skills 23, 24 & 34)
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead class="bg-slate-900 text-slate-400 uppercase font-semibold border-b border-slate-700">
+                                <tr>
+                                    <th class="p-3">Candidate Action</th>
+                                    <th class="p-3">Net Recovery</th>
+                                    <th class="p-3">Feasibility</th>
+                                    <th class="p-3">Status</th>
+                                    <th class="p-3 text-right">Decision</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700">
+                                <tr>
+                                    <td class="p-3 font-medium text-white">Renegotiate Cloud Instance Tiering</td>
+                                    <td class="p-3 text-emerald-400 font-mono font-bold">$420,000</td>
+                                    <td class="p-3">0.92 (High)</td>
+                                    <td class="p-3"><span class="bg-amber-900/50 text-amber-300 px-2 py-0.5 rounded border border-amber-700">Pending</span></td>
+                                    <td class="p-3 text-right space-x-1">
+                                        <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded transition font-semibold">Approve</button>
+                                        <button class="bg-rose-600 hover:bg-rose-500 text-white px-2.5 py-1 rounded transition font-semibold">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium text-white">Consolidate Software License Seats</td>
+                                    <td class="p-3 text-emerald-400 font-mono font-bold">$185,000</td>
+                                    <td class="p-3">0.85 (Med)</td>
+                                    <td class="p-3"><span class="bg-emerald-900/50 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700">Approved</span></td>
+                                    <td class="p-3 text-right text-slate-500">Executed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Real-Time SSE Agent Console (Skill 33) -->
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg flex flex-col h-full">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-700 mb-3">
+                    <h3 class="text-base font-bold text-white flex items-center">
+                        <i data-lucide="terminal" class="w-5 h-5 mr-2 text-emerald-400"></i>
+                        Agent Thought Stream (SSE)
+                    </h3>
+                    <span class="flex h-2 w-2 relative">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                </div>
+                <div id="thoughtConsole" class="flex-1 bg-slate-950 rounded-lg p-3 font-mono text-xs text-slate-300 overflow-y-auto space-y-2 border border-slate-800 h-96">
+                    <p class="text-slate-500">[System Log] Connected to SQLite control store.</p>
+                    <p class="text-slate-500">[System Log] Gemini API Key initialized.</p>
+                    <p class="text-blue-400">[A0 Orchestrator] Awaiting user trigger...</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript Handler -->
+    <script>
+        lucide.createIcons();
+
+        // Initialize Chart.js Forecast Fan Chart
+        const ctx = document.getElementById('forecastChart').getContext('2d');
+        const forecastChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4 (P)', 'Q1 +1 (P)', 'Q2 +1 (P)'],
+                datasets: [
+                    {
+                        label: 'P50 Forecast',
+                        data: [12.1, 13.5, 14.2, 15.1, 15.8, 16.5],
+                        borderColor: '#3b82f6',
+                        backgroundColor: '#3b82f6',
+                        borderWidth: 3,
+                        fill: false
+                    },
+                    {
+                        label: 'P90 Upper Bound',
+                        data: [12.1, 13.5, 14.2, 16.2, 17.1, 18.2],
+                        borderColor: 'transparent',
+                        backgroundColor: 'rgba(59, 130, 246, 0.15)',
+                        fill: '+1'
+                    },
+                    {
+                        label: 'P10 Lower Bound',
+                        data: [12.1, 13.5, 14.2, 14.1, 14.5, 14.9],
+                        borderColor: 'transparent',
+                        backgroundColor: 'transparent',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#94a3b8' } } },
+                scales: {
+                    x: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } },
+                    y: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } }
+                }
+            }
+        });
+
+        // Trigger Analysis via SSE
+        function triggerAnalysis() {
+            const consoleBox = document.getElementById('thoughtConsole');
+            const messages = [
+                "[A0 Orchestrator] Triggering Task DAG #2026-093...",
+                "[A1 Data Inspector] SQLite source check passed. 14,200 records loaded.",
+                "[A2 Forecast Engine] Running ARIMA backtest (MAPE 8.2%)...",
+                "[Gemini API] Prompt tokens: 1,420 | Completion: 380 | Latency: 420ms",
+                "[A6 Action Evaluator] 2 candidate actions generated.",
+                "[A7 Validator] Independent audit PASS (0 reconcile errors)."
+            ];
+            
+            messages.forEach((msg, idx) => {
+                setTimeout(() => {
+                    const p = document.createElement('p');
+                    p.className = msg.includes("Gemini") ? "text-amber-300 font-semibold" : "text-emerald-400";
+                    p.textContent = msg;
+                    consoleBox.appendChild(p);
+                    consoleBox.scrollTop = consoleBox.scrollHeight;
+                }, idx * 800);
+            });
+        }
+    </script>
+</body>
+</html>
+```
+
+---
+
+## 2. `app/main.py` (FastAPI Server)
+
+Save the code below as `app/main.py`:
+
+```python
+import sqlite3
+import os
+from fastapi import FastAPI, Depends, HTTPException
+from fastapi.responses import HTMLResponse, StreamingResponse
+import json
+import asyncio
+
+app = FastAPI(title="Data-to-Decision API Gateway")
+DB_PATH = "control.sqlite"
+
+def get_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    try:
+        yield conn
+    finally:
+        conn.close()
+
+@app.get("/", response_class=HTMLResponse)
+async def read_index():
+    with open("index.html", "r") as f:
+        return f.read()
+
+@app.get("/api/v1/kpis")
+async def get_kpis(db: sqlite3.Connection = Depends(get_db)):
+    return {
+        "status": "success",
+        "kpis": [
+            {"metric": "Revenue YTD", "value": "$14.2M", "rag": "GREEN"},
+            {"metric": "Operating Margin", "value": "18.5%", "rag": "AMBER"}
+        ]
+    }
+
+@app.get("/api/v1/stream-thoughts")
+async def stream_agent_thoughts():
+    async def event_generator():
+        steps = [
+            {"agent": "A0_Orchestrator", "message": "DAG Pipeline Initialized."},
+            {"agent": "A1_Data_Inspector", "message": "Inspecting SQLite tables... OK."},
+            {"agent": "Gemini_API", "message": "Generating decision story via gemini-2.0-flash..."},
+            {"agent": "A7_Validator", "message": "Audit verified. Report Published."}
+        ]
+        for step in steps:
+            await asyncio.sleep(1)
+            yield f"data: {json.dumps(step)}\n\n"
+
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+---
+
+## 3. Quickstart Instructions
+
+1. **Create your project folder:**
+   ```bash
+   mkdir my-analytics-app && cd my-analytics-app
+   mkdir app
+   ```
+2. **Save the files:**
+   - Save the HTML above to `app/index.html`.
+   - Save `control_schema.sql` to your project root.
+   - Save `main.py` to `app/main.py`.
+3. **Initialize SQLite:**
+   ```bash
+   sqlite3 control.sqlite < control_schema.sql
+   ```
+4. **Install and Run:**
+   ```bash
+   pip install fastapi uvicorn google-genai
+   python app/main.py
+   ```
+5. Access the studio at `http://localhost:8000`.
