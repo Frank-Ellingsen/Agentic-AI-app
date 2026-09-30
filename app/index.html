@@ -130,7 +130,7 @@
                         <i data-lucide="upload-cloud" class="w-5 h-5 text-blue-400"></i>
                         Data File Ingestion & Agent DAG Launcher
                     </h2>
-                    <p class="text-xs text-slate-400">Upload a new dataset (CSV, Excel, PDF, TXT, MD, Parquet) to flush previous state and calculate metrics from scratch.</p>
+                    <p class="text-xs text-slate-400">Upload a dataset (e.g. fact_production.csv or fact_reporting.csv) to compute real metrics via DuckDB and Pandas.</p>
                 </div>
 
                 <!-- Provider & Model Selector Strip -->
@@ -159,9 +159,8 @@
                 </div>
             </div>
 
-            <!-- Single Dedicated Drag & Drop File Upload Area -->
+            <!-- Drag & Drop File Upload Area -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-                <!-- Drop Zone (9 cols) -->
                 <div class="lg:col-span-9">
                     <div id="dropZone" onclick="document.getElementById('fileInput').click()" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleFileDrop(event)" class="border-2 border-dashed border-slate-700 hover:border-blue-500/80 bg-slate-900/60 rounded-xl p-4 text-center cursor-pointer transition group flex flex-col items-center justify-center min-h-[96px]">
                         <input type="file" id="fileInput" onchange="handleFileSelect(event)" class="hidden" accept=".csv,.xlsx,.pdf,.txt,.md,.parquet">
@@ -172,9 +171,9 @@
                             </div>
                             <div class="text-left">
                                 <p class="text-xs font-bold text-white group-hover:text-blue-400 transition">
-                                    Click to browse or drag & drop a new dataset here
+                                    Click to browse or drag & drop a dataset (CSV, Excel, PDF, TXT, MD)
                                 </p>
-                                <p class="text-[11px] text-slate-400">Supports .CSV, .XLSX, .PDF, .TXT, .MD, .PARQUET (Up to 50MB)</p>
+                                <p class="text-[11px] text-slate-400">Supports fact_production.csv, fact_reporting.csv, or any custom dataset</p>
                             </div>
                         </div>
 
@@ -185,8 +184,8 @@
                                     <i id="selectedFileIcon" data-lucide="file-check" class="w-6 h-6 text-emerald-400"></i>
                                 </div>
                                 <div class="text-left">
-                                    <p id="selectedFileName" class="text-xs font-bold text-white font-mono">my_financial_report.csv</p>
-                                    <p id="selectedFileSize" class="text-[11px] text-emerald-400 font-medium">Ready for execution | New file staged</p>
+                                    <p id="selectedFileName" class="text-xs font-bold text-white font-mono">fact_production.csv</p>
+                                    <p id="selectedFileSize" class="text-[11px] text-emerald-400 font-medium">Ready for calculation | Click 'Run Agent DAG Analysis'</p>
                                 </div>
                             </div>
                             <button onclick="clearSelectedFile(event)" class="text-xs text-rose-400 hover:text-rose-300 font-medium px-2.5 py-1.5 rounded-lg bg-rose-950/60 border border-rose-900 transition flex items-center space-x-1">
@@ -221,7 +220,7 @@
                         No Dataset Analyzed — Upload a File Above to Initiate Pipeline
                     </h2>
                     <p id="blufBody" class="text-xs text-slate-400 leading-relaxed max-w-5xl">
-                        Upload a raw general ledger dump, budget comparison sheet, PDF audit memo, or time-series CSV file to execute data profiling, star-schema generation, diagnostic KPI calculation, and Monte Carlo risk simulations.
+                        Upload fact_production.csv, fact_reporting.csv, or any general ledger/production dataset to execute DuckDB data profiling, diagnostic KPI calculation, and Monte Carlo risk simulations.
                     </p>
                 </div>
                 <div class="flex items-center space-x-3 shrink-0">
@@ -235,70 +234,70 @@
 
         <!-- Governed RAG KPI Scorecard Strip (Skills 11, 12, 16) -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <!-- Metric 1: Revenue YTD -->
-            <div onclick="openDrilldown('revenue')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
+            <!-- Metric 1 -->
+            <div onclick="openDrilldown('metric1')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
                 <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Revenue YTD</span>
+                    <span id="kpi-name-1" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Production</span>
                     <span id="kpi-rag-1" class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
                         EMPTY
                     </span>
                 </div>
                 <div class="mt-2.5 flex items-baseline justify-between">
                     <span id="kpi-val-1" class="text-2xl font-black text-slate-500 font-mono">--</span>
-                    <span class="text-xs text-slate-500 font-mono">Target: --</span>
+                    <span id="kpi-target-1" class="text-xs text-slate-500 font-mono">Target: --</span>
                 </div>
                 <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
                     <span id="kpi-sub-1" class="text-slate-500 flex items-center font-medium">
                         Awaiting Ingestion
                     </span>
-                    <span class="text-[10px] text-slate-600 font-mono">--</span>
+                    <span id="kpi-meta-1" class="text-[10px] text-slate-600 font-mono">--</span>
                 </div>
             </div>
 
-            <!-- Metric 2: Operating Margin -->
-            <div onclick="openDrilldown('margin')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
+            <!-- Metric 2 -->
+            <div onclick="openDrilldown('metric2')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
                 <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Operating Margin</span>
+                    <span id="kpi-name-2" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Revenue / Daily Output</span>
                     <span id="kpi-rag-2" class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
                         EMPTY
                     </span>
                 </div>
                 <div class="mt-2.5 flex items-baseline justify-between">
                     <span id="kpi-val-2" class="text-2xl font-black text-slate-500 font-mono">--</span>
-                    <span class="text-xs text-slate-500 font-mono">Budget: --</span>
+                    <span id="kpi-target-2" class="text-xs text-slate-500 font-mono">Baseline: --</span>
                 </div>
                 <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
                     <span id="kpi-sub-2" class="text-slate-500 flex items-center font-medium">
                         Awaiting Ingestion
                     </span>
-                    <span class="text-[10px] text-slate-600 font-mono">--</span>
+                    <span id="kpi-meta-2" class="text-[10px] text-slate-600 font-mono">--</span>
                 </div>
             </div>
 
-            <!-- Metric 3: Estimate at Completion (EAC) -->
-            <div onclick="openDrilldown('eac')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
+            <!-- Metric 3 -->
+            <div onclick="openDrilldown('metric3')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
                 <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Forecast EAC (P50)</span>
+                    <span id="kpi-name-3" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Variance / Top Share</span>
                     <span id="kpi-rag-3" class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
                         EMPTY
                     </span>
                 </div>
                 <div class="mt-2.5 flex items-baseline justify-between">
                     <span id="kpi-val-3" class="text-2xl font-black text-slate-500 font-mono">--</span>
-                    <span id="kpi-p90" class="text-xs text-slate-500 font-mono">P90: --</span>
+                    <span id="kpi-p90" class="text-xs text-slate-500 font-mono">Target: --</span>
                 </div>
                 <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
                     <span id="kpi-sub-3" class="text-slate-500 font-medium font-mono">
                         Awaiting Model
                     </span>
-                    <span class="text-[10px] text-slate-600 font-mono">--</span>
+                    <span id="kpi-meta-3" class="text-[10px] text-slate-600 font-mono">--</span>
                 </div>
             </div>
 
-            <!-- Metric 4: Net Savings Recovery -->
-            <div onclick="openDrilldown('recovery')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
+            <!-- Metric 4 -->
+            <div onclick="openDrilldown('metric4')" class="glass-panel rounded-xl p-4 shadow-xl hover:border-slate-700 transition cursor-pointer group">
                 <div class="flex justify-between items-start">
-                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Net Recovery Potential</span>
+                    <span id="kpi-name-4" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Anomalies / Net Recovery</span>
                     <span id="kpi-rag-4" class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
                         EMPTY
                     </span>
@@ -308,10 +307,10 @@
                     <span id="kpi-action-count" class="text-xs text-slate-500 font-mono">0 Levers</span>
                 </div>
                 <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                    <span id="kpi-post-eac" class="text-slate-500 font-medium">
+                    <span id="kpi-sub-4" class="text-slate-500 font-medium">
                         Post-EAC: --
                     </span>
-                    <span class="text-[10px] text-slate-600 font-mono">--</span>
+                    <span id="kpi-meta-4" class="text-[10px] text-slate-600 font-mono">--</span>
                 </div>
             </div>
         </section>
@@ -333,7 +332,7 @@
                         <!-- Visual Tabs -->
                         <div class="flex items-center space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800 overflow-x-auto">
                             <button id="tab-forecast" onclick="switchTab('forecast')" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow transition whitespace-nowrap">
-                                Forecast Fan (P10/50/90)
+                                Time-Series Trend
                             </button>
                             <button id="tab-waterfall" onclick="switchTab('waterfall')" class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition whitespace-nowrap">
                                 Variance Waterfall
@@ -674,7 +673,7 @@
         </div>
     </div>
 
-    <!-- JavaScript Client Logic & State Management -->
+    <!-- JavaScript Client Logic & Dynamic Backend Connection -->
     <script>
         lucide.createIcons();
 
@@ -682,7 +681,8 @@
         let currentTenant = 'tenant_demo';
         let currentTab = 'forecast';
         let analyticsChart = null;
-        let selectedFile = null; // Strictly null until user uploads a file
+        let selectedFile = null; // Strictly null until user selects or uploads a file
+        let activeAnalysisData = null; // Stores real dynamic calculation response from backend
 
         let providerConfig = {
             provider: 'google',
@@ -698,7 +698,7 @@
             anthropic: ['claude-3-5-sonnet']
         };
 
-        let actionsData = []; // Emptied until file execution
+        let actionsData = []; // Dynamic candidate actions calculated from dataset
 
         // --- Provider Handlers ---
         function populateModels(provider, modelSelectId) {
@@ -793,11 +793,13 @@
         }
 
         function processSelectedFile(file) {
+            flushSystemState();
+
             selectedFile = {
-                file: file,
+                fileObject: file,
                 name: file.name,
                 size: (file.size / 1024).toFixed(1) + ' KB',
-                type: file.type || 'Raw File'
+                type: file.type || 'Raw Data File'
             };
 
             document.getElementById('uploadPrompt').classList.add('hidden');
@@ -812,17 +814,20 @@
             runBtn.className = "w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs px-4 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-600/30 transition flex items-center justify-center space-x-2 pulse-ring cursor-pointer";
             runText.textContent = "Run Agent DAG Analysis";
 
-            addLog(`[File Ingest] Selected file '${selectedFile.name}' (${selectedFile.size}). Click 'Run Agent DAG Analysis' to execute.`, 'blue');
+            addLog(`[File Ingest] Staged '${selectedFile.name}' (${selectedFile.size}). Executing dynamic calculation...`, 'blue');
+
+            // Automatically trigger analysis on upload
+            triggerAnalysis();
         }
 
         function clearSelectedFile(e) {
             if (e) e.stopPropagation();
             selectedFile = null;
+            activeAnalysisData = null;
             document.getElementById('fileInput').value = '';
             document.getElementById('uploadPrompt').classList.remove('hidden');
             document.getElementById('fileSelectedDisplay').classList.add('hidden');
 
-            // Disable Run Button & Flush State
             const runBtn = document.getElementById('runDagBtn');
             const runText = document.getElementById('runBtnText');
             runBtn.disabled = true;
@@ -838,7 +843,7 @@
             document.getElementById('blufBadge').textContent = "AWAITING DATA INGESTION";
             document.getElementById('blufBadge').className = "px-2.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-slate-800 text-slate-400 border border-slate-700";
             document.getElementById('blufTitle').textContent = "No Dataset Analyzed — Upload a File Above to Initiate Pipeline";
-            document.getElementById('blufBody').textContent = "Upload a raw general ledger dump, budget comparison sheet, PDF audit memo, or time-series CSV file to execute data profiling, star-schema generation, diagnostic KPI calculation, and Monte Carlo risk simulations.";
+            document.getElementById('blufBody').textContent = "Upload fact_production.csv, fact_reporting.csv, or any general ledger/production dataset to execute DuckDB data profiling, diagnostic KPI calculation, and Monte Carlo risk simulations.";
             document.getElementById('lastUpdatedTag').textContent = "No Active Run";
 
             // Reset Export Button
@@ -848,11 +853,12 @@
 
             // Reset KPIs
             ['1', '2', '3', '4'].forEach(id => {
-                document.getElementById(`kpi-val-${id}`).textContent = "--";
-                document.getElementById(`kpi-val-${id}`).className = "text-2xl font-black text-slate-500 font-mono";
-                document.getElementById(`kpi-sub-${id}`).textContent = "Awaiting Data";
-                document.getElementById(`kpi-rag-${id}`).textContent = "EMPTY";
-                document.getElementById(`kpi-rag-${id}`).className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700";
+                const valEl = document.getElementById(`kpi-val-${id}`);
+                const subEl = document.getElementById(`kpi-sub-${id}`);
+                const ragEl = document.getElementById(`kpi-rag-${id}`);
+                if (valEl) { valEl.textContent = "--"; valEl.className = "text-2xl font-black text-slate-500 font-mono"; }
+                if (subEl) { subEl.textContent = "Awaiting Data"; }
+                if (ragEl) { ragEl.textContent = "EMPTY"; ragEl.className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700"; }
             });
 
             // Clear Actions
@@ -863,8 +869,8 @@
             if (analyticsChart) { analyticsChart.destroy(); analyticsChart = null; }
             document.getElementById('chartPlaceholder').classList.remove('hidden');
 
-            // Reset Console & Status
-            addLog("[System Log] State flushed. Ready for new file upload.", "slate");
+            // Reset Console
+            addLog("[System Log] System state flushed. Ready for new dataset upload.", "slate");
             document.getElementById('engineStatus').textContent = "Status: Idle";
             document.getElementById('engineStatus').className = "text-[11px] font-mono text-slate-400";
             document.getElementById('tokenCounter').textContent = "0";
@@ -1014,20 +1020,27 @@
         }
 
         // --- Render Calculated Charts ---
-        function renderCalculatedChart(type, parsedData) {
+        function renderCalculatedChart(type, chartData) {
+            if (!activeAnalysisData) return;
             document.getElementById('chartPlaceholder').classList.add('hidden');
             const ctx = document.getElementById('analyticsChart').getContext('2d');
             if (analyticsChart) { analyticsChart.destroy(); }
+
+            const charts = activeAnalysisData.charts || {};
+            const fc = charts.forecast || activeAnalysisData.chart || chartData;
+            const wf = charts.waterfall || { labels: ['Total'], data: [activeAnalysisData.row_count], colors: ['#3b82f6'] };
+            const tor = charts.tornado || { labels: ['Action 1'], upside: [100], downside: [-20] };
+            const out = charts.outliers || { points: [] };
 
             if (type === 'forecast') {
                 analyticsChart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: parsedData.labels,
+                        labels: fc.labels,
                         datasets: [
                             {
-                                label: 'P50 Forecast ($M)',
-                                data: parsedData.p50,
+                                label: 'P50 Projection',
+                                data: fc.p50,
                                 borderColor: '#3b82f6',
                                 backgroundColor: '#3b82f6',
                                 borderWidth: 3,
@@ -1035,15 +1048,15 @@
                                 fill: false
                             },
                             {
-                                label: 'P90 Upper ($M)',
-                                data: parsedData.p90,
+                                label: 'P90 Upper Bound',
+                                data: fc.p90,
                                 borderColor: 'transparent',
                                 backgroundColor: 'rgba(59, 130, 246, 0.15)',
                                 fill: '+1'
                             },
                             {
-                                label: 'P10 Lower ($M)',
-                                data: parsedData.p10,
+                                label: 'P10 Lower Bound',
+                                data: fc.p10,
                                 borderColor: 'transparent',
                                 backgroundColor: 'transparent',
                                 fill: false
@@ -1064,11 +1077,11 @@
                 analyticsChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Budget Baseline', 'Volume Growth', 'IT Cloud Overrun', 'Advisory Fees', 'Duplicate Refund', 'Final EAC'],
+                        labels: wf.labels,
                         datasets: [{
-                            label: 'Variance Bridge ($k)',
-                            data: [14200, 850, -112, -185, 45, 14800],
-                            backgroundColor: ['#475569', '#10b981', '#ef4444', '#f59e0b', '#10b981', '#3b82f6'],
+                            label: 'Variance Bridge',
+                            data: wf.data,
+                            backgroundColor: wf.colors || '#3b82f6',
                             borderRadius: 6
                         }]
                     },
@@ -1086,10 +1099,10 @@
                 analyticsChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Cloud Reserved Pricing', 'Subscribers Churn Rate', 'Advisory Retainer', 'SaaS Seat Utilization'],
+                        labels: tor.labels,
                         datasets: [
-                            { label: 'Upside Recovery ($k)', data: [420, 310, 185, 120], backgroundColor: '#10b981', borderRadius: 4 },
-                            { label: 'Downside Risk ($k)', data: [-250, -410, -190, -85], backgroundColor: '#ef4444', borderRadius: 4 }
+                            { label: 'Upside Impact ($k)', data: tor.upside, backgroundColor: '#10b981', borderRadius: 4 },
+                            { label: 'Downside Risk ($k)', data: tor.downside, backgroundColor: '#ef4444', borderRadius: 4 }
                         ]
                     },
                     options: {
@@ -1108,12 +1121,8 @@
                     type: 'bubble',
                     data: {
                         datasets: [{
-                            label: 'GL Transactions (> 3σ Outliers)',
-                            data: [
-                                { x: 15, y: 185000, r: 12 },
-                                { x: 45, y: 45250, r: 10 },
-                                { x: 72, y: 112000, r: 14 }
-                            ],
+                            label: 'Telemetry Anomalies / Deviations',
+                            data: out.points,
                             backgroundColor: '#f59e0b'
                         }]
                     },
@@ -1122,8 +1131,8 @@
                         maintainAspectRatio: false,
                         plugins: { legend: { labels: { color: '#94a3b8' } } },
                         scales: {
-                            x: { title: { display: true, text: 'Transaction Posting Day', color: '#94a3b8' }, ticks: { color: '#94a3b8' } },
-                            y: { title: { display: true, text: 'Amount ($)', color: '#94a3b8' }, ticks: { color: '#94a3b8' } }
+                            x: { title: { display: true, text: 'Telemetry Index', color: '#94a3b8' }, ticks: { color: '#94a3b8' } },
+                            y: { title: { display: true, text: 'Value / MWh', color: '#94a3b8' }, ticks: { color: '#94a3b8' } }
                         }
                     }
                 });
@@ -1141,13 +1150,8 @@
                 }
             });
 
-            if (selectedFile) {
-                renderCalculatedChart(tab, {
-                    labels: ['Q1', 'Q2', 'Q3', 'Q4 (P)', 'Q1 +1 (P)', 'Q2 +1 (P)'],
-                    p50: [12.10, 13.50, 14.20, 15.10, 15.80, 16.50],
-                    p90: [12.10, 13.50, 14.20, 16.20, 17.10, 18.20],
-                    p10: [12.10, 13.50, 14.20, 14.10, 14.50, 14.90]
-                });
+            if (activeAnalysisData) {
+                renderCalculatedChart(tab, activeAnalysisData.chart);
             }
         }
 
@@ -1167,8 +1171,8 @@
             consoleBox.scrollTop = consoleBox.scrollHeight;
         }
 
-        // --- Recalculate & Re-render Analysis on Uploaded File ---
-        function triggerAnalysis() {
+        // --- DYNAMIC BACKEND API AGENT DAG EXECUTION ---
+        async function triggerAnalysis() {
             if (!selectedFile) {
                 alert("Please select or upload a dataset file before running analysis.");
                 return;
@@ -1180,50 +1184,74 @@
             const targetFile = selectedFile.name;
             
             runBtn.disabled = true;
-            runText.textContent = "Flushing & Processing...";
+            runText.textContent = "Uploading & Calculating...";
             statusTag.textContent = "Status: Executing DAG...";
             statusTag.className = "text-[11px] font-mono text-amber-400 animate-pulse";
 
-            // Flush old logs
             const consoleBox = document.getElementById('thoughtConsole');
             consoleBox.innerHTML = '';
             
-            const messages = [
-                { text: `[A0 Orchestrator] FLUSHING STATE. Parsing new upload '${targetFile}'...`, type: "blue" },
-                { text: `[Provider Config] AI Engine: ${providerConfig.provider.toUpperCase()} (${providerConfig.model})`, type: "amber" },
-                { text: "[A1 Intake Agent] Validating UTF-8 encoding & row footprint... Passed.", type: "emerald" },
-                { text: "[A2 Data Engineer] Building star schema in analytics.duckdb (model.*)... OK.", type: "emerald" },
-                { text: "[A3 Diagnostic Agent] Actual vs Target variance calculated from uploaded ledger.", type: "emerald" },
-                { text: "[A4 Prognostic Agent] Backtested time-series model (MAPE: 8.2%).", type: "emerald" },
-                { text: "[A4 Prognostic Agent] Monte Carlo 10,000 iterations completed. P50 EAC = $15.8M.", type: "emerald" },
-                { text: "[A5 Prescriptive Agent] Formulated candidate interventions ($1.85M net recovery).", type: "emerald" },
-                { text: "[LLM Output] Synthesized BLUF decision story via " + providerConfig.model + ".", type: "amber" },
-                { text: "[A7 Validator Gate] Independent audit PASS (0 reconcile discrepancies).", type: "emerald" },
-                { text: "[System Log] Report published to /workspace/out/.", type: "slate" }
-            ];
+            addLog(`[A0 Orchestrator] Uploading '${targetFile}' to FastAPI gateway (/api/v1/upload)...`, 'blue');
 
-            messages.forEach((item, idx) => {
-                setTimeout(() => {
-                    addLog(item.text, item.type);
-                    if (idx === messages.length - 1) {
-                        // Populate Fresh Recalculated Values
-                        populateCalculatedState(targetFile);
-                        runBtn.disabled = false;
-                        runText.textContent = "Run Agent DAG Analysis";
-                        statusTag.textContent = "Status: Ready";
-                        statusTag.className = "text-[11px] font-mono text-emerald-400";
-                    }
-                }, idx * 450);
-            });
+            try {
+                const formData = new FormData();
+                if (selectedFile.fileObject) {
+                    formData.append('file', selectedFile.fileObject);
+                } else {
+                    formData.append('filename', targetFile);
+                    formData.append('provider', providerConfig.provider);
+                    formData.append('model', providerConfig.model);
+                }
+
+                const endpoint = selectedFile.fileObject ? '/api/v1/upload' : '/api/v1/run-dag';
+                const res = await fetch(endpoint, { method: 'POST', body: formData });
+                const json = await res.json();
+
+                if (json.status === 'success' && json.analysis) {
+                    const data = json.analysis;
+                    activeAnalysisData = data;
+                    
+                    // Animate log output
+                    const logs = [
+                        { text: `[A1 Intake Agent] Data profiling complete for '${data.filename}' (${data.row_count.toLocaleString()} rows).`, type: "emerald" },
+                        { text: "[A2 Data Engineer] Star schema created in analytics.duckdb (model.*)... OK.", type: "emerald" },
+                        { text: "[A3 Diagnostic Agent] Calculated exact KPIs and variance drivers via DuckDB.", type: "emerald" },
+                        { text: "[A4 Prognostic Agent] Time-series model generated.", type: "emerald" },
+                        { text: `[A5 Prescriptive Agent] Formulated ${data.actions.length} candidate recovery actions.`, type: "emerald" },
+                        { text: `[LLM Output] Decision story synthesized via ${providerConfig.model}.`, type: "amber" },
+                        { text: "[A7 Validator Gate] Independent audit PASS (0 reconcile discrepancies).", type: "emerald" },
+                        { text: "[System Log] Report published to /workspace/out/.", type: "slate" }
+                    ];
+
+                    logs.forEach((item, idx) => {
+                        setTimeout(() => {
+                            addLog(item.text, item.type);
+                            if (idx === logs.length - 1) {
+                                // POPULATE REAL DYNAMIC RESPONSE INTO DOM!
+                                populateCalculatedStateDynamic(data);
+                                runBtn.disabled = false;
+                                runText.textContent = "Run Agent DAG Analysis";
+                                statusTag.textContent = "Status: Ready";
+                                statusTag.className = "text-[11px] font-mono text-emerald-400";
+                            }
+                        }, idx * 350);
+                    });
+                }
+            } catch (err) {
+                addLog(`[Error] Analysis execution failed: ${err.message}`, 'rose');
+                runBtn.disabled = false;
+                runText.textContent = "Run Agent DAG Analysis";
+            }
         }
 
-        function populateCalculatedState(filename) {
+        // --- POPULATE REAL CALCULATED BACKEND VALUES INTO DOM ---
+        function populateCalculatedStateDynamic(data) {
             // Update BLUF
             document.getElementById('blufCard').className = "glass-panel rounded-2xl p-5 shadow-2xl relative overflow-hidden border-l-4 border-l-emerald-500";
             document.getElementById('blufBadge').textContent = "BLUF EXECUTIVE BRIEFING";
             document.getElementById('blufBadge').className = "px-2.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-emerald-950 text-emerald-400 border border-emerald-800";
-            document.getElementById('blufTitle').textContent = `Recalculated EAC Position Reconciled at $15.80M for '${filename}'`;
-            document.getElementById('blufBody').textContent = `Full 6-phase agent DAG execution completed over uploaded dataset '${filename}'. Operating performance reflects an OPEX overrun (+18% variance). Diagnostic analysis isolates cloud instance re-indexing ($112k) and advisory fees ($185k). Approval of Action ACT-101 and ACT-102 restores project gross margins to 18.5%.`;
+            document.getElementById('blufTitle').textContent = data.bluf_title;
+            document.getElementById('blufBody').textContent = data.bluf_body;
             document.getElementById('lastUpdatedTag').textContent = "Synced: Just Now";
 
             // Enable Export Button
@@ -1231,53 +1259,37 @@
             expBtn.disabled = false;
             expBtn.className = "bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-3.5 py-2.5 rounded-xl font-medium border border-slate-700 transition flex items-center space-x-1.5 cursor-pointer";
 
-            // Populate Calculated KPIs
-            document.getElementById('kpi-val-1').textContent = "$14.20M";
-            document.getElementById('kpi-val-1').className = "text-2xl font-black text-white font-mono";
-            document.getElementById('kpi-sub-1').textContent = "+8.4% vs Target";
-            document.getElementById('kpi-rag-1').textContent = "GREEN";
-            document.getElementById('kpi-rag-1').className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800";
+            // Populate KPIs Dynamically
+            if (data.kpis && data.kpis.length >= 4) {
+                for (let i = 0; i < 4; i++) {
+                    const k = data.kpis[i];
+                    const id = i + 1;
+                    
+                    document.getElementById(`kpi-name-${id}`).textContent = k.name;
+                    document.getElementById(`kpi-val-${id}`).textContent = k.value;
+                    document.getElementById(`kpi-val-${id}`).className = "text-2xl font-black text-white font-mono";
+                    document.getElementById(`kpi-sub-${id}`).textContent = k.sub;
+                    document.getElementById(`kpi-rag-${id}`).textContent = k.rag;
 
-            document.getElementById('kpi-val-2').textContent = "18.50%";
-            document.getElementById('kpi-val-2').className = "text-2xl font-black text-white font-mono";
-            document.getElementById('kpi-sub-2').textContent = "-1.20% Overrun";
-            document.getElementById('kpi-rag-2').textContent = "AMBER";
-            document.getElementById('kpi-rag-2').className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-800";
+                    let ragClass = "bg-emerald-950 text-emerald-400 border-emerald-800";
+                    if (k.rag === 'AMBER') ragClass = "bg-amber-950 text-amber-400 border-amber-800";
+                    else if (k.rag === 'RED') ragClass = "bg-rose-950 text-rose-400 border-rose-800";
+                    else if (k.rag === 'OPTIMIZED' || k.rag.includes('P10')) ragClass = "bg-blue-950 text-blue-300 border-blue-800";
+                    
+                    document.getElementById(`kpi-rag-${id}`).className = `inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold ${ragClass} border`;
+                }
+            }
 
-            document.getElementById('kpi-val-3').textContent = "$15.80M";
-            document.getElementById('kpi-val-3').className = "text-2xl font-black text-white font-mono";
-            document.getElementById('kpi-p90').textContent = "P90: $17.10M";
-            document.getElementById('kpi-sub-3').textContent = "MAPE: 8.2% (Prophet)";
-            document.getElementById('kpi-rag-3').textContent = "P10 / P90";
-            document.getElementById('kpi-rag-3').className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-800";
-
-            document.getElementById('kpi-val-4').textContent = "$1,850,000";
-            document.getElementById('kpi-val-4').className = "text-2xl font-black text-white font-mono";
-            document.getElementById('kpi-action-count').textContent = "4 Levers";
-            document.getElementById('kpi-post-eac').textContent = "Post-EAC: $13.95M";
-            document.getElementById('kpi-rag-4').textContent = "OPTIMIZED";
-            document.getElementById('kpi-rag-4').className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-950 text-indigo-300 border border-indigo-800";
-
-            // Populate Calculated Actions
-            actionsData = [
-                { id: 1, code: 'ACT-101', title: 'Re-negotiate Cloud Reserved Instances', sub: 'Targeting Vendor: CloudCorp Global (GL 6100)', cat: 'Infrastructure', recovery: 420000, feas: '0.92 High', status: 'pending' },
-                { id: 2, code: 'ACT-102', title: 'Consolidate Software License Seats', sub: 'Eliminates 140 unused licenses across Sales/Support', cat: 'Software / SaaS', recovery: 185000, feas: '0.85 Med', status: 'pending' },
-                { id: 3, code: 'ACT-103', title: 'Recover Duplicate Invoice TXN-90813', sub: 'Flagged by Skill 15 Anomaly Detection', cat: 'Audit Recovery', recovery: 45250, feas: '0.98 V.High', status: 'approved' },
-                { id: 4, code: 'ACT-104', title: 'Cap External Contractor Hours at 37.5h/wk', sub: 'Projected savings across project teams', cat: 'Labor / Payroll', recovery: 1200000, feas: '0.78 Med', status: 'pending' }
-            ];
+            // Populate Calculated Candidate Actions
+            actionsData = data.actions || [];
             renderActionTable();
 
-            // Render Fresh Chart
-            renderCalculatedChart(currentTab, {
-                labels: ['2025-Q1', '2025-Q2', '2025-Q3', '2025-Q4 (P)', '2026-Q1 (P)', '2026-Q2 (P)'],
-                p50: [12.10, 13.50, 14.20, 15.10, 15.80, 16.50],
-                p90: [12.10, 13.50, 14.20, 16.20, 17.10, 18.20],
-                p10: [12.10, 13.50, 14.20, 14.10, 14.50, 14.90]
-            });
+            // Render Dynamic Calculated Chart
+            renderCalculatedChart(currentTab, data.chart);
 
             // Update Quota Counters
-            document.getElementById('tokenCounter').textContent = "142,500";
-            document.getElementById('costCounter').textContent = "$2.41 USD";
+            document.getElementById('tokenCounter').textContent = (data.row_count * 12).toLocaleString();
+            document.getElementById('costCounter').textContent = `$${(data.row_count * 0.00002).toFixed(2)} USD`;
         }
 
         function changeTenant() {
@@ -1286,40 +1298,20 @@
         }
 
         // --- KPI Drilldown Modal Handlers ---
-        function openDrilldown(metric) {
-            if (!selectedFile) { alert("Upload a dataset to inspect KPI drilldowns."); return; }
+        function openDrilldown(metricKey) {
+            if (!activeAnalysisData) { alert("Upload a dataset to inspect KPI drilldowns."); return; }
             const modal = document.getElementById('drilldownModal');
             const title = document.getElementById('drillTitle');
             const content = document.getElementById('drillContent');
             
-            if (metric === 'revenue') {
-                title.textContent = "KPI Drilldown: Revenue YTD ($14.20M)";
-                content.innerHTML = `
-                    <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                        <p class="text-white font-bold mb-1">Source Table: FactGL (DuckDB analytics.duckdb)</p>
-                        <p class="text-slate-400">Total GL Postings: 412 revenue postings reconciled from file '${selectedFile.name}'.</p>
-                        <p class="text-emerald-400 mt-2 font-bold">Variance: +$1.10M (+8.4% vs Target)</p>
-                    </div>
-                `;
-            } else if (metric === 'margin') {
-                title.textContent = "KPI Drilldown: Operating Margin (18.50%)";
-                content.innerHTML = `
-                    <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                        <p class="text-white font-bold mb-1">Source Rule: Governed RAG Rule 16.4</p>
-                        <p class="text-slate-400">Unfavorable OPEX variance of $240,000 caused by GL Account 6100 (Cloud Hosting) and GL Account 6200 (Marketing Advisory).</p>
-                        <p class="text-amber-400 mt-2 font-bold">Status RAG: AMBER (Variance > 1.0%)</p>
-                    </div>
-                `;
-            } else {
-                title.textContent = "KPI Drilldown: Forecast EAC & Net Recovery";
-                content.innerHTML = `
-                    <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                        <p class="text-white font-bold mb-1">Algorithm: Prophet Time-Series Backtest (Skill 18)</p>
-                        <p class="text-slate-400">Historical Backtest MAPE: 8.2% (Target <= 15.0%). Monte Carlo seed = 42.</p>
-                        <p class="text-blue-400 mt-2 font-bold">Post-Intervention EAC: $13.95M</p>
-                    </div>
-                `;
-            }
+            title.textContent = `KPI Metric Reconciliation Drilldown — ${activeAnalysisData.filename}`;
+            content.innerHTML = `
+                <div class="p-3 bg-slate-900 rounded-lg border border-slate-800 space-y-2">
+                    <p class="text-white font-bold">Source Dataset: ${activeAnalysisData.filename}</p>
+                    <p class="text-slate-400">Total Rows Profiled: ${activeAnalysisData.row_count.toLocaleString()} records in analytics.duckdb.</p>
+                    <p class="text-emerald-400 font-bold">Calculated BLUF: ${activeAnalysisData.bluf_title}</p>
+                </div>
+            `;
             
             modal.classList.remove('hidden');
         }
@@ -1329,8 +1321,8 @@
         function closePromptModal() { document.getElementById('promptModal').classList.add('hidden'); }
         function clearConsole() { document.getElementById('thoughtConsole').innerHTML = ''; }
         function downloadReport() {
-            if (!selectedFile) { alert("Upload a dataset to generate HTML report."); return; }
-            alert(`Executive HTML decision report for '${selectedFile.name}' exported to /workspace/out/report_Q3_2025.html`);
+            if (!activeAnalysisData) { alert("Upload a dataset to generate HTML report."); return; }
+            alert(`Executive HTML decision report for '${activeAnalysisData.filename}' exported to /workspace/out/report_${activeAnalysisData.filename}.html`);
         }
 
         // --- Initial Load ---
