@@ -173,7 +173,7 @@
                                 <p class="text-xs font-bold text-white group-hover:text-blue-400 transition">
                                     Click to browse or drag & drop a dataset (CSV, Excel, PDF, TXT, MD)
                                 </p>
-                                <p class="text-[11px] text-slate-400">Supports fact_production.csv, fact_reporting.csv, or any custom dataset</p>
+                                <p class="text-[11px] text-slate-400">Drag & drop any CSV, Excel, PDF, TXT, MD, or Parquet dataset file</p>
                             </div>
                         </div>
 
@@ -184,7 +184,7 @@
                                     <i id="selectedFileIcon" data-lucide="file-check" class="w-6 h-6 text-emerald-400"></i>
                                 </div>
                                 <div class="text-left">
-                                    <p id="selectedFileName" class="text-xs font-bold text-white font-mono">fact_production.csv</p>
+                                    <p id="selectedFileName" class="text-xs font-bold text-white font-mono">--</p>
                                     <p id="selectedFileSize" class="text-[11px] text-emerald-400 font-medium">Ready for calculation | Click 'Run Agent DAG Analysis'</p>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@
                         No Dataset Analyzed — Upload a File Above to Initiate Pipeline
                     </h2>
                     <p id="blufBody" class="text-xs text-slate-400 leading-relaxed max-w-5xl">
-                        Upload fact_production.csv, fact_reporting.csv, or any general ledger/production dataset to execute DuckDB data profiling, diagnostic KPI calculation, and Monte Carlo risk simulations.
+                        Upload any general ledger, telemetry, diamonds, retail, or custom dataset to execute DuckDB analytical profiling, dynamic KPI calculation, and Monte Carlo risk simulations.
                     </p>
                 </div>
                 <div class="flex items-center space-x-3 shrink-0">
