@@ -159,6 +159,25 @@
                 </div>
             </div>
 
+            <!-- Pre-Loaded Sample Datasets Picker Strip -->
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="text-xs font-semibold text-white">Pre-Loaded Datasets (data/):</span>
+                    <select id="sampleDatasetSelect" onchange="selectSampleDataset(this.value)" class="bg-slate-900 text-xs font-semibold text-blue-300 px-3 py-1.5 rounded-lg border border-slate-700 focus:outline-none cursor-pointer">
+                        <option value="">-- Select from 16 data files --</option>
+                    </select>
+                </div>
+                <div class="flex flex-wrap items-center gap-1.5 text-xs">
+                    <span class="text-[11px] text-slate-500 font-medium">Quick Presets:</span>
+                    <button onclick="selectSampleDataset('fact_production.csv')" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg border border-slate-700 font-mono text-[11px] transition cursor-pointer">fact_production.csv</button>
+                    <button onclick="selectSampleDataset('sample_budget_vs_actual.csv')" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg border border-slate-700 font-mono text-[11px] transition cursor-pointer">budget_vs_actual.csv</button>
+                    <button onclick="selectSampleDataset('sample_general_ledger.csv')" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg border border-slate-700 font-mono text-[11px] transition cursor-pointer">general_ledger.csv</button>
+                    <button onclick="selectSampleDataset('sample_vendor_contract.pdf')" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-amber-300 hover:text-amber-200 rounded-lg border border-amber-900/60 font-mono text-[11px] transition cursor-pointer">vendor_contract.pdf</button>
+                    <button onclick="selectSampleDataset('insurance.csv')" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg border border-slate-700 font-mono text-[11px] transition cursor-pointer">insurance.csv</button>
+                </div>
+            </div>
+
             <!-- Drag & Drop File Upload Area -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
                 <div class="lg:col-span-9">
@@ -1325,9 +1344,59 @@
             alert(`Executive HTML decision report for '${activeAnalysisData.filename}' exported to /workspace/out/report_${activeAnalysisData.filename}.html`);
         }
 
+        function selectSampleDataset(filename) {
+            if (!filename) return;
+            flushSystemState();
+            selectedFile = {
+                fileObject: null,
+                name: filename,
+                size: 'Pre-loaded Sample File',
+                type: 'Sample Dataset'
+            };
+
+            document.getElementById('uploadPrompt').classList.add('hidden');
+            document.getElementById('fileSelectedDisplay').classList.remove('hidden');
+            document.getElementById('selectedFileName').textContent = selectedFile.name;
+            document.getElementById('selectedFileSize').textContent = `data/${selectedFile.name} | Click 'Run Agent DAG Analysis'`;
+
+            const selectEl = document.getElementById('sampleDatasetSelect');
+            if (selectEl) selectEl.value = filename;
+
+            const runBtn = document.getElementById('runDagBtn');
+            const runText = document.getElementById('runBtnText');
+            runBtn.disabled = false;
+            runBtn.className = "w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs px-4 py-3.5 rounded-xl font-bold shadow-lg shadow-blue-600/30 transition flex items-center justify-center space-x-2 pulse-ring cursor-pointer";
+            runText.textContent = "Run Agent DAG Analysis";
+
+            addLog(`[Sample Select] Staged 'data/${selectedFile.name}'. Executing DAG pipeline...`, 'blue');
+            triggerAnalysis();
+        }
+
+        async function loadSampleDatasetsDropdown() {
+            try {
+                const res = await fetch('/api/v1/list-datasets');
+                const data = await res.json();
+                if (data.status === 'success' && data.datasets) {
+                    const select = document.getElementById('sampleDatasetSelect');
+                    if (select) {
+                        select.innerHTML = '<option value="">-- Select from 16 data files --</option>';
+                        data.datasets.forEach(d => {
+                            const opt = document.createElement('option');
+                            opt.value = d.filename;
+                            opt.textContent = `${d.filename} (${(d.size_bytes/1024).toFixed(1)} KB)`;
+                            select.appendChild(opt);
+                        });
+                    }
+                }
+            } catch(err) {
+                console.warn("Sample dataset list fetch error:", err);
+            }
+        }
+
         // --- Initial Load ---
         window.addEventListener('DOMContentLoaded', () => {
             onQuickProviderChange();
+            loadSampleDatasetsDropdown();
             flushSystemState();
         });
     </script>
