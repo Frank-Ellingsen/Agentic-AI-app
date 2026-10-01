@@ -6,10 +6,19 @@ import shutil
 import pandas as pd
 import duckdb
 from fastapi import FastAPI, Depends, HTTPException, File, UploadFile, Form
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse, JSONResponse
 from typing import Optional, Dict, Any
 
 app = FastAPI(title="Data-to-Decision API Gateway")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "control.sqlite")
 UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 

@@ -1190,6 +1190,50 @@
             consoleBox.scrollTop = consoleBox.scrollHeight;
         }
 
+        // --- API GATEWAY FETCH HELPER WITH FALLBACK & ERROR PARSING ---
+        async function apiFetch(endpoint, options = {}) {
+            const currentOrigin = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : '';
+            const candidates = [];
+            
+            if (currentOrigin && currentOrigin.startsWith('http')) {
+                candidates.push(currentOrigin);
+            }
+            if (!candidates.includes('http://127.0.0.1:8000')) candidates.push('http://127.0.0.1:8000');
+            if (!candidates.includes('http://localhost:8000')) candidates.push('http://localhost:8000');
+
+            let lastRes = null;
+            let lastErr = null;
+
+            for (const base of candidates) {
+                try {
+                    const url = `${base.replace(/\/$/, '')}${endpoint}`;
+                    const res = await fetch(url, options);
+                    const ct = res.headers.get('content-type') || '';
+
+                    if (res.ok && ct.includes('application/json')) {
+                        return await res.json();
+                    }
+                    if (ct.includes('application/json')) {
+                        const errJson = await res.json();
+                        throw new Error(errJson.detail || errJson.message || `API error (${res.status})`);
+                    }
+                    lastRes = res;
+                } catch (e) {
+                    lastErr = e;
+                }
+            }
+
+            if (lastErr && lastErr.message && !lastErr.message.includes('Unexpected token')) {
+                throw lastErr;
+            }
+
+            if (lastRes) {
+                throw new Error(`API Gateway error (${lastRes.status}): Server returned non-JSON response. Ensure Uvicorn server is running on http://127.0.0.1:8000.`);
+            }
+
+            throw new Error(`Could not connect to FastAPI gateway at http://127.0.0.1:8000. Please start Uvicorn server.`);
+        }
+
         // --- DYNAMIC BACKEND API AGENT DAG EXECUTION ---
         async function triggerAnalysis() {
             if (!selectedFile) {
@@ -1223,8 +1267,7 @@
                 }
 
                 const endpoint = selectedFile.fileObject ? '/api/v1/upload' : '/api/v1/run-dag';
-                const res = await fetch(endpoint, { method: 'POST', body: formData });
-                const json = await res.json();
+                const json = await apiFetch(endpoint, { method: 'POST', body: formData });
 
                 if (json.status === 'success' && json.analysis) {
                     const data = json.analysis;
@@ -1374,8 +1417,7 @@
 
         async function loadSampleDatasetsDropdown() {
             try {
-                const res = await fetch('/api/v1/list-datasets');
-                const data = await res.json();
+                const data = await apiFetch('/api/v1/list-datasets');
                 if (data.status === 'success' && data.datasets) {
                     const select = document.getElementById('sampleDatasetSelect');
                     if (select) {
